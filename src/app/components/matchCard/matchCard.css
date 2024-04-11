@@ -1,0 +1,23 @@
+.radiusInverted::before,
+.radiusInverted::after{
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 15px;
+  width: 55px;
+  z-index: -1;
+}
+
+.radiusInverted::before{
+    left: -53px;
+    border-top-right-radius: 20px;
+    box-shadow: 25px 0px 0 0 #1F2022;
+}
+
+.radiusInverted::after{   
+    left: 110px;
+    border-top-left-radius: 20px;
+    box-shadow: -25px 0px 0 0 #1F2022;
+  }
+  
+
