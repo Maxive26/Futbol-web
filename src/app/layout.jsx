@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="h-screen grid grid-cols-[300px_1fr] grid-rows-[60px_1fr]">
+      <body className="h-screen grid grid-cols-[250px_1fr] grid-rows-[60px_1fr]">
         <header className="bg-grayCard col-[2_/_3] row-[1_/_2]">
           <Buscador />
         </header>
