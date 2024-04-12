@@ -1,4 +1,3 @@
-import Buscador from "./components/buscador/buscador";
 import MatchCard from "./components/matchCard/matchCard";
 import teams from "./mocks/teams.json";
 
@@ -11,7 +10,6 @@ export default function Home() {
 
   return (
     <>
-      <Buscador />
       <MatchCard
         estadio={"Mâs Monumental"}
         estado={team.status}

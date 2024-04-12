@@ -1,3 +1,4 @@
+import Buscador from "./components/buscador/buscador";
 import "./globals.css";
 
 export const metadata = {
@@ -8,7 +9,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="h-screen grid grid-cols-[300px_1fr] grid-rows-[60px_1fr]">
+        <header className="bg-grayCard col-[2_/_3] row-[1_/_2]">
+          <Buscador />
+        </header>
+        <section className="bg-greenCard col-[1_/_2] row-[1_/_3]"></section>
+        <main className="bg-blackBG col-[2_/_3] row-[2_/_3] p-10">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
