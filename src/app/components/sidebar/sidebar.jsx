@@ -1,9 +1,12 @@
 import Link from "./link";
+import Logo from "./logo";
 
 export default function Sidebar() {
   return (
     <>
-      <div className="h-10 ">Logo</div>
+      <div className="h-10">
+        <Logo />
+      </div>
       <div className=" text-whiteCard flex flex-col gap-2">
         <span>LIGAS</span>
         <Link href={"#"} liga={"Copa de la liga"} />

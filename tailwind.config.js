@@ -18,6 +18,7 @@ module.exports = {
       blackBG: "#1F2022",
       grayCard: "#D9DFE8",
       whiteCard: "#FFFFFF",
+      grayPage: "#29292C",
     },
   },
   plugins: [],
