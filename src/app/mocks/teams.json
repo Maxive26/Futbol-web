@@ -11,6 +11,9 @@
     },
     "response": [
       {
+        "result":{
+          "result": 1
+        },
         "status":{
           "status": true
         },

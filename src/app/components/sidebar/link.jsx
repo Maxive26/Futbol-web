@@ -1,4 +1,4 @@
-export default function Link({ liga, href }) {
+export default function Links({ liga, href }) {
   return (
     <div className="flex border-l-2 border-grayPage ml-2  transition-all ease-in hover:border-greenCard">
       <a

@@ -6,6 +6,7 @@ export default function Home() {
     nombre: teams.response[0].team.name,
     logo: teams.response[0].team.logo,
     status: teams.response[0].status.status,
+    resultado: teams.response[0].result.result,
   };
 
   return (
@@ -17,10 +18,12 @@ export default function Home() {
         team1={{
           escudo: team.logo,
           nombre: team.nombre,
+          resultado: team.resultado,
         }}
         team2={{
           escudo: team.logo,
           nombre: team.nombre,
+          resultado: team.resultado,
         }}
       />
     </>

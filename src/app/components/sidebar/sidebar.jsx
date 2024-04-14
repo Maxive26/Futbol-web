@@ -1,4 +1,4 @@
-import Link from "./link";
+import Links from "./link";
 import Logo from "./logo";
 
 export default function Sidebar() {
@@ -8,13 +8,13 @@ export default function Sidebar() {
         <Logo />
       </div>
       <div className=" text-whiteCard flex flex-col gap-2">
-        <Link href={"/"} liga={"Inicio"} />
+        <Links href={"/"} liga={"Inicio"} />
         <br />
         <span>LIGAS</span>
-        <Link href={"#"} liga={"Copa de la liga"} />
-        <Link href={"#"} liga={"Premier League"} />
-        <Link href={"#"} liga={"Serie A"} />
-        <Link href={"#"} liga={"Brasileirao"} />
+        <Links href={"#"} liga={"Copa de la liga"} />
+        <Links href={"#"} liga={"Premier League"} />
+        <Links href={"#"} liga={"Serie A"} />
+        <Links href={"#"} liga={"Brasileirao"} />
       </div>
     </>
   );
