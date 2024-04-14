@@ -19,6 +19,7 @@ module.exports = {
       grayCard: "#D9DFE8",
       whiteCard: "#FFFFFF",
       grayPage: "#29292C",
+      searchBG: "#242427",
     },
   },
   plugins: [],

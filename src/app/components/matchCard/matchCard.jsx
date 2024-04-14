@@ -14,7 +14,7 @@ export default function MatchCard(props) {
         </div>
         <div className="h-[146px] flex justify-center items-center gap-8">
           <div className="flex flex-col items-center">
-            <img src={team1.escudo} className="w-20 " />
+            <img src={team1.escudo} className="w-20 drop-shadow-2xl" />
             <span className="text-center font-bold">{team1.nombre}</span>
           </div>
           <div className="flex flex-col items-center">
@@ -22,7 +22,7 @@ export default function MatchCard(props) {
             <span className="font-bold">{horario}</span>
           </div>
           <div className="flex flex-col items-center">
-            <img src={team2.escudo} className="w-20" />
+            <img src={team2.escudo} className="w-20 drop-shadow-2xl" />
             <span className="text-center font-bold">{team2.nombre}</span>
           </div>
         </div>

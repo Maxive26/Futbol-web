@@ -8,6 +8,8 @@ export default function Sidebar() {
         <Logo />
       </div>
       <div className=" text-whiteCard flex flex-col gap-2">
+        <Link href={"/"} liga={"Inicio"} />
+        <br />
         <span>LIGAS</span>
         <Link href={"#"} liga={"Copa de la liga"} />
         <Link href={"#"} liga={"Premier League"} />
