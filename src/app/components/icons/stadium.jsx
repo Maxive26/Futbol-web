@@ -6,9 +6,9 @@ export default function Stadium({ opacity }) {
       stroke="#1F2022"
       opacity={opacity}
       fill="#1F2022"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 24 24"
-      class="text-2xl"
+      className="text-2xl"
       height="1em"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"

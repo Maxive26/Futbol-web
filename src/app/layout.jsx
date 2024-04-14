@@ -15,8 +15,10 @@ const poppins = Poppins({
 
 export default function RootLayout({ children }) {
   return (
-    <html className={poppins.className} lang="es">
-      <body className="h-screen grid grid-cols-[250px_1fr] grid-rows-[60px_1fr]">
+    <html lang="es">
+      <body
+        className={`${poppins.className} h-screen grid grid-cols-[250px_1fr] grid-rows-[60px_1fr]`}
+      >
         <header className="flex justify-between items-center px-10 bg-blackBG border-b-2 border-grayPage col-[2_/_3] row-[1_/_2]">
           <Buscador />
         </header>
