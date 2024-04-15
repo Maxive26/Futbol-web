@@ -14,6 +14,7 @@ export default function Sidebar() {
         <Links href={"/ligas/copadelaliga"} liga={"Copa de la liga"} />
         <Links href={"#"} liga={"Liga Profesional"} />
         <Links href={"#"} liga={"Premier League"} />
+        <Links href={"#"} liga={"La Liga"} />
         <Links href={"#"} liga={"Serie A"} />
         <Links href={"#"} liga={"Brasileirao"} />
       </div>
