@@ -12,8 +12,8 @@ export default function Links({ liga, href }) {
     >
       <Link
         href={href}
-        className={`w-full  pl-5 transition-all opacity-70 ease-in hover:text-greenCard hover:opacity-100
-        ${pathName === href ? "text-greenCard opacity-100" : ""}
+        className={`w-full  pl-5 transition-all ease-in hover:text-greenCard hover:opacity-100
+        ${pathName === href ? "text-greenCard opacity-100" : "opacity-70"}
         `}
       >
         {liga}

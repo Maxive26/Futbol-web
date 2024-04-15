@@ -8,7 +8,6 @@ export default function Home() {
     status: teams.response[0].status.status,
     resultado: teams.response[0].result.result,
   };
-
   return (
     <>
       <MatchCard
