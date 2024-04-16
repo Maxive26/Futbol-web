@@ -2,18 +2,20 @@
 
 import { useEffect, useState } from "react";
 
-export function useGetLeague(id, api_key) {
+export function useGetLeague(id, season, api_key) {
+  console.log(season);
+  console.log(id);
   const [data, setData] = useState("");
   const URL = "https://v3.football.api-sports.io";
-  const API_KEY = process.env.REACT_APP_FOOTBALL_API_KEY;
-
   // COPA DE LA LIGA ID: 1032
+  // 2705c96ca7a369a3775cc8efb8e046f6
   useEffect(() => {
-    fetch(`${URL}/standings?league=${id}&season=2024`, {
+    const API_KEY = process.env.REACT_APP_FOOTBALL_API_KEY;
+    fetch(`${URL}/standings?league=${id}&season=${season}`, {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": { API_KEY },
+        "x-rapidapi-key": "2705c96ca7a369a3775cc8efb8e046f6",
       },
     })
       .then((response) => response.json())

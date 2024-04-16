@@ -12,11 +12,11 @@ export default function Sidebar() {
         <br />
         <span>LIGAS</span>
         <Links href={"/ligas/copadelaliga"} liga={"Copa de la liga"} />
-        <Links href={"#"} liga={"Liga Profesional"} />
-        <Links href={"#"} liga={"Premier League"} />
-        <Links href={"#"} liga={"La Liga"} />
-        <Links href={"#"} liga={"Serie A"} />
-        <Links href={"#"} liga={"Brasileirao"} />
+        <Links href={"/ligas/ligaProfesional"} liga={"Liga Profesional"} />
+        <Links href={"/ligas/premierLeague"} liga={"Premier League"} />
+        <Links href={"/ligas/laLiga"} liga={"La Liga"} />
+        <Links href={"/ligas/serieA"} liga={"Serie A"} />
+        <Links href={"/ligas/brasileirao"} liga={"Brasileirao"} />
       </div>
     </>
   );
