@@ -20,6 +20,7 @@ module.exports = {
       whiteCard: "#FFFFFF",
       grayPage: "#29292C",
       searchBG: "#242427",
+      firstTeam: "#4D7C0F",
     },
   },
   plugins: [],

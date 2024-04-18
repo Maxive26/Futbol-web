@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 
 export function useGetLeague(id, season, api_key) {
-  console.log(season);
-  console.log(id);
   const [data, setData] = useState("");
   const URL = "https://v3.football.api-sports.io";
   // COPA DE LA LIGA ID: 1032

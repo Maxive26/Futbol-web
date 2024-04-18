@@ -1,0 +1,152 @@
+{
+    "get": "fixtures",
+    "parameters": {
+        "league": "1032",
+        "season": "2024",
+        "date": "2024-04-17"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "fixture": {
+                "id": 1158650,
+                "referee": "A. Merlos",
+                "timezone": "UTC",
+                "date": "2024-04-17T22:30:00+00:00",
+                "timestamp": 1713393000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19391,
+                    "name": "Estadio Gigante de Arroyito",
+                    "city": "Rosario, Provincia de Santa Fe"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 1032,
+                "name": "Copa de la Liga Profesional",
+                "country": "Argentina",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/1032.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
+                "season": 2024,
+                "round": "1st Phase - 14"
+            },
+            "teams": {
+                "home": {
+                    "id": 437,
+                    "name": "Rosario Central",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/437.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 476,
+                    "name": "Deportivo Riestra",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/476.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1158640,
+                "referee": "A. Merlos",
+                "timezone": "UTC",
+                "date": "2024-04-17T22:30:00+00:00",
+                "timestamp": 1713393000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19391,
+                    "name": "Estadio Gigante de Arroyito",
+                    "city": "Rosario, Provincia de Santa Fe"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 1032,
+                "name": "Copa de la Liga Profesional",
+                "country": "Argentina",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/1032.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
+                "season": 2024,
+                "round": "1st Phase - 14"
+            },
+            "teams": {
+                "home": {
+                    "id": 437,
+                    "name": "Rosario Central",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/437.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 476,
+                    "name": "Deportivo Riestra",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/476.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        }
+    ]
+}

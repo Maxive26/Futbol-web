@@ -1,7 +1,7 @@
 // import leagues from "../../mocks/leagues.json";
 import { useGetLeague } from "../../hooks/useGetLeague.js";
 
-export default function LeagueTable({ leagueID, año }) {
+export default function LeagueTable({ leagueID, año, clasificationTeams }) {
   const data = useGetLeague(leagueID, año);
   const leagues = data.data;
   return (
@@ -37,7 +37,11 @@ export default function LeagueTable({ leagueID, año }) {
                     {group.map((team, teamIndex) => (
                       <tr
                         key={teamIndex}
-                        className="border-b text-center border-greenCard even:bg-searchBG odd:bg-blackBG"
+                        className={`border-b text-center border-greenCard  ${
+                          teamIndex < clasificationTeams
+                            ? "bg-firstTeam bg-opacity-20"
+                            : "even:bg-grayPage odd:bg-searchBG"
+                        } `}
                       >
                         <td className="py-2 border border-greenCard">
                           {team.rank}
