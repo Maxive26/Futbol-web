@@ -8,12 +8,12 @@ export function useGetLeague(id, season, api_key) {
   // COPA DE LA LIGA ID: 1032
   // 2705c96ca7a369a3775cc8efb8e046f6
   useEffect(() => {
-    const API_KEY = process.env.REACT_APP_FOOTBALL_API_KEY;
+    const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
     fetch(`${URL}/standings?league=${id}&season=${season}`, {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "2705c96ca7a369a3775cc8efb8e046f6",
+        "x-rapidapi-key": `${API_KEY}`,
       },
     })
       .then((response) => response.json())

@@ -4,8 +4,6 @@ import fixture from "./mocks/fixture.json";
 import { useGetFixture } from "../app/hooks/useGetFixture.js";
 
 export default function Home() {
-  const API_KEY = process.env.REACT_APP_FOOTBALL_API_KEY;
-  console.log("Esta es la apiKey", API_KEY);
   // const data = useGetFixture();
   // const fixture = data.data;
 
