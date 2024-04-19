@@ -1,12 +1,13 @@
 {
     "get": "fixtures",
     "parameters": {
-        "league": "1032",
+        "league": "906",
         "season": "2024",
-        "date": "2024-04-17"
+        "date": "2024-04-18",
+        "timezone": "America\/Argentina\/Buenos_Aires"
     },
     "errors": [],
-    "results": 1,
+    "results": 5,
     "paging": {
         "current": 1,
         "total": 1
@@ -14,61 +15,61 @@
     "response": [
         {
             "fixture": {
-                "id": 1158650,
-                "referee": "A. Merlos",
-                "timezone": "UTC",
-                "date": "2024-04-17T22:30:00+00:00",
-                "timestamp": 1713393000,
+                "id": 1167972,
+                "referee": null,
+                "timezone": "America\/Argentina\/Buenos_Aires",
+                "date": "2024-04-18T15:00:00-03:00",
+                "timestamp": 1713463200,
                 "periods": {
-                    "first": null,
-                    "second": null
+                    "first": 1713463200,
+                    "second": 1713466800
                 },
                 "venue": {
-                    "id": 19391,
-                    "name": "Estadio Gigante de Arroyito",
-                    "city": "Rosario, Provincia de Santa Fe"
+                    "id": null,
+                    "name": null,
+                    "city": null
                 },
                 "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
                 }
             },
             "league": {
-                "id": 1032,
-                "name": "Copa de la Liga Profesional",
+                "id": 906,
+                "name": "Reserve League",
                 "country": "Argentina",
-                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/1032.png",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/906.png",
                 "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
                 "season": 2024,
-                "round": "1st Phase - 14"
+                "round": "1st Phase - 9"
             },
             "teams": {
                 "home": {
-                    "id": 437,
-                    "name": "Rosario Central",
-                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/437.png",
+                    "id": 20818,
+                    "name": "Instituto Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/20818.png",
                     "winner": null
                 },
                 "away": {
-                    "id": 476,
-                    "name": "Deportivo Riestra",
-                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/476.png",
+                    "id": 18697,
+                    "name": "San Lorenzo Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18697.png",
                     "winner": null
                 }
             },
             "goals": {
-                "home": null,
-                "away": null
+                "home": 1,
+                "away": 1
             },
             "score": {
                 "halftime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "fulltime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 1
                 },
                 "extratime": {
                     "home": null,
@@ -82,61 +83,265 @@
         },
         {
             "fixture": {
-                "id": 1158640,
-                "referee": "A. Merlos",
-                "timezone": "UTC",
-                "date": "2024-04-17T22:30:00+00:00",
-                "timestamp": 1713393000,
+                "id": 1167973,
+                "referee": null,
+                "timezone": "America\/Argentina\/Buenos_Aires",
+                "date": "2024-04-18T15:00:00-03:00",
+                "timestamp": 1713463200,
                 "periods": {
-                    "first": null,
-                    "second": null
+                    "first": 1713463200,
+                    "second": 1713466800
                 },
                 "venue": {
-                    "id": 19391,
-                    "name": "Estadio Gigante de Arroyito",
-                    "city": "Rosario, Provincia de Santa Fe"
+                    "id": null,
+                    "name": null,
+                    "city": null
                 },
                 "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
                 }
             },
             "league": {
-                "id": 1032,
-                "name": "Copa de la Liga Profesional",
+                "id": 906,
+                "name": "Reserve League",
                 "country": "Argentina",
-                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/1032.png",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/906.png",
                 "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
                 "season": 2024,
-                "round": "1st Phase - 14"
+                "round": "1st Phase - 9"
             },
             "teams": {
                 "home": {
-                    "id": 437,
-                    "name": "Rosario Central",
-                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/437.png",
+                    "id": 18677,
+                    "name": "Argentinos Juniors Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18677.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 18695,
+                    "name": "River Plate Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18695.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 1
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 1
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 1
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1167976,
+                "referee": null,
+                "timezone": "America\/Argentina\/Buenos_Aires",
+                "date": "2024-04-18T15:00:00-03:00",
+                "timestamp": 1713463200,
+                "periods": {
+                    "first": 1713463200,
+                    "second": 1713466800
+                },
+                "venue": {
+                    "id": null,
+                    "name": null,
+                    "city": null
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 906,
+                "name": "Reserve League",
+                "country": "Argentina",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/906.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
+                "season": 2024,
+                "round": "1st Phase - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 18685,
+                    "name": "Estudiantes La Plata Res",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18685.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 18699,
+                    "name": "Talleres C\u00f3rdoba Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18699.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 3,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 1
+                },
+                "fulltime": {
+                    "home": 3,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1167977,
+                "referee": null,
+                "timezone": "America\/Argentina\/Buenos_Aires",
+                "date": "2024-04-18T15:00:00-03:00",
+                "timestamp": 1713463200,
+                "periods": {
+                    "first": 1713463200,
+                    "second": 1713466800
+                },
+                "venue": {
+                    "id": null,
+                    "name": null,
+                    "city": null
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 906,
+                "name": "Reserve League",
+                "country": "Argentina",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/906.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
+                "season": 2024,
+                "round": "1st Phase - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 18700,
+                    "name": "Tigre Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18700.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 18690,
+                    "name": "Lan\u00fas Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18690.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 3,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 1
+                },
+                "fulltime": {
+                    "home": 3,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1167981,
+                "referee": null,
+                "timezone": "America\/Argentina\/Buenos_Aires",
+                "date": "2024-04-18T15:00:00-03:00",
+                "timestamp": 1713463200,
+                "periods": {
+                    "first": 1713463200,
+                    "second": 1713466800
+                },
+                "venue": {
+                    "id": null,
+                    "name": null,
+                    "city": null
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 906,
+                "name": "Reserve League",
+                "country": "Argentina",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/906.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/ar.svg",
+                "season": 2024,
+                "round": "1st Phase - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 18701,
+                    "name": "Uni\u00f3n Santa Fe Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18701.png",
                     "winner": null
                 },
                 "away": {
-                    "id": 476,
-                    "name": "Deportivo Riestra",
-                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/476.png",
+                    "id": 18682,
+                    "name": "Central C\u00f3rdoba SdE Res.",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/18682.png",
                     "winner": null
                 }
             },
             "goals": {
-                "home": null,
-                "away": null
+                "home": 1,
+                "away": 1
             },
             "score": {
                 "halftime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "fulltime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 1
                 },
                 "extratime": {
                     "home": null,
