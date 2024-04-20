@@ -12,25 +12,28 @@ export default function Home() {
 
   return (
     <>
-      {data.map((match) => (
-        <div key={match.id}>
-          <MatchCard
-            estadio={match.estadio}
-            estado={match.estado}
-            horario={match.horario}
-            team1={{
-              escudo: match.equipoLocalEscudo,
-              nombre: match.equipoLocalNombre,
-              resultado: match.equipoLocalResultado,
-            }}
-            team2={{
-              escudo: match.equipoVisitanteEscudo,
-              nombre: match.equipoVisitanteNombre,
-              resultado: match.equipoVisitanteResultado,
-            }}
-          />
-        </div>
-      ))}
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(320px,_1fr))]">
+        {data.map((match) => (
+          <div key={match.id}>
+            <h2 className="text-whiteCard">{match.nombreLiga}</h2>
+            <MatchCard
+              estadio={match.estadio}
+              estado={match.estado}
+              horario={match.horario}
+              team1={{
+                escudo: match.equipoLocalEscudo,
+                nombre: match.equipoLocalNombre,
+                resultado: match.equipoLocalResultado,
+              }}
+              team2={{
+                escudo: match.equipoVisitanteEscudo,
+                nombre: match.equipoVisitanteNombre,
+                resultado: match.equipoVisitanteResultado,
+              }}
+            />
+          </div>
+        ))}
+      </div>
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function MatchCard(props) {
     <>
       <div className="w-80 h-52 bg-greenCard rounded-3xl flex flex-col">
         <div className="h-6 flex items-center justify-center">
-          <span className="font-bold bg-blackBG text-whiteCard px-4 w-28 relative text-center rounded-b-[20px] radiusInverted z-10">
+          <span className="bg-blackBG text-sm text-whiteCard px-4 w-28 h-6 relative text-center rounded-b-[20px] radiusInverted z-10">
             {estado === "NS"
               ? `${convertirTimestampAHora(horario)}`
               : estado === "FT"

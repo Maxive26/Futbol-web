@@ -6,13 +6,22 @@ export function useGetFixture() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    function obtenerFechaActual() {
+      const fecha = new Date();
+      const año = fecha.getFullYear();
+      const mes = (fecha.getMonth() + 1).toString().padStart(2, "0");
+      const dia = fecha.getDate().toString().padStart(2, "0");
+      const fechaFormateada = `${año}-${mes}-${dia}`;
+
+      return fechaFormateada;
+    }
     const fetchData = async () => {
       try {
         const URL = "https://v3.football.api-sports.io";
         const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
 
         const response = await fetch(
-          `${URL}/fixtures?league=906&season=2024&date=2024-04-19&timezone=America/Argentina/Buenos_Aires`,
+          `${URL}/fixtures?&date=${obtenerFechaActual()}&timezone=America/Argentina/Buenos_Aires`,
           {
             method: "GET",
             headers: {
@@ -23,8 +32,12 @@ export function useGetFixture() {
         );
 
         const data = await response.json();
-        const matches = data.response;
+        const ligasRequeridas = [906, 1032, 135, 39, 128, 140, 71, 78, 61];
+        const matches = data.response.filter((match) =>
+          ligasRequeridas.includes(match.league.id)
+        );
         const mappedMatches = matches?.map((match) => ({
+          nombreLiga: match.league.name,
           id: match.fixture.id,
           referi: match.fixture.referee,
           horario: match.fixture.timestamp,
@@ -46,7 +59,7 @@ export function useGetFixture() {
       }
     };
 
-    fetchData(); // Llama a la función para obtener los datos
+    fetchData();
   }, []);
 
   return { data };
