@@ -32,7 +32,7 @@ export default function MatchCard(props) {
           <div className="flex flex-col items-center">
             <span className="font-bold">VS.</span>
             <span className="font-bold">
-              {convertirTimestampAHora(horario)}
+              {team1.resultado} - {team2.resultado}
             </span>
           </div>
           <div className="flex flex-col items-center w-28">

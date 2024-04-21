@@ -1,6 +1,5 @@
 import Buscador from "./components/buscador/buscador";
 import Sidebar from "./components/sidebar/sidebar";
-import FootballBall from "../app/components/icons/footballBall";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -27,12 +26,6 @@ export default function RootLayout({ children }) {
           <Sidebar />
         </section>
         <main className="overflow-auto bg-blackBG col-[2_/_3] row-[2_/_3] px-10 pt-5">
-          <h1 className="text-2xl font-semibold mb-4 text-whiteCard flex items-center">
-            <span className="mr-2">
-              <FootballBall color={"#FFF"} />
-            </span>
-            PARTIDOS DE HOY
-          </h1>
           {children}
         </main>
       </body>
