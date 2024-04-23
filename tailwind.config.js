@@ -23,5 +23,5 @@ module.exports = {
       firstTeam: "#4D7C0F",
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

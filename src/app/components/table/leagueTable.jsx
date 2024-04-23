@@ -1,9 +1,11 @@
 // import leagues from "../../mocks/leagues.json";
 import { useGetLeague } from "../../hooks/useGetLeague.js";
+import Loading from "../loading/loading.jsx";
 
 export default function LeagueTable({ leagueID, año, clasificationTeams }) {
   const data = useGetLeague(leagueID, año);
   const leagues = data.data;
+
   return (
     <>
       {leagues.response?.map((league, index) => (

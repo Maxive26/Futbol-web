@@ -1,8 +1,8 @@
 "use client";
-import MatchCard from "./components/matchCard/matchCard";
 import { useGetFixture } from "../app/hooks/useGetFixture.js";
 import FootballBall from "../app/components/icons/footballBall";
 import Loading from "../app/components/loading/loading";
+import FixtureLeague from "./components/fixtureLeague/fixtureLeague";
 
 export default function Home() {
   const { data } = useGetFixture();
@@ -22,8 +22,6 @@ export default function Home() {
     );
   }
 
-  const renderedLeagues = [];
-
   return (
     <>
       <h1 className="text-2xl font-semibold mb-4 text-whiteCard flex items-center">
@@ -32,59 +30,35 @@ export default function Home() {
         </span>
         PARTIDOS DE HOY
       </h1>
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(320px,_1fr))] gap-4">
-        {/* Iteramos sobre los partidos */}
-        {data.map((match) => {
-          // Verificamos si la liga ya ha sido renderizada
-          if (!renderedLeagues.includes(match.nombreLiga)) {
-            // Agregamos la liga al array de ligas renderizadas
-            renderedLeagues.push(match.nombreLiga);
-            // Mostramos el nombre de la liga solo una vez
-            return (
-              <div key={match.nombreLiga}>
-                <h2 className="text-whiteCard text-lg font-semibold mb-2">
-                  {match.nombreLiga}
-                </h2>
-                <MatchCard
-                  estadio={match.estadio}
-                  estado={match.estado}
-                  horario={match.horario}
-                  team1={{
-                    escudo: match.equipoLocalEscudo,
-                    nombre: match.equipoLocalNombre,
-                    resultado: match.equipoLocalResultado,
-                  }}
-                  team2={{
-                    escudo: match.equipoVisitanteEscudo,
-                    nombre: match.equipoVisitanteNombre,
-                    resultado: match.equipoVisitanteResultado,
-                  }}
-                />
-              </div>
-            );
-          } else {
-            // Si la liga ya ha sido renderizada, solo mostramos el partido
-            return (
-              <MatchCard
-                key={match.id}
-                estadio={match.estadio}
-                estado={match.estado}
-                horario={match.horario}
-                team1={{
-                  escudo: match.equipoLocalEscudo,
-                  nombre: match.equipoLocalNombre,
-                  resultado: match.equipoLocalResultado,
-                }}
-                team2={{
-                  escudo: match.equipoVisitanteEscudo,
-                  nombre: match.equipoVisitanteNombre,
-                  resultado: match.equipoVisitanteResultado,
-                }}
-              />
-            );
-          }
-        })}
-      </div>
+      <section className="bg-grayPage rounded-xl p-5">
+        <FixtureLeague data={data} league={[128]} />
+        <FixtureLeague data={data} league={[1032]} />
+        <FixtureLeague data={data} league={[13]} />
+        <FixtureLeague data={data} league={[11]} />
+        <FixtureLeague data={data} league={[2]} />
+        <FixtureLeague data={data} league={[906]} />
+        <FixtureLeague data={data} league={[39]} />
+        <FixtureLeague data={data} league={[140]} />
+        <FixtureLeague data={data} league={[135]} />
+        <FixtureLeague data={data} league={[71]} />
+        <FixtureLeague data={data} league={[78]} />
+        <FixtureLeague data={data} league={[61]} />
+        <FixtureLeague data={data} league={[239]} />
+      </section>
     </>
   );
 }
+
+// 128 --> LIGA PROFESIONAL ARGENTINA
+// 1032 --> COPA DE LA LIGA
+// 13 --> LIBERTADORES
+// 11 --> SUDAMERICANA
+// 2 --> UEFA CHAMPIONS LEAGUE
+// 906 --> RESERVA ARGENTINA
+// 39 --> PREMIER LEAGUE
+// 140 --> LA LIGA
+// 135 --> SERIE A
+// 71 --> BRASILEIRAO
+// 78 --> BUNDESLIGA
+// 61 --> LIGUE 1 FRANCIA
+// 239 --> LIGA COLOMBIA
