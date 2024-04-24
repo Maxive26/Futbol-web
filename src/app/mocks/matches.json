@@ -1,0 +1,432 @@
+{
+    "get": "fixtures\/lineups",
+    "parameters": {
+        "fixture": "1035454"
+    },
+    "errors": [],
+    "results": 2,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "team": {
+                "id": 42,
+                "name": "Arsenal",
+                "logo": "https:\/\/media.api-sports.io\/football\/teams\/42.png",
+                "colors": {
+                    "player": {
+                        "primary": "e10000",
+                        "number": "ffffff",
+                        "border": "e10000"
+                    },
+                    "goalkeeper": {
+                        "primary": "00d5ff",
+                        "number": "ffffff",
+                        "border": "00d5ff"
+                    }
+                }
+            },
+            "formation": "4-3-3",
+            "startXI": [
+                {
+                    "player": {
+                        "id": 19465,
+                        "name": "David Raya",
+                        "number": 22,
+                        "pos": "G",
+                        "grid": "1:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 19959,
+                        "name": "Benjamin White",
+                        "number": 4,
+                        "pos": "D",
+                        "grid": "2:4"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 22090,
+                        "name": "William Saliba",
+                        "number": 2,
+                        "pos": "D",
+                        "grid": "2:3"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 22224,
+                        "name": "Gabriel Magalh\u00e3es",
+                        "number": 6,
+                        "pos": "D",
+                        "grid": "2:2"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 2597,
+                        "name": "Takehiro Tomiyasu",
+                        "number": 18,
+                        "pos": "D",
+                        "grid": "2:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 37127,
+                        "name": "Martin \u00d8degaard",
+                        "number": 8,
+                        "pos": "M",
+                        "grid": "3:3"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 49,
+                        "name": "Thomas Partey",
+                        "number": 5,
+                        "pos": "M",
+                        "grid": "3:2"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 2937,
+                        "name": "Declan Rice",
+                        "number": 41,
+                        "pos": "M",
+                        "grid": "3:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 1460,
+                        "name": "Bukayo Saka",
+                        "number": 7,
+                        "pos": "F",
+                        "grid": "4:3"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 978,
+                        "name": "Kai Havertz",
+                        "number": 29,
+                        "pos": "F",
+                        "grid": "4:2"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 1946,
+                        "name": "Leandro Trossard",
+                        "number": 19,
+                        "pos": "F",
+                        "grid": "4:1"
+                    }
+                }
+            ],
+            "substitutes": [
+                {
+                    "player": {
+                        "id": 641,
+                        "name": "Oleksandr Zinchenko",
+                        "number": 35,
+                        "pos": "D",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 2289,
+                        "name": "Jorginho",
+                        "number": 20,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 127769,
+                        "name": "Gabriel Martinelli",
+                        "number": 11,
+                        "pos": "F",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 643,
+                        "name": "Gabriel Jesus",
+                        "number": 9,
+                        "pos": "F",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 41725,
+                        "name": "F\u00e1bio Vieira",
+                        "number": 21,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 20355,
+                        "name": "Aaron Ramsdale",
+                        "number": 1,
+                        "pos": "G",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 61431,
+                        "name": "Jakub Kiwior",
+                        "number": 15,
+                        "pos": "D",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 1161,
+                        "name": "Emile Smith Rowe",
+                        "number": 10,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 1468,
+                        "name": "Edward Nketiah",
+                        "number": 14,
+                        "pos": "F",
+                        "grid": null
+                    }
+                }
+            ],
+            "coach": {
+                "id": 7248,
+                "name": "Mikel Arteta",
+                "photo": "https:\/\/media.api-sports.io\/football\/coachs\/7248.png"
+            }
+        },
+        {
+            "team": {
+                "id": 49,
+                "name": "Chelsea",
+                "logo": "https:\/\/media.api-sports.io\/football\/teams\/49.png",
+                "colors": {
+                    "player": {
+                        "primary": "1532c1",
+                        "number": "ffffff",
+                        "border": "1532c1"
+                    },
+                    "goalkeeper": {
+                        "primary": "d9ee6f",
+                        "number": "ffffff",
+                        "border": "d9ee6f"
+                    }
+                }
+            },
+            "formation": "4-2-3-1",
+            "startXI": [
+                {
+                    "player": {
+                        "id": 118307,
+                        "name": "\u0110or\u0111e Petrovi\u0107",
+                        "number": 28,
+                        "pos": "G",
+                        "grid": "1:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 284406,
+                        "name": "Alfie Gilchrist",
+                        "number": 42,
+                        "pos": "D",
+                        "grid": "2:4"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 21998,
+                        "name": "Axel Disasi",
+                        "number": 2,
+                        "pos": "D",
+                        "grid": "2:3"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 95,
+                        "name": "Beno\u00eet Badiashile",
+                        "number": 5,
+                        "pos": "D",
+                        "grid": "2:2"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 47380,
+                        "name": "Marc Cucurella",
+                        "number": 3,
+                        "pos": "D",
+                        "grid": "2:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 5996,
+                        "name": "Enzo Fern\u00e1ndez",
+                        "number": 8,
+                        "pos": "M",
+                        "grid": "3:2"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 116117,
+                        "name": "Mois\u00e9s Caicedo",
+                        "number": 25,
+                        "pos": "M",
+                        "grid": "3:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 136723,
+                        "name": "Noni Madueke",
+                        "number": 11,
+                        "pos": "M",
+                        "grid": "4:3"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 67972,
+                        "name": "Conor Gallagher",
+                        "number": 23,
+                        "pos": "M",
+                        "grid": "4:2"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 63577,
+                        "name": "Mykhaylo Mudryk",
+                        "number": 10,
+                        "pos": "M",
+                        "grid": "4:1"
+                    }
+                },
+                {
+                    "player": {
+                        "id": 283058,
+                        "name": "Nicolas Jackson",
+                        "number": 15,
+                        "pos": "F",
+                        "grid": "5:1"
+                    }
+                }
+            ],
+            "substitutes": [
+                {
+                    "player": {
+                        "id": 645,
+                        "name": "Raheem Sterling",
+                        "number": 7,
+                        "pos": "F",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 19720,
+                        "name": "Trevoh Chalobah",
+                        "number": 14,
+                        "pos": "D",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 259,
+                        "name": "Thiago Silva",
+                        "number": 6,
+                        "pos": "D",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 270507,
+                        "name": "Cesare Casadei",
+                        "number": 31,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 19012,
+                        "name": "Marcus Bettinelli",
+                        "number": 13,
+                        "pos": "G",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 138935,
+                        "name": "Carney Chukwuemeka",
+                        "number": 17,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 284404,
+                        "name": "Jimi Tauriainen",
+                        "number": 49,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 365660,
+                        "name": "Kiano Dyer",
+                        "number": 78,
+                        "pos": "M",
+                        "grid": null
+                    }
+                },
+                {
+                    "player": {
+                        "id": 415001,
+                        "name": "Deivid Washington",
+                        "number": 36,
+                        "pos": "F",
+                        "grid": null
+                    }
+                }
+            ],
+            "coach": {
+                "id": 13,
+                "name": "M. Pochettino",
+                "photo": "https:\/\/media.api-sports.io\/football\/coachs\/13.png"
+            }
+        }
+    ]
+}

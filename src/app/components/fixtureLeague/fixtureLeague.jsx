@@ -1,5 +1,6 @@
 import MatchCard from "../matchCard/matchCard";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FixtureLeague({ data, league }) {
   const filteredMatches = data.filter((match) => league.includes(match.idLiga));
@@ -19,22 +20,48 @@ export default function FixtureLeague({ data, league }) {
       )}
       <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {filteredMatches.map((match) => (
-          <div key={match.id} className="mb-5">
-            <MatchCard
-              estadio={match.estadio}
-              estado={match.estado}
-              horario={match.horario}
-              team1={{
-                escudo: match.equipoLocalEscudo,
-                nombre: match.equipoLocalNombre,
-                resultado: match.equipoLocalResultado,
-              }}
-              team2={{
-                escudo: match.equipoVisitanteEscudo,
-                nombre: match.equipoVisitanteNombre,
-                resultado: match.equipoVisitanteResultado,
-              }}
-            />
+          <div key={match.idFixture} className="mb-5 w-80 h-52 rounded-3xl">
+            {match.estado !== "NS" ? (
+              <Link
+                className="hover:opacity-80"
+                href={`/fixture/${match.idFixture}`}
+              >
+                <MatchCard
+                  tiempo={match.tiempoTranscurrido}
+                  estadio={match.estadio}
+                  estado={match.estado}
+                  horario={match.horario}
+                  team1={{
+                    escudo: match.equipoLocalEscudo,
+                    nombre: match.equipoLocalNombre,
+                    resultado: match.equipoLocalResultado,
+                  }}
+                  team2={{
+                    escudo: match.equipoVisitanteEscudo,
+                    nombre: match.equipoVisitanteNombre,
+                    resultado: match.equipoVisitanteResultado,
+                  }}
+                />
+              </Link>
+            ) : (
+              <div>
+                <MatchCard
+                  estadio={match.estadio}
+                  estado={match.estado}
+                  horario={match.horario}
+                  team1={{
+                    escudo: match.equipoLocalEscudo,
+                    nombre: match.equipoLocalNombre,
+                    resultado: match.equipoLocalResultado,
+                  }}
+                  team2={{
+                    escudo: match.equipoVisitanteEscudo,
+                    nombre: match.equipoVisitanteNombre,
+                    resultado: match.equipoVisitanteResultado,
+                  }}
+                />
+              </div>
+            )}
           </div>
         ))}
       </section>

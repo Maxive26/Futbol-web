@@ -4,7 +4,7 @@ import "./matchCard.css";
 import Image from "next/image";
 
 export default function MatchCard(props) {
-  const { estadio, estado, team1, team2, horario } = props;
+  const { estadio, estado, team1, team2, horario, tiempo } = props;
 
   function convertirTimestampAHora(timestamp) {
     const date = new Date(timestamp * 1000);
@@ -22,7 +22,9 @@ export default function MatchCard(props) {
               ? `${convertirTimestampAHora(horario)}`
               : estado === "FT"
               ? "Finalizado"
-              : "En Vivo"}
+              : estado === "HT"
+              ? "E.T"
+              : "Vivo"}
           </span>
         </div>
         <div className="h-[146px] flex justify-center items-center gap-4">
@@ -37,6 +39,10 @@ export default function MatchCard(props) {
             <span className="text-center font-bold">{team1.nombre}</span>
           </div>
           <div className="flex flex-col items-center">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <span className="font-bold">
+              {tiempo & (estado !== "FT") ? `${tiempo}'` : ""}
+            </span>
             <span className="font-bold">VS.</span>
             <span className="font-bold">
               {team1.resultado} - {team2.resultado}
@@ -53,9 +59,9 @@ export default function MatchCard(props) {
             <span className="text-center font-bold">{team2.nombre}</span>
           </div>
         </div>
-        <div className="h-9 border-grayCard border-t-2 flex items-center justify-center">
+        <div className="h-9 border-grayCard border-t-2 flex px-6 items-center justify-center">
           <Stadium opacity={0.6} />
-          <span className="font-bold ml-2">{estadio}</span>
+          <span className="font-bold ml-2 truncate">{estadio}</span>
         </div>
       </div>
     </>

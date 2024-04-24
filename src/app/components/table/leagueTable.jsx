@@ -1,4 +1,5 @@
 // import leagues from "../../mocks/leagues.json";
+import Image from "next/image.js";
 import { useGetLeague } from "../../hooks/useGetLeague.js";
 import Loading from "../loading/loading.jsx";
 
@@ -11,7 +12,13 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
       {leagues.response?.map((league, index) => (
         <div key={index} className="">
           <h1 className="text-2xl font-semibold mb-4 flex items-center">
-            <img className="w-8 h-8" src={league.league.logo} alt="" />
+            <Image
+              width={32}
+              height={32}
+              className="w-8 h-8"
+              src={league.league.logo}
+              alt=""
+            />
             {league.league.name.toUpperCase()}
           </h1>
           <div className="2xl:flex 2xl:gap-10">
@@ -49,7 +56,9 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
                           {team.rank}
                         </td>
                         <td className="p-2 flex items-center w-72 border-r border-greenCard truncate">
-                          <img
+                          <Image
+                            width={32}
+                            height={32}
                             src={team.team.logo}
                             alt={team.team.name}
                             className="w-8 h-8 mr-2 "

@@ -36,8 +36,8 @@ export default function Home() {
         <FixtureLeague data={data} league={[13]} />
         <FixtureLeague data={data} league={[11]} />
         <FixtureLeague data={data} league={[2]} />
-        <FixtureLeague data={data} league={[906]} />
         <FixtureLeague data={data} league={[39]} />
+        <FixtureLeague data={data} league={[906]} />
         <FixtureLeague data={data} league={[140]} />
         <FixtureLeague data={data} league={[135]} />
         <FixtureLeague data={data} league={[71]} />
@@ -54,8 +54,8 @@ export default function Home() {
 // 13 --> LIBERTADORES
 // 11 --> SUDAMERICANA
 // 2 --> UEFA CHAMPIONS LEAGUE
-// 906 --> RESERVA ARGENTINA
 // 39 --> PREMIER LEAGUE
+// 906 --> RESERVA ARGENTINA
 // 140 --> LA LIGA
 // 135 --> SERIE A
 // 71 --> BRASILEIRAO
