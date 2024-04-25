@@ -21,6 +21,7 @@ module.exports = {
       grayPage: "#29292C",
       searchBG: "#242427",
       firstTeam: "#4D7C0F",
+      red: "#b91c1c",
     },
   },
   plugins: [require("tailwind-scrollbar")],

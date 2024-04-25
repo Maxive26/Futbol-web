@@ -15,7 +15,10 @@ export default function MatchCard(props) {
 
   return (
     <>
-      <div className="w-80 h-52 bg-greenCard rounded-3xl flex flex-col">
+      <div className="w-80 h-52 bg-greenCard rounded-3xl relative flex flex-col">
+        {estado !== "NS" && estado !== "FT" ? (
+          <div className="w-5 h-5 bg-red rounded-full absolute top-3 left-3 animate-bounce z-10"></div>
+        ) : null}
         <div className="h-6 flex items-center justify-center">
           <span className="bg-blackBG text-sm text-whiteCard px-4 w-28 h-6 relative text-center rounded-b-[20px] radiusInverted z-10">
             {estado === "NS"
@@ -39,12 +42,11 @@ export default function MatchCard(props) {
             <span className="text-center font-bold">{team1.nombre}</span>
           </div>
           <div className="flex flex-col items-center">
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
             <span className="font-bold">
               {tiempo & (estado !== "FT") ? `${tiempo}'` : ""}
             </span>
             <span className="font-bold">VS.</span>
-            <span className="font-bold">
+            <span className="font-bold text-xl">
               {team1.resultado} - {team2.resultado}
             </span>
           </div>

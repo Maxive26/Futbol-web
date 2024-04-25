@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 
 export function useGetLeague(id, season, api_key) {
   const [data, setData] = useState("");
+  const [loading, setLoading] = useState(true);
   const URL = "https://v3.football.api-sports.io";
 
   useEffect(() => {
+    setLoading(true);
     const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
     fetch(`${URL}/standings?league=${id}&season=${season}`, {
       method: "GET",
@@ -20,7 +22,7 @@ export function useGetLeague(id, season, api_key) {
       .catch((err) => {
         console.log(err);
       });
-
+    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -32,5 +34,5 @@ export function useGetLeague(id, season, api_key) {
   //     puntos: data.response[0].league.standing[0][0].points,
   //   };
 
-  return { data };
+  return { data, loading };
 }

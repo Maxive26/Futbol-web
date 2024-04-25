@@ -4,12 +4,15 @@ import { useGetLeague } from "../../hooks/useGetLeague.js";
 import Loading from "../loading/loading.jsx";
 
 export default function LeagueTable({ leagueID, año, clasificationTeams }) {
-  const data = useGetLeague(leagueID, año);
-  const leagues = data.data;
+  const { data, loading } = useGetLeague(leagueID, año);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
-      {leagues.response?.map((league, index) => (
+      {data.response?.map((league, index) => (
         <div key={index} className="">
           <h1 className="text-2xl font-semibold mb-4 flex items-center">
             <Image

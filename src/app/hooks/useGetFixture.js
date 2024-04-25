@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-export function useGetFixture() {
+export function useGetFixture(tomorrow) {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  function getCurrentDate() {
+  function getCurrentDate(tomorrow) {
     const date = new Date();
+    date.setDate(date.getDate() + tomorrow);
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const day = date.getDate().toString().padStart(2, "0");
@@ -14,10 +16,11 @@ export function useGetFixture() {
 
     return dateFormated;
   }
-  const CURRENT_DAY = getCurrentDate();
+  const CURRENT_DAY = getCurrentDate(tomorrow);
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const URL = "https://v3.football.api-sports.io";
         const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
 
@@ -63,11 +66,13 @@ export function useGetFixture() {
         setData(mappedMatches);
       } catch (error) {
         console.error("Error al obtener los datos:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, [CURRENT_DAY]);
 
-  return { data };
+  return { data, loading };
 }

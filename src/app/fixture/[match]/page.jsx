@@ -8,10 +8,10 @@ import PlayersTable from "@/app/components/table/playersTable";
 
 export default function Page({ params }) {
   const { match } = params;
-  const { data } = useGetMatchInfo(match);
+  const { data, loading } = useGetMatchInfo(match);
   // const data = null;
 
-  if (!data) {
+  if (loading) {
     return (
       <>
         <Loading />
@@ -20,7 +20,7 @@ export default function Page({ params }) {
   }
   return (
     <>
-      <div className="flex bg-grayPage rounded-xl p-5 justify-center text-center gap-10">
+      <div className="flex bg-grayPage rounded-xl p-5  text-center gap-10">
         {data.map((team) => (
           <div className="text-whiteCard " key={team.idEquipo}>
             <div className="flex justify-center">
@@ -34,9 +34,9 @@ export default function Page({ params }) {
             </div>
             <h1 className="text-2xl mb-4">{team.equipo}</h1>
             <h1 className="mb-4">Formacion: {team.formacion}</h1>
-            <h1 className="mb-4">Entrenador: {team.entrenador}</h1>
-            <PlayersTable jugadores={team.jugadores} />
-            <PlayersTable jugadores={team.suplentes} />
+            <h1 className="mb-4">DT: {team.entrenador}</h1>
+            <PlayersTable jugadores={team.jugadores} color={team.color} />
+            <PlayersTable jugadores={team.suplentes} color={team.color} />
           </div>
         ))}
         <FootballField />;

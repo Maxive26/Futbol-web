@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 
 export default function useGetMatchInfo(fixtureID) {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const URL = "https://v3.football.api-sports.io";
         const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
 
@@ -25,6 +27,7 @@ export default function useGetMatchInfo(fixtureID) {
         const data = await response.json();
 
         const mappedFormation = data.response?.map((team) => ({
+          color: team.team.colors.player.primary,
           equipo: team.team.name,
           idEquipo: team.team.id,
           escudo: team.team.logo,
@@ -37,11 +40,13 @@ export default function useGetMatchInfo(fixtureID) {
         setData(mappedFormation);
       } catch (error) {
         console.error("Error al obtener los datos:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
-  return { data };
+  return { data, loading };
 }
