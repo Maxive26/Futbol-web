@@ -1,6 +1,8 @@
+"use client";
+
 // import leagues from "../../mocks/leagues.json";
 import Image from "next/image.js";
-import { useGetLeague } from "../../hooks/useGetLeague.js";
+import useGetLeague from "../../hooks/useGetLeague.js";
 import Loading from "../loading/loading.jsx";
 
 export default function LeagueTable({ leagueID, año, clasificationTeams }) {
@@ -12,20 +14,20 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
 
   return (
     <>
-      {data.response?.map((league, index) => (
-        <div key={index} className="">
+      {data?.map((league) => (
+        <div key={league.leagueId} className="">
           <h1 className="text-2xl font-semibold mb-4 flex items-center">
             <Image
               width={32}
               height={32}
               className="w-8 h-8"
-              src={league.league.logo}
+              src={league.leagueLogo}
               alt=""
             />
-            {league.league.name.toUpperCase()}
+            {league.leagueName.toUpperCase()}
           </h1>
-          <div className="2xl:flex 2xl:gap-10">
-            {league.league.standings.map((group, groupIndex) => (
+          <div className="2xl:flex 2xl:gap-10 bg-grayPage rounded-xl p-5">
+            {league.leagueStandings.map((group, groupIndex) => (
               <div key={groupIndex} className="">
                 <h2 className="text-lg font-semibold mb-2">
                   {groupIndex === 0 ? "GRUPO A" : "GRUPO B"}
@@ -48,7 +50,7 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
                   <tbody>
                     {group.map((team, teamIndex) => (
                       <tr
-                        key={teamIndex}
+                        key={team.team.id}
                         className={`border-b text-center border-greenCard  ${
                           teamIndex < clasificationTeams
                             ? "bg-firstTeam bg-opacity-20"

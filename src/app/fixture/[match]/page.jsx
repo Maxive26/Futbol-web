@@ -12,11 +12,7 @@ export default function Page({ params }) {
   // const data = null;
 
   if (loading) {
-    return (
-      <>
-        <Loading />
-      </>
-    );
+    return <Loading />;
   }
   return (
     <>

@@ -2,37 +2,47 @@
 
 import { useEffect, useState } from "react";
 
-export function useGetLeague(id, season, api_key) {
-  const [data, setData] = useState("");
+export default function useGetLeague(id, season) {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const URL = "https://v3.football.api-sports.io";
 
   useEffect(() => {
-    setLoading(true);
-    const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
-    fetch(`${URL}/standings?league=${id}&season=${season}`, {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": `${API_KEY}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((err) => {
-        console.log(err);
-      });
-    setLoading(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const URL = "https://v3.football.api-sports.io";
+        const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
 
-  //   const leagueInfo = {
-  //     id: data.response[0].league.standing[0][0].team.id,
-  //     posicion: data.response[0].league.standing[0].rank,
-  //     equipo: data.response[0].league.standing[0][0].team.name,
-  //     escudo: data.response[0].league.standing[0][0].team.logo,
-  //     puntos: data.response[0].league.standing[0][0].points,
-  //   };
+        const response = await fetch(
+          `${URL}/standings?league=${id}&season=${season}`,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": "v3.football.api-sports.io",
+              "x-rapidapi-key": `${API_KEY}`,
+            },
+          }
+        );
+        const data = await response.json();
+
+        const mappedLeagues = data.response?.map((league) => ({
+          leagueId: league.league.id,
+          leagueName: league.league.name,
+          leagueCountry: league.league.country,
+          leagueLogo: league.league.logo,
+          leagueSeason: league.league.season,
+          leagueStandings: league.league.standings, //mapear y despues mapear de nuevo, arreglo de arreglos
+        }));
+
+        setData(mappedLeagues);
+      } catch (error) {
+        console.error("Error al obtener los datos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   return { data, loading };
 }
