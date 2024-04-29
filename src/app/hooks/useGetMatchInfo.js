@@ -28,6 +28,7 @@ export default function useGetMatchInfo(fixtureID) {
 
         const mappedFormation = data.response?.map((team) => ({
           color: team.team.colors.player.primary,
+          colorSecundario: team.team.colors.player.number,
           equipo: team.team.name,
           idEquipo: team.team.id,
           escudo: team.team.logo,

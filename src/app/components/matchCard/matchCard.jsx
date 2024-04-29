@@ -16,7 +16,7 @@ export default function MatchCard(props) {
   return (
     <>
       <div className="w-80 h-52 bg-greenCard rounded-3xl relative flex flex-col">
-        {estado !== "NS" && estado !== "FT" ? (
+        {estado !== "NS" && estado !== "FT" && estado !== "PEN" ? (
           <div className="w-5 h-5 bg-red rounded-full absolute top-3 left-3 animate-bounce z-10"></div>
         ) : null}
         <div className="h-6 flex items-center justify-center">
@@ -24,6 +24,8 @@ export default function MatchCard(props) {
             {estado === "NS"
               ? `${convertirTimestampAHora(horario)}`
               : estado === "FT"
+              ? "Finalizado"
+              : estado === "PEN"
               ? "Finalizado"
               : estado === "HT"
               ? "E.T"
@@ -49,6 +51,11 @@ export default function MatchCard(props) {
             <span className="font-bold text-xl">
               {team1.resultado} - {team2.resultado}
             </span>
+            {estado === "PEN" && (
+              <span className="font-bold text-sm">
+                {team1.resultadoPen} - {team2.resultadoPen}
+              </span>
+            )}
           </div>
           <div className="flex flex-col items-center w-28">
             <Image

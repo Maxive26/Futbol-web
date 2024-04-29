@@ -58,9 +58,11 @@ export function useGetFixture(tomorrow) {
           equipoLocalNombre: match.teams.home.name,
           equipoLocalEscudo: match.teams.home.logo,
           equipoLocalResultado: match.goals.home,
+          equipoLocalResultadoPen: match.score.penalty.home,
           equipoVisitanteNombre: match.teams.away.name,
           equipoVisitanteEscudo: match.teams.away.logo,
           equipoVisitanteResultado: match.goals.away,
+          equipoVisitanteResultadoPen: match.score.penalty.away,
         }));
 
         setData(mappedMatches);

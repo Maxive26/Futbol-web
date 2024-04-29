@@ -4,6 +4,7 @@ import Link from "next/link";
 
 export default function FixtureLeague({ data, league }) {
   const filteredMatches = data.filter((match) => league.includes(match.idLiga));
+  console.log(filteredMatches);
   return (
     <div>
       {filteredMatches.length !== 0 && (
@@ -35,11 +36,13 @@ export default function FixtureLeague({ data, league }) {
                     escudo: match.equipoLocalEscudo,
                     nombre: match.equipoLocalNombre,
                     resultado: match.equipoLocalResultado,
+                    resultadoPen: match.equipoLocalResultadoPen,
                   }}
                   team2={{
                     escudo: match.equipoVisitanteEscudo,
                     nombre: match.equipoVisitanteNombre,
                     resultado: match.equipoVisitanteResultado,
+                    resultadoPen: match.equipoVisitanteResultadoPen,
                   }}
                 />
               </Link>

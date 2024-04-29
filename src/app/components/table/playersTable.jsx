@@ -1,12 +1,15 @@
 import React from "react";
 
 export default function PlayersTable({ jugadores, color }) {
-  const colorTeam = `#${color}`;
-  console.log(colorTeam);
+  const colorTeam = `#${color.principal}`;
+  const colorTeamSecundary = `#${color.secundario}`;
   return (
     <table className="mb-10">
       <thead>
-        <tr className={`border border-greenCard bg-[${colorTeam}]`}>
+        <tr
+          style={{ backgroundColor: colorTeam, color: colorTeamSecundary }}
+          className={`border border-greenCard`}
+        >
           <th className="px-2 border-r">Pos</th>
           <th className="px-2 border-r text-center">N°</th>
           <th className="px-2 text-left border-r pl-2">Jugador</th>
