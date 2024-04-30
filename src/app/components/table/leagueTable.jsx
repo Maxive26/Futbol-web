@@ -15,7 +15,7 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
   return (
     <>
       {data?.map((league) => (
-        <div key={league.leagueId} className="">
+        <div key={league.leagueId}>
           <h1 className="text-2xl font-semibold mb-4 flex items-center">
             <Image
               width={32}
@@ -26,13 +26,15 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
             />
             {league.leagueName.toUpperCase()}
           </h1>
-          <div className="2xl:flex 2xl:gap-10 bg-grayPage rounded-xl p-5">
+          <div className="grid grid-cols-2 bg-grayPage rounded-xl p-5">
             {league.leagueStandings.map((group, groupIndex) => (
               <div key={groupIndex} className="">
-                <h2 className="text-lg font-semibold mb-2">
-                  {groupIndex === 0 ? "GRUPO A" : "GRUPO B"}
-                </h2>
-                <table className="border-collapse">
+                {league.leagueStandings.length > 1 && (
+                  <h2 className="text-lg font-semibold mb-2">
+                    {"Grupo " + String.fromCharCode(65 + groupIndex)}
+                  </h2>
+                )}
+                <table className="border-collapse mb-3">
                   <thead>
                     <tr className="border border-greenCard">
                       <th className="px-2 border-r">#</th>
@@ -60,7 +62,7 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
                         <td className="py-2 border border-greenCard">
                           {team.rank}
                         </td>
-                        <td className="p-2 flex items-center w-72 border-r border-greenCard truncate">
+                        <td className="p-2 flex items-center w-64 border-r border-greenCard truncate">
                           <Image
                             width={32}
                             height={32}

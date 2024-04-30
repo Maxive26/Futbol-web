@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Home() {
   const [button, setButton] = useState("Mañana");
   const [tomorrow, setTomorrow] = useState(0);
-  const { data, loading } = useGetFixture(tomorrow);
+  const { data, loading, error } = useGetFixture(tomorrow);
   // const data = null;
 
   if (loading) {
@@ -37,6 +37,11 @@ export default function Home() {
 
   return (
     <>
+      {data.length === 0 && (
+        <h1 className="text-whiteCard font-bold">
+          Peticiones diarias alcanzadas
+        </h1>
+      )}
       <div className="flex items-center mb-4 justify-between">
         <h1 className="text-2xl font-semibold text-whiteCard md:w-80 flex items-center">
           <span className="mr-2">

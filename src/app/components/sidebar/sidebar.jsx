@@ -10,13 +10,16 @@ export default function Sidebar() {
       <div className=" text-whiteCard flex flex-col gap-2">
         <Links href={"/"} liga={"Inicio"} />
         <br />
-        <span>LIGAS</span>
-        <Links href={"/ligas/copadelaliga"} liga={"Copa de la liga"} />
+        <span className="font-bold text-xl ml-2">LIGAS</span>
         <Links href={"/ligas/ligaProfesional"} liga={"Liga Profesional"} />
         <Links href={"/ligas/premierLeague"} liga={"Premier League"} />
         <Links href={"/ligas/laLiga"} liga={"La Liga"} />
         <Links href={"/ligas/serieA"} liga={"Serie A"} />
         <Links href={"/ligas/brasileirao"} liga={"Brasileirao"} />
+        <span className="font-bold text-xl ml-2">COPAS</span>
+        <Links href={"/ligas/copadelaliga"} liga={"Copa de la liga"} />
+        <Links href={"/ligas/libertadores"} liga={"Copa Libertadores"} />
+        <Links href={"/ligas/sudamericana"} liga={"Copa Sudamericana"} />
       </div>
     </>
   );

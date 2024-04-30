@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export function useGetFixture(tomorrow) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   function getCurrentDate(tomorrow) {
     const date = new Date();
@@ -67,6 +68,7 @@ export function useGetFixture(tomorrow) {
 
         setData(mappedMatches);
       } catch (error) {
+        setError(error);
         console.error("Error al obtener los datos:", error);
       } finally {
         setLoading(false);
@@ -76,5 +78,5 @@ export function useGetFixture(tomorrow) {
     fetchData();
   }, [CURRENT_DAY]);
 
-  return { data, loading };
+  return { data, loading, error };
 }
