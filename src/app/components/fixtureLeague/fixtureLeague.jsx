@@ -1,4 +1,4 @@
-import MatchCard from "../matchCard/matchCard";
+import MatchCard from "@/app/components/matchCard/matchCard";
 import Image from "next/image";
 import Link from "next/link";
 

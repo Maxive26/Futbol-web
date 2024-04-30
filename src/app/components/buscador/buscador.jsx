@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../icons/search";
+import Search from "@/app/components/icons/search";
 
 export default function Buscador() {
   return (

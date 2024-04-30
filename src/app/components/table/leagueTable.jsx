@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image.js";
-import useGetLeague from "../../hooks/useGetLeague.js";
-import Loading from "../loading/loading.jsx";
+import useGetLeague from "@/app/hooks/useGetLeague.js";
+import Loading from "@/app/components/loading/loading.jsx";
 import { useEffect } from "react";
 
 export default function LeagueTable({

@@ -1,5 +1,5 @@
 import React from "react";
-import FootballBall from "../icons/footballBall";
+import FootballBall from "@/app/components/icons/footballBall";
 
 export default function Logo() {
   return (

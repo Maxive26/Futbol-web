@@ -2,12 +2,12 @@
 
 import FootballField from "@/app/components/footballField/footballField";
 import Loading from "@/app/components/loading/loading";
-import useGetMatchInfo from "../../../app/hooks/useGetMatchInfo";
+import useGetMatchInfo from "@/app/hooks/useGetMatchInfo";
 import Image from "next/image";
 import Link from "next/link";
 import PlayersTable from "@/app/components/table/playersTable";
-import NotFound from "../../components/not-found/notFound";
-import FootballBall from "../../components/icons/footballBall";
+import NotFound from "@/app/components/not-found/notFound";
+import FootballBall from "@/app/components/icons/footballBall";
 
 export default function Page({ params }) {
   const { match } = params;
@@ -24,7 +24,7 @@ export default function Page({ params }) {
   return (
     <>
       <div className="flex items-center mb-4 justify-between">
-        <h1 className="text-2xl font-semibold text-whiteCard  flex items-center">
+        <h1 className="text-2xl sm:font-semibold text-whiteCard  flex items-center">
           <span className="mr-2">
             <FootballBall color={"#FFF"} />
           </span>

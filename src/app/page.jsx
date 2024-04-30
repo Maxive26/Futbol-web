@@ -1,8 +1,8 @@
 "use client";
-import { useGetFixture } from "../app/hooks/useGetFixture.js";
-import FootballBall from "../app/components/icons/footballBall";
-import Loading from "../app/components/loading/loading";
-import FixtureLeague from "./components/fixtureLeague/fixtureLeague";
+import { useGetFixture } from "@/app/hooks/useGetFixture.js";
+import FootballBall from "@/app/components/icons/footballBall";
+import Loading from "@/app/components/loading/loading";
+import FixtureLeague from "@/app/components/fixtureLeague/fixtureLeague";
 import { useState } from "react";
 
 export default function Home() {

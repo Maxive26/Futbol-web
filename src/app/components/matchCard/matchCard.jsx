@@ -1,6 +1,6 @@
 import React from "react";
-import Stadium from "../icons/stadium";
-import "./matchCard.css";
+import Stadium from "@/app/components/icons/stadium";
+import "@/app/components/matchCard/matchCard.css";
 import Image from "next/image";
 
 export default function MatchCard(props) {

@@ -1,5 +1,5 @@
-import Buscador from "./components/buscador/buscador";
-import Sidebar from "./components/sidebar/sidebar";
+import Buscador from "@/app/components/buscador/buscador";
+import Sidebar from "@/app/components/sidebar/sidebar";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
