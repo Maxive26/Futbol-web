@@ -22,6 +22,7 @@ module.exports = {
       searchBG: "#242427",
       firstTeam: "#4D7C0F",
       red: "#b91c1c",
+      yellow: "#ddeb4b",
     },
   },
   plugins: [require("tailwind-scrollbar")],

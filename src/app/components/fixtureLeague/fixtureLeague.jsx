@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function FixtureLeague({ data, league }) {
   const filteredMatches = data.filter((match) => league.includes(match.idLiga));
-  console.log(filteredMatches);
+
   return (
     <div>
       {filteredMatches.length !== 0 && (

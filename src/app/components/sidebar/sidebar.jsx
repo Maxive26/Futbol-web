@@ -20,6 +20,8 @@ export default function Sidebar() {
         <Links href={"/ligas/copadelaliga"} liga={"Copa de la liga"} />
         <Links href={"/ligas/libertadores"} liga={"Copa Libertadores"} />
         <Links href={"/ligas/sudamericana"} liga={"Copa Sudamericana"} />
+        <Links href={"/ligas/championsLeague"} liga={"Champions League"} />
+        <Links href={"/ligas/copaArgentina"} liga={"Copa Argentina"} />
       </div>
     </>
   );

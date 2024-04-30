@@ -28,7 +28,7 @@ export default function PlayersTable({ jugadores, color }) {
               <td className="border border-greenCard w-12 text-center">
                 {player.player.number}
               </td>
-              <td className="border border-greenCard w-56 text-left pl-2">
+              <td className="border border-greenCard w-56 text-left pl-2 truncate">
                 {player.player.name}
               </td>
             </tr>

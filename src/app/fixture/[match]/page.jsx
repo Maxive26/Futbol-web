@@ -4,7 +4,10 @@ import FootballField from "@/app/components/footballField/footballField";
 import Loading from "@/app/components/loading/loading";
 import useGetMatchInfo from "../../../app/hooks/useGetMatchInfo";
 import Image from "next/image";
+import Link from "next/link";
 import PlayersTable from "@/app/components/table/playersTable";
+import NotFound from "../../components/not-found/notFound";
+import FootballBall from "../../components/icons/footballBall";
 
 export default function Page({ params }) {
   const { match } = params;
@@ -14,10 +17,28 @@ export default function Page({ params }) {
   if (loading) {
     return <Loading />;
   }
+
+  if (!data) {
+    <NotFound />;
+  }
   return (
     <>
+      <div className="flex items-center mb-4 justify-between">
+        <h1 className="text-2xl font-semibold text-whiteCard  flex items-center">
+          <span className="mr-2">
+            <FootballBall color={"#FFF"} />
+          </span>
+          INFORMACION DEL ENCUENTRO
+        </h1>
+        <Link
+          href={"/"}
+          className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard  px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
+        >
+          Volver
+        </Link>
+      </div>
       <div className="flex bg-grayPage rounded-xl p-5 text-center gap-10">
-        {data.map((team, index) => (
+        {data?.map((team, index) => (
           <div className="text-whiteCard " key={team.idEquipo}>
             <div className="flex justify-center">
               <Image

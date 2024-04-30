@@ -1,12 +1,22 @@
 "use client";
 
-// import leagues from "../../mocks/leagues.json";
 import Image from "next/image.js";
 import useGetLeague from "../../hooks/useGetLeague.js";
 import Loading from "../loading/loading.jsx";
+import { useEffect } from "react";
 
-export default function LeagueTable({ leagueID, año, clasificationTeams }) {
+export default function LeagueTable({
+  leagueID,
+  año,
+  clasificationTeams,
+  equipos,
+  amarilloTeams,
+}) {
   const { data, loading } = useGetLeague(leagueID, año);
+
+  useEffect(() => {
+    leagueID === 13 ? equipos(data) : null;
+  }, [data, equipos, leagueID]);
 
   if (loading) {
     return <Loading />;
@@ -24,7 +34,10 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
               src={league.leagueLogo}
               alt=""
             />
-            {league.leagueName.toUpperCase()}
+            {league.leagueName.toUpperCase()}{" "}
+            {league.leagueSeason === 2023
+              ? league.leagueSeason + "/2024"
+              : league.leagueSeason}
           </h1>
           <div className="grid grid-cols-2 bg-grayPage rounded-xl p-5">
             {league.leagueStandings.map((group, groupIndex) => (
@@ -55,7 +68,9 @@ export default function LeagueTable({ leagueID, año, clasificationTeams }) {
                         key={team.team.id}
                         className={`border-b text-center border-greenCard  ${
                           teamIndex < clasificationTeams
-                            ? "bg-firstTeam bg-opacity-20"
+                            ? "bg-firstTeam bg-opacity-40"
+                            : (amarilloTeams === true) & (teamIndex === 2)
+                            ? "bg-yellow bg-opacity-20"
                             : "even:bg-grayPage odd:bg-searchBG"
                         } `}
                       >
