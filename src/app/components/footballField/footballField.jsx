@@ -63,5 +63,3 @@ export default function FootballField({ jugadores, index, color }) {
     </div>
   );
 }
-
-//1197147 fixture de ejemplo

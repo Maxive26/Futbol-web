@@ -2,6 +2,7 @@ import Buscador from "@/app/components/buscador/buscador";
 import Sidebar from "@/app/components/sidebar/sidebar";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import ChangueThemeIcon from "./components/changueThemeIcon/changueThemeIcon";
 
 export const metadata = {
   title: "Promiedos",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       >
         <header className="flex justify-between items-center px-10 bg-blackBG border-b-2 border-grayPage col-[2_/_3] row-[1_/_2]">
           <Buscador />
+          <ChangueThemeIcon />
         </header>
         <section className="overflow-auto bg-blackBG border-r-2 border-grayPage col-[1_/_2] row-[1_/_3] p-5 flex flex-col gap-10">
           <Sidebar />

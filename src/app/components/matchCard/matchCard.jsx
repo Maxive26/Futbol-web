@@ -4,8 +4,7 @@ import "@/app/components/matchCard/matchCard.css";
 import Image from "next/image";
 
 export default function MatchCard(props) {
-  const { estadio, estado, team1, team2, horario, tiempo } = props;
-
+  const { estadio, estado, team1, team2, horario, tiempo, ronda } = props;
   function convertirTimestampAHora(timestamp) {
     const date = new Date(timestamp * 1000);
     const horas = date.getHours().toString().padStart(2, "0");
@@ -32,6 +31,9 @@ export default function MatchCard(props) {
               : "Vivo"}
           </span>
         </div>
+        <span className="text-center text-xs font-bold">
+          {ronda === "Semi-finals" ? "Semifinal" : ronda}
+        </span>
         <div className="h-[146px] flex justify-center items-center gap-4">
           <div className="flex flex-col items-center w-28">
             <Image

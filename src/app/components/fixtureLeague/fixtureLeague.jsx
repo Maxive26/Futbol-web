@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default function FixtureLeague({ data, league }) {
   const filteredMatches = data.filter((match) => league.includes(match.idLiga));
-
   return (
     <div>
       {filteredMatches.length !== 0 && (
@@ -19,6 +18,7 @@ export default function FixtureLeague({ data, league }) {
           {filteredMatches[0].nombreLiga}
         </h1>
       )}
+
       <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {filteredMatches.map((match) => (
           <div key={match.idFixture} className="mb-5 w-80 h-52 rounded-3xl">
@@ -32,6 +32,7 @@ export default function FixtureLeague({ data, league }) {
                   estadio={match.estadio}
                   estado={match.estado}
                   horario={match.horario}
+                  ronda={match.ronda}
                   team1={{
                     escudo: match.equipoLocalEscudo,
                     nombre: match.equipoLocalNombre,
@@ -52,6 +53,7 @@ export default function FixtureLeague({ data, league }) {
                   estadio={match.estadio}
                   estado={match.estado}
                   horario={match.horario}
+                  ronda={match.ronda}
                   team1={{
                     escudo: match.equipoLocalEscudo,
                     nombre: match.equipoLocalNombre,

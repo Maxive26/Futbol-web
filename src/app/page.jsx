@@ -9,7 +9,6 @@ export default function Home() {
   const [button, setButton] = useState("Mañana");
   const [tomorrow, setTomorrow] = useState(0);
   const { data, loading, error } = useGetFixture(tomorrow);
-  // const data = null;
 
   if (loading) {
     return (
@@ -63,6 +62,7 @@ export default function Home() {
         <FixtureLeague data={data} league={[11]} />
         <FixtureLeague data={data} league={[2]} />
         <FixtureLeague data={data} league={[39]} />
+        <FixtureLeague data={data} league={[16]} />
         <FixtureLeague data={data} league={[140]} />
         <FixtureLeague data={data} league={[135]} />
         <FixtureLeague data={data} league={[71]} />
@@ -81,6 +81,7 @@ export default function Home() {
 // 11 --> SUDAMERICANA
 // 2 --> UEFA CHAMPIONS LEAGUE
 // 39 --> PREMIER LEAGUE
+// 16 --> CONCACAF CHAMPIONS
 // 140 --> LA LIGA
 // 135 --> SERIE A
 // 71 --> BRASILEIRAO
