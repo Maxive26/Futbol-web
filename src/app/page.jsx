@@ -58,9 +58,12 @@ export default function Home() {
       <section className="bg-grayPage rounded-xl p-5">
         <FixtureLeague data={data} league={[128]} />
         <FixtureLeague data={data} league={[1032]} />
+        <FixtureLeague data={data} league={[130]} />
         <FixtureLeague data={data} league={[13]} />
         <FixtureLeague data={data} league={[11]} />
         <FixtureLeague data={data} league={[2]} />
+        <FixtureLeague data={data} league={[3]} />
+        <FixtureLeague data={data} league={[848]} />
         <FixtureLeague data={data} league={[39]} />
         <FixtureLeague data={data} league={[16]} />
         <FixtureLeague data={data} league={[140]} />
@@ -77,9 +80,12 @@ export default function Home() {
 
 // 128 --> LIGA PROFESIONAL ARGENTINA
 // 1032 --> COPA DE LA LIGA
+// 130 --> COPA ARGENTINA
 // 13 --> LIBERTADORES
 // 11 --> SUDAMERICANA
 // 2 --> UEFA CHAMPIONS LEAGUE
+// 3 --> UEFA EUROPA LEAGUE
+// 848 --> UEFA EUROPA CONFERENCE LEAGUE
 // 39 --> PREMIER LEAGUE
 // 16 --> CONCACAF CHAMPIONS
 // 140 --> LA LIGA
