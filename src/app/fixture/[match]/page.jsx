@@ -68,7 +68,7 @@ export default function Page({ params }) {
             />
           </div>
         ))}
-        <div className="flex flex-col">
+        <div className="flex flex-col py-10">
           {data.map((team, index) => (
             <div key={index} className={index === 1 ? "rotate-180" : ""}>
               <FootballField

@@ -4,12 +4,11 @@ export default function FootballField({ jugadores, index, color }) {
   const colorTeam = `#${color.principal}`;
   const colorTeamSecundary = `#${color.secundario}`;
   const llenarArrayConJugadores = (jugadores) => {
-    // Crear un array 5x5
     let array = [];
     for (let i = 0; i < 5; i++) {
       array[i] = [];
       for (let j = 0; j < 5; j++) {
-        array[i][j] = { number: "", apellido: "" }; // Inicialmente, todas las posiciones están vacías
+        array[i][j] = { number: "", apellido: "" };
       }
     }
 
@@ -17,10 +16,14 @@ export default function FootballField({ jugadores, index, color }) {
       const nombre =
         jugador.player.name.split(" ").length === 1
           ? jugador.player.name
+          : jugador.player.name.split(" ").length === 3
+          ? jugador.player.name.split(" ")[1] +
+            " " +
+            jugador.player.name.split(" ")[2]
           : jugador.player.name.split(" ")[1];
       let [x, y] = jugador.player.grid.split(":").map(Number);
       array[x - 1][y - 1].number = jugador.player.number;
-      array[x - 1][y - 1].apellido = nombre; // Obtener el apellido del nombre del jugador
+      array[x - 1][y - 1].apellido = nombre;
     });
 
     return array;
@@ -48,7 +51,7 @@ export default function FootballField({ jugadores, index, color }) {
                       backgroundColor: colorTeam,
                       color: colorTeamSecundary,
                     }}
-                    className={`font-bold text-center w-16 border-2 border-blackBG rounded-full`}
+                    className={`font-bold text-center w-[79px] border-2 border-blackBG rounded-full`}
                     key={cellIndex}
                   >
                     <div>{cell.number}</div>

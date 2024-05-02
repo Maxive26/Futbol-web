@@ -73,6 +73,9 @@ export default function Home() {
         <FixtureLeague data={data} league={[78]} />
         <FixtureLeague data={data} league={[61]} />
         <FixtureLeague data={data} league={[239]} />
+        <FixtureLeague data={data} league={[268]} />
+        <FixtureLeague data={data} league={[250]} />
+        <FixtureLeague data={data} league={[265]} />
       </section>
     </>
   );
@@ -95,3 +98,6 @@ export default function Home() {
 // 78 --> BUNDESLIGA
 // 61 --> LIGUE 1 FRANCIA
 // 239 --> LIGA COLOMBIA
+// 268 --> LIGA URUGUAY
+// 250 --> LIGA PARAGUAY
+// 265 --> LIGA CHILE
