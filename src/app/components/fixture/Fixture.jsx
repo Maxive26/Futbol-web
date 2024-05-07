@@ -5,25 +5,21 @@ import FootballBall from "../icons/footballBall";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 export default function Fixture({ data }) {
-  const [button, setButton] = useState("Mañana");
-
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+  const valorParametro = searchParams.get("day")?.toString();
 
   const handleDay = () => {
     const params = new URLSearchParams(searchParams);
-    if (button === "Mañana") {
-      setButton("Hoy");
-      params.set("day", 1);
+    if (valorParametro === "1") {
+      params.set("day", 0);
+      // params.delete("day");
     } else {
-      setButton("Mañana");
-      params.delete("day");
+      params.set("day", 1);
     }
     replace(`${pathname}?${params.toString()}`);
   };
-
-  const valorParametro = searchParams.get("day")?.toString();
 
   return (
     <>

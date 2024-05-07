@@ -55,7 +55,7 @@ export default function FootballField({ jugadores, index, color }) {
                     key={cellIndex}
                   >
                     <div>{cell.number}</div>
-                    <div className="text-xs">{cell.apellido}</div>
+                    <div className="text-xs truncate">{cell.apellido}</div>
                   </td>
                 ) : null
               )}

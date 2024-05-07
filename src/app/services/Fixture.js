@@ -21,10 +21,10 @@ export const getFixtures = async (tomorrow) => {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
-      cache: "no-cache",
+      cache: "default", //no-store
     }
   );
-
+  console.log("Hice el fetch");
   const data = await response.json();
   const requiredLeagues = [
     906, 1032, 135, 39, 128, 140, 71, 78, 61, 13, 2, 239, 11, 16, 3, 848, 130,

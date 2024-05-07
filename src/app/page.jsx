@@ -2,17 +2,19 @@ import { getFixtures } from "@/app/services/Fixture.js";
 
 import Fixture from "./components/fixture/Fixture";
 import { Suspense } from "react";
-import Loading from "./components/loading/loading";
+import MatchCardSkeleton from "./components/matchCard/matchCardSkeleton";
 
 export default async function Home({ searchParams }) {
   const currentDay = Number(searchParams?.day) || 0;
+  console.log("Cambia currentDay??", currentDay);
   const data = await getFixtures(currentDay);
+
   return (
     <>
       {data.length === 0 && (
         <h1 className=" text-red">Peticiones diarias alcanzadas</h1>
       )}
-      <Suspense key={currentDay} fallback={<Loading />}>
+      <Suspense key={currentDay} fallback={<MatchCardSkeleton />}>
         <Fixture data={data} />
       </Suspense>
     </>

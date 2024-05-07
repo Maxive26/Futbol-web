@@ -1,13 +1,8 @@
 import React from "react";
-import Matches from "@/app/components/matches/matches";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import MatchCardSkeleton from "../components/matchCard/matchCardSkeleton";
 
 export default function page() {
-  return (
-    <>
-      <Matches />
-      <Matches />
-      <Matches />
-      <Matches />
-    </>
-  );
+  return <MatchCardSkeleton />;
 }

@@ -3,6 +3,7 @@ import Sidebar from "@/app/components/sidebar/sidebar";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ChangueThemeIcon from "./components/changueThemeIcon/changueThemeIcon";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 export const metadata = {
   title: "Promiedos",
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
         <section className="overflow-auto bg-blackBG border-r-2 border-grayPage col-[1_/_2] row-[1_/_3] p-5 flex flex-col gap-10">
           <Sidebar />
         </section>
-        <main className="overflow-auto bg-blackBG col-[2_/_3] row-[2_/_3] md:px-10 md:py-5 scrollbar-thin scrollbar-thumb-greenCard scrollbar-track-grayPage">
-          {children}
-        </main>
+        <SkeletonTheme baseColor="#313131" highlightColor="#525252">
+          <main className="overflow-auto bg-blackBG col-[2_/_3] row-[2_/_3] md:px-10 md:py-5 scrollbar-thin scrollbar-thumb-greenCard scrollbar-track-grayPage">
+            {children}
+          </main>
+        </SkeletonTheme>
       </body>
     </html>
   );
