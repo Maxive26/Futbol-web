@@ -1,82 +1,20 @@
-"use client";
-import { useGetFixture } from "@/app/hooks/useGetFixture.js";
-import FootballBall from "@/app/components/icons/footballBall";
-import Loading from "@/app/components/loading/loading";
-import FixtureLeague from "@/app/components/fixtureLeague/fixtureLeague";
-import { useState } from "react";
+import { getFixtures } from "@/app/services/Fixture.js";
+import Fixture from "./components/fixture/Fixture";
+import { Suspense } from "react";
+import MatchCardSkeleton from "./components/matchCard/matchCardSkeleton";
 
-export default function Home() {
-  const [button, setButton] = useState("Mañana");
-  const [tomorrow, setTomorrow] = useState(0);
-  const { data, loading, error } = useGetFixture(tomorrow);
-
-  if (loading) {
-    return (
-      <>
-        <h1 className="text-2xl font-semibold mb-4 text-whiteCard flex items-center">
-          <span className="mr-2">
-            <FootballBall color={"#FFF"} />
-          </span>
-          PARTIDOS DE HOY
-        </h1>
-        <Loading />
-      </>
-    );
-  }
-
-  const handleDay = () => {
-    if (button === "Mañana") {
-      setButton("Hoy");
-      setTomorrow(1);
-    } else {
-      setButton("Mañana");
-      setTomorrow(0);
-    }
-  };
+export default async function Home({ searchParams }) {
+  const currentDay = Number(searchParams?.day) || 0;
+  const data = await getFixtures(currentDay);
 
   return (
     <>
       {data.length === 0 && (
-        <h1 className="text-whiteCard font-bold">
-          Peticiones diarias alcanzadas
-        </h1>
+        <h1 className=" text-red">Peticiones diarias alcanzadas</h1>
       )}
-      <div className="flex items-center mb-4 justify-between">
-        <h1 className="text-2xl font-semibold text-whiteCard md:w-80 flex items-center">
-          <span className="mr-2">
-            <FootballBall color={"#FFF"} />
-          </span>
-          {button === "Mañana" ? "PARTIDOS DE HOY" : "PARTIDOS DE MAÑANA"}
-        </h1>
-        <button
-          onClick={handleDay}
-          className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard  px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
-        >
-          {button}
-        </button>
-      </div>
-      <section className="bg-grayPage rounded-xl p-5">
-        <FixtureLeague data={data} league={[128]} />
-        <FixtureLeague data={data} league={[1032]} />
-        <FixtureLeague data={data} league={[130]} />
-        <FixtureLeague data={data} league={[13]} />
-        <FixtureLeague data={data} league={[11]} />
-        <FixtureLeague data={data} league={[2]} />
-        <FixtureLeague data={data} league={[3]} />
-        <FixtureLeague data={data} league={[848]} />
-        <FixtureLeague data={data} league={[39]} />
-        <FixtureLeague data={data} league={[16]} />
-        <FixtureLeague data={data} league={[140]} />
-        <FixtureLeague data={data} league={[135]} />
-        <FixtureLeague data={data} league={[71]} />
-        <FixtureLeague data={data} league={[906]} />
-        <FixtureLeague data={data} league={[78]} />
-        <FixtureLeague data={data} league={[61]} />
-        <FixtureLeague data={data} league={[239]} />
-        <FixtureLeague data={data} league={[268]} />
-        <FixtureLeague data={data} league={[250]} />
-        <FixtureLeague data={data} league={[265]} />
-      </section>
+      <Suspense key={currentDay} fallback={<MatchCardSkeleton />}>
+        <Fixture data={data} />
+      </Suspense>
     </>
   );
 }

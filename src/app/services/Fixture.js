@@ -21,9 +21,10 @@ export const getFixtures = async (tomorrow) => {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
+      cache: "default", //no-store
     }
   );
-
+  console.log("[!Fixture!] Hice el fetch");
   const data = await response.json();
   const requiredLeagues = [
     906, 1032, 135, 39, 128, 140, 71, 78, 61, 13, 2, 239, 11, 16, 3, 848, 130,
@@ -32,12 +33,13 @@ export const getFixtures = async (tomorrow) => {
   const matches = data.response.filter((match) =>
     requiredLeagues.includes(match.league.id)
   );
-
   const mappedMatches = matches?.map((match) => ({
     idLiga: match.league.id,
     logoLiga: match.league.logo,
+    logoPais: match.league.flag,
     ronda: match.league.round,
     nombreLiga: match.league.name,
+    paisLiga: match.league.country,
     idFixture: match.fixture.id,
     referi: match.fixture.referee,
     horario: match.fixture.timestamp,
@@ -55,6 +57,5 @@ export const getFixtures = async (tomorrow) => {
     equipoVisitanteResultado: match.goals.away,
     equipoVisitanteResultadoPen: match.score.penalty.away,
   }));
-
   return mappedMatches;
 };

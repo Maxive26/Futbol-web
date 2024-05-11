@@ -1,4 +1,3 @@
-"use client";
 import LeagueTable from "@/app/components/table/leagueTable.jsx";
 export default function SudamericanaPage() {
   return (
