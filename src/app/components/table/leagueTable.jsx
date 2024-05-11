@@ -1,26 +1,17 @@
-"use client";
-
 import Image from "next/image.js";
-import useGetLeague from "@/app/hooks/useGetLeague.js";
-import Loading from "@/app/components/loading/loading.jsx";
-import { useEffect } from "react";
+import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
+import LeagueMatches from "../matches/LeagueMatches";
 
-export default function LeagueTable({
+export default async function LeagueTable({
   leagueID,
   año,
   clasificationTeams,
   equipos,
   amarilloTeams,
+  partidosPorFecha,
 }) {
-  const { data, loading } = useGetLeague(leagueID, año);
-
-  useEffect(() => {
-    leagueID === 13 ? equipos(data) : null;
-  }, [data, equipos, leagueID]);
-
-  if (loading) {
-    return <Loading />;
-  }
+  const data = await getLeague(leagueID, año);
+  const leagueMatches = await getLeaguesMatches(leagueID, año);
 
   return (
     <>
@@ -36,7 +27,7 @@ export default function LeagueTable({
             />
             {league.leagueName.toUpperCase()}{" "}
             {league.leagueSeason === 2023
-              ? league.leagueSeason + "/2024"
+              ? league.leagueSeason + `/${league.leagueSeason + 1}`
               : league.leagueSeason}
           </h1>
           <div className="grid grid-cols-2 bg-grayPage rounded-xl p-5">
@@ -118,6 +109,12 @@ export default function LeagueTable({
                 </table>
               </div>
             ))}
+            <div>
+              <LeagueMatches
+                partidosPorFecha={partidosPorFecha}
+                data={leagueMatches}
+              />
+            </div>
           </div>
         </div>
       ))}

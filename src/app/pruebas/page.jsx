@@ -1,8 +1,9 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import MatchCardSkeleton from "../components/matchCard/matchCardSkeleton";
+import LeagueTableSkeleton from "../components/table/leagueTableSkeleton";
+import Matches from "../components/matches/matches";
 
 export default function page() {
-  return <MatchCardSkeleton />;
+  return <div>asd</div>;
 }

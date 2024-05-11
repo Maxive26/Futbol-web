@@ -13,8 +13,8 @@ export default function MatchCardSkeleton() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 bg-grayPage rounded-xl p-5 items-center mb-4 justify-between">
-        {Array(4)
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  bg-grayPage rounded-xl p-5 items-center mb-4 justify-between">
+        {Array(3)
           .fill(0)
           .map((card, index) => (
             <div

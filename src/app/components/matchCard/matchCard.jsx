@@ -4,7 +4,8 @@ import "@/app/components/matchCard/matchCard.css";
 import Image from "next/image";
 
 export default function MatchCard(props) {
-  const { estadio, estado, team1, team2, horario, tiempo, ronda } = props;
+  const { estadio, estado, team1, team2, horario, tiempo, ronda, logoLiga } =
+    props;
   function convertirTimestampAHora(timestamp) {
     const date = new Date(timestamp * 1000);
     const horas = date.getHours().toString().padStart(2, "0");
@@ -28,10 +29,17 @@ export default function MatchCard(props) {
       : "Vivo";
 
   const rondaDeLaFecha = ronda === "Semi-finals" ? "Semifinal" : ronda;
-
   return (
     <>
       <div className="w-80 h-52 bg-greenCard rounded-3xl relative flex flex-col">
+        <Image
+          className="absolute z-10 w-[130px] h-[130px] top-10 left-[96px] opacity-10 grayscale"
+          width={130}
+          height={130}
+          priority
+          src={logoLiga}
+          alt="Logo liga"
+        />
         {estado !== "NS" &&
         estado !== "FT" &&
         estado !== "PEN" &&
@@ -44,13 +52,15 @@ export default function MatchCard(props) {
           </span>
         </div>
         <span className="text-center text-xs font-bold">{rondaDeLaFecha}</span>
-        <div className="h-[146px] flex justify-center items-center gap-4">
+        <div className="h-[146px] flex justify-center items-center gap-4 z-20">
           <div className="flex flex-col items-center w-28">
             <Image
               width={80}
               height={80}
+              priority
               src={team1.escudo}
-              className="w-20 h-20 drop-shadow-2xl mb-3"
+              style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
+              className="w-20 h-20  mb-3"
               alt="Escudo del equipo local"
             />
             <span className="text-center font-bold truncate w-32">
@@ -77,8 +87,10 @@ export default function MatchCard(props) {
             <Image
               width={80}
               height={80}
+              priority
               src={team2.escudo}
-              className="w-20 h-20 drop-shadow-2xl mb-3"
+              style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
+              className="w-20 h-20  mb-3"
               alt="Escudo del equipo visitante"
             />
             <span className="text-center font-bold truncate w-32">

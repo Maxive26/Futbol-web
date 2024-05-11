@@ -1,12 +1,10 @@
 import { getFixtures } from "@/app/services/Fixture.js";
-
 import Fixture from "./components/fixture/Fixture";
 import { Suspense } from "react";
 import MatchCardSkeleton from "./components/matchCard/matchCardSkeleton";
 
 export default async function Home({ searchParams }) {
   const currentDay = Number(searchParams?.day) || 0;
-  console.log("Cambia currentDay??", currentDay);
   const data = await getFixtures(currentDay);
 
   return (

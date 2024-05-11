@@ -7,7 +7,16 @@ import { SkeletonTheme } from "react-loading-skeleton";
 
 export const metadata = {
   title: "Promiedos",
-  description: "Estadisticas y partidos de Futbol",
+  description: "Partidos y estadisticas de Fútbol",
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    title: "Promiedos",
+    description: "Partidos y estadisticas de Fútbol",
+    images:
+      "https://www.infobae.com/new-resizer/PYW0Co1m7dyZpwOXvjSi8TzbvMw=/1200x900/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/12/09192945/River-vs-Boca-Final-Copa-Libertadores-280.jpg",
+  },
 };
 
 const poppins = Poppins({
