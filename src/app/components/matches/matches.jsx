@@ -52,7 +52,11 @@ export default function Matches({
       </div>
       <div className="flex justify-between">
         <div className="w-40 flex p-1">
-          <img src={local.Escudo} alt="Escudo equipo local" />
+          <img
+            className="h-5 w-5"
+            src={local.Escudo}
+            alt="Escudo equipo local"
+          />
           <span className="ml-1 border-greenCard truncate">{local.Nombre}</span>
         </div>
         <div className="w-4 py-1 flex justify-center border-l border-greenCard">
@@ -66,7 +70,11 @@ export default function Matches({
           <span className="mr-1 border-greenCard truncate">
             {visitante.Nombre}
           </span>
-          <img src={visitante.Escudo} alt="Escudo equipo local" />
+          <img
+            className="h-5 w-5"
+            src={visitante.Escudo}
+            alt="Escudo equipo local"
+          />
         </div>
       </div>
     </div>

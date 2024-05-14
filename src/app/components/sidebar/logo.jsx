@@ -6,11 +6,11 @@ export default function Logo() {
   return (
     <Link href={"/"}>
       <span className="flex text-whiteCard text-3xl items-center">
-        PR
+        FUTB
         <span>
           <FootballBall color={"#EBFD69"} />
         </span>
-        MIEDOS
+        LITA
       </span>
     </Link>
   );

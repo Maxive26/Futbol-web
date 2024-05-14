@@ -1,5 +1,6 @@
 import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 import LeagueMatches from "../matches/LeagueMatches";
+import { Suspense } from "react";
 
 export default async function LeagueTable({
   leagueID,

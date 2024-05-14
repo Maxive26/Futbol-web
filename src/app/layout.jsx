@@ -6,14 +6,16 @@ import ChangueThemeIcon from "./components/changueThemeIcon/changueThemeIcon";
 import { SkeletonTheme } from "react-loading-skeleton";
 
 export const metadata = {
-  title: "Promiedos",
-  description: "Partidos y estadisticas de Fútbol",
+  title: "Futbolita",
+  description:
+    "Pagina web sobre partidos de futbol y todos los paices y todas las competiciones, con tablas de posiciones, informaciones del encuentro, informaciones de equipos, entre otras funcionalidades",
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Promiedos",
-    description: "Partidos y estadisticas de Fútbol",
+    title: "Futbolita",
+    description:
+      "Pagina web sobre partidos de futbol y todos los paices y todas las competiciones, con tablas de posiciones, informaciones del encuentro, informaciones de equipos, entre otras funcionalidades",
     images:
       "https://www.infobae.com/new-resizer/PYW0Co1m7dyZpwOXvjSi8TzbvMw=/1200x900/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/12/09192945/River-vs-Boca-Final-Copa-Libertadores-280.jpg",
   },

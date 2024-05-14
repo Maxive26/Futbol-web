@@ -38,6 +38,7 @@ export default function LeagueMatches({ partidosPorFecha, data }) {
     <>
       <span className="mb-5 flex justify-between w-96 font-bold text-xl">
         <button
+          disabled
           onClick={handleSubtractDate}
           className="px-2 rounded-full rotate-180 hover:bg-blackBG"
         >
@@ -45,6 +46,7 @@ export default function LeagueMatches({ partidosPorFecha, data }) {
         </button>
         FECHA {searchParams.get("fecha")}
         <button
+          disabled
           onClick={handleAddDate}
           className="px-2 rounded-full hover:bg-blackBG"
         >

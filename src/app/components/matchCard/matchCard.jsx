@@ -33,7 +33,7 @@ export default function MatchCard(props) {
       <div className="w-80 h-52 bg-greenCard rounded-3xl relative flex flex-col">
         <img
           className="absolute z-10 w-[130px] h-[130px] top-10 left-[96px] opacity-10 grayscale"
-          priority
+          priority="true"
           src={logoLiga}
           alt="Logo liga"
         />
@@ -52,7 +52,7 @@ export default function MatchCard(props) {
         <div className="h-[146px] flex justify-center items-center gap-4 z-20">
           <div className="flex flex-col items-center w-28">
             <img
-              priority
+              priority="true"
               src={team1.escudo}
               style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
               className="w-20 h-20  mb-3"
@@ -80,7 +80,7 @@ export default function MatchCard(props) {
           </div>
           <div className="flex flex-col items-center w-28">
             <img
-              priority
+              priority="true"
               src={team2.escudo}
               style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
               className="w-20 h-20  mb-3"
