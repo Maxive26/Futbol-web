@@ -1,6 +1,5 @@
 import FootballField from "@/app/components/footballField/footballField";
 import { getMatchInfo } from "@/app/services/MatchInfo.js";
-import Image from "next/image";
 import Link from "next/link";
 import PlayersTable from "@/app/components/table/playersTable";
 import NotFound from "@/app/components/not-found/notFound";
@@ -35,13 +34,7 @@ export default async function Page({ params }) {
           {data?.map((team, index) => (
             <div className="text-whiteCard " key={team.idEquipo}>
               <div className="flex justify-center">
-                <Image
-                  className="mb-4"
-                  width={128}
-                  height={128}
-                  src={team.escudo}
-                  alt="Escudo"
-                />
+                <img className="mb-4" src={team.escudo} alt="Escudo" />
               </div>
               <h1 className="text-2xl mb-4">{team.equipo}</h1>
               <h1 className="mb-4">Formacion: {team.formacion}</h1>

@@ -1,5 +1,4 @@
 import MatchCard from "@/app/components/matchCard/matchCard";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function FixtureLeague({ data, league }) {
@@ -37,23 +36,19 @@ export default function FixtureLeague({ data, league }) {
         <h2 className="text-whiteCard text-xl mb-5 flex">
           {filteredMatches[0].logoPais !== null ? (
             <div className="border-opacity-20 border-r-2 border-whiteCard">
-              <Image
+              <img
                 src={filteredMatches[0].logoPais}
                 className="w-5 h-5 mr-2 pt-2"
                 alt="Bandera del pais"
-                width={20}
-                height={20}
               />
             </div>
           ) : (
             ""
           )}
-          <Image
+          <img
             src={filteredMatches[0].logoLiga}
             className="w-7 h-7 ml-3 mr-2"
             alt="Logo de la liga"
-            width={28}
-            height={28}
           />
           {nombreLigaCorrecto}
         </h2>

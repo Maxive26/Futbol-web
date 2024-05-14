@@ -1,4 +1,3 @@
-import Image from "next/image.js";
 import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 import LeagueMatches from "../matches/LeagueMatches";
 
@@ -18,13 +17,7 @@ export default async function LeagueTable({
       {data?.map((league) => (
         <div key={league.leagueId}>
           <h1 className="text-2xl font-semibold mb-4 flex items-center">
-            <Image
-              width={32}
-              height={32}
-              className="w-8 h-8"
-              src={league.leagueLogo}
-              alt=""
-            />
+            <img className="w-8 h-8" src={league.leagueLogo} alt="" />
             {league.leagueName.toUpperCase()}{" "}
             {league.leagueSeason === 2023
               ? league.leagueSeason + `/${league.leagueSeason + 1}`
@@ -69,9 +62,7 @@ export default async function LeagueTable({
                           {team.rank}
                         </td>
                         <td className="p-2 flex items-center w-64 border-r border-greenCard truncate">
-                          <Image
-                            width={32}
-                            height={32}
+                          <img
                             src={team.team.logo}
                             alt={team.team.name}
                             className="w-8 h-8 mr-2 "

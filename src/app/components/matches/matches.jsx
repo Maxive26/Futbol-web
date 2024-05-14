@@ -1,7 +1,6 @@
 import React from "react";
 import Plus from "@/app/components/icons/plus";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Matches({
   fecha,
@@ -53,12 +52,7 @@ export default function Matches({
       </div>
       <div className="flex justify-between">
         <div className="w-40 flex p-1">
-          <Image
-            src={local.Escudo}
-            width={24}
-            height={24}
-            alt="Escudo equipo local"
-          />
+          <img src={local.Escudo} alt="Escudo equipo local" />
           <span className="ml-1 border-greenCard truncate">{local.Nombre}</span>
         </div>
         <div className="w-4 py-1 flex justify-center border-l border-greenCard">
@@ -72,12 +66,7 @@ export default function Matches({
           <span className="mr-1 border-greenCard truncate">
             {visitante.Nombre}
           </span>
-          <Image
-            src={visitante.Escudo}
-            width={24}
-            height={24}
-            alt="Escudo equipo local"
-          />
+          <img src={visitante.Escudo} alt="Escudo equipo local" />
         </div>
       </div>
     </div>

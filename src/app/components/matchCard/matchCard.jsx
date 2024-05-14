@@ -1,7 +1,6 @@
 import React from "react";
 import Stadium from "@/app/components/icons/stadium";
 import "@/app/components/matchCard/matchCard.css";
-import Image from "next/image";
 
 export default function MatchCard(props) {
   const { estadio, estado, team1, team2, horario, tiempo, ronda, logoLiga } =
@@ -32,10 +31,8 @@ export default function MatchCard(props) {
   return (
     <>
       <div className="w-80 h-52 bg-greenCard rounded-3xl relative flex flex-col">
-        <Image
+        <img
           className="absolute z-10 w-[130px] h-[130px] top-10 left-[96px] opacity-10 grayscale"
-          width={130}
-          height={130}
           priority
           src={logoLiga}
           alt="Logo liga"
@@ -54,9 +51,7 @@ export default function MatchCard(props) {
         <span className="text-center text-xs font-bold">{rondaDeLaFecha}</span>
         <div className="h-[146px] flex justify-center items-center gap-4 z-20">
           <div className="flex flex-col items-center w-28">
-            <Image
-              width={80}
-              height={80}
+            <img
               priority
               src={team1.escudo}
               style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
@@ -84,9 +79,7 @@ export default function MatchCard(props) {
             )}
           </div>
           <div className="flex flex-col items-center w-28">
-            <Image
-              width={80}
-              height={80}
+            <img
               priority
               src={team2.escudo}
               style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
