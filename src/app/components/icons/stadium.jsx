@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Stadium({ opacity }) {
+export default function Stadium({ opacity, color = "#1F2022" }) {
   return (
     <svg
-      stroke="#1F2022"
+      stroke={color}
       opacity={opacity}
-      fill="#1F2022"
+      fill={color}
       strokeWidth="0"
       viewBox="0 0 24 24"
       className="text-2xl"

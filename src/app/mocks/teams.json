@@ -1,40 +1,40 @@
 {
-    "get": "teams",
-    "parameters": {
-      "id": "33"
-    },
-    "errors": [],
-    "results": 1,
-    "paging": {
-      "current": 1,
-      "total": 1
-    },
-    "response": [
-      {
-        "result":{
-          "result": 1
-        },
-        "status":{
-          "status": true
-        },
-        "team": {
-          "id": 33,
-          "name": "River Plate",
-          "code": "MUN",
-          "country": "England",
-          "founded": 1878,
-          "national": false,
-          "logo": "https://media.api-sports.io/football/teams/435.png"
-        },
-        "venue": {
-          "id": 556,
-          "name": "Old Trafford",
-          "address": "Sir Matt Busby Way",
-          "city": "Manchester",
-          "capacity": 76212,
-          "surface": "grass",
-          "image": "https://media.api-sports.io/football/venues/556.png"
-        }
+  "get": "teams",
+  "parameters": {
+    "id": "33"
+  },
+  "errors": [],
+  "results": 1,
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "response": [
+    {
+      "result": {
+        "result": 1
+      },
+      "status": {
+        "status": true
+      },
+      "team": {
+        "id": 435,
+        "name": "River Plate",
+        "code": "RIV",
+        "country": "Argentina",
+        "founded": 1901,
+        "national": false,
+        "logo": "https://media.api-sports.io/football/teams/435.png"
+      },
+      "venue": {
+        "id": 19570,
+        "name": "Estadio Mâs Monumental",
+        "address": "Avenida Presidente José Figueroa Alcorta 7597, Núñez",
+        "city": "Capital Federal, Ciudad de Buenos Aires",
+        "capacity": 83214,
+        "surface": "grass",
+        "image": "https://media.api-sports.io/football/venues/556.png"
       }
-    ]
-  }
+    }
+  ]
+}

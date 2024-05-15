@@ -31,12 +31,20 @@ export default async function Page({ params }) {
           </Link>
         </div>
         <div className="flex bg-grayPage rounded-xl p-5 text-center gap-10">
-          {data?.map((team, index) => (
+          {data?.map((team) => (
             <div className="text-whiteCard " key={team.idEquipo}>
-              <div className="flex justify-center">
-                <img className="mb-4" src={team.escudo} alt="Escudo" />
+              <div className="group">
+                <div className="flex justify-center group-hover:animate-pulse">
+                  <Link href={`/team/${team.idEquipo}`}>
+                    <img className="mb-4 " src={team.escudo} alt="Escudo" />
+                  </Link>
+                </div>
+                <Link href={`/team/${team.idEquipo}`}>
+                  <h1 className="text-2xl mb-4 group-hover:text-greenCard group-hover:animate-pulse">
+                    {team.equipo}
+                  </h1>
+                </Link>
               </div>
-              <h1 className="text-2xl mb-4">{team.equipo}</h1>
               <h1 className="mb-4">Formacion: {team.formacion}</h1>
               <h1 className="mb-4">DT: {team.entrenador}</h1>
               <PlayersTable
