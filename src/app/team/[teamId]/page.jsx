@@ -14,6 +14,10 @@ export default async function page({ params }) {
   const players = await getPlayersTeam(teamId);
   const fixture = await getMatchesForTeam(teamId);
   fixture.sort((a, b) => a.fecha - b.fecha);
+
+  var today = new Date();
+  var year = today.getFullYear();
+
   function convertirTimestamp(timestamp) {
     const fecha = new Date(timestamp * 1000);
     const dia = ("0" + fecha.getDate()).slice(-2);
@@ -72,7 +76,7 @@ export default async function page({ params }) {
               </span>
               <span>
                 <span className="font-bold text-greenCard">Fundación: </span>
-                {team.fundacion}
+                {team.fundacion} ({year - team.fundacion} Años)
               </span>
               <Link className="mt-10" href={"/"}>
                 <h3 className="text-whiteCard flex font-bold text-xl hover:text-greenCard">
