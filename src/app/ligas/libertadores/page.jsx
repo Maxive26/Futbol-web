@@ -11,9 +11,6 @@ export default function LibertadoresPage() {
           amarilloTeams={true}
         />
       </section>
-      <section>
-        <h1>holas</h1>
-      </section>
     </>
   );
 }

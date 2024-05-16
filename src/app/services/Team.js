@@ -55,3 +55,36 @@ export const getPlayersTeam = async (id) => {
   }));
   return mappedTeam;
 };
+
+export const getMatchesForTeam = async (id) => {
+  const URL = "https://v3.football.api-sports.io";
+  const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
+  const SEASON = "2024";
+  const TIMEZONE = "America/Argentina/Buenos_Aires";
+  const response = await fetch(
+    `${URL}/fixtures?season=${SEASON}&team=${id}&timezone=${TIMEZONE}`,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": `${API_KEY}`,
+      },
+    }
+  );
+  console.log("[!TeamPlayersMatches!] Hice el fetch");
+  const data = await response.json();
+  const mappedTeam = data.response?.map((match) => ({
+    fecha: match.fixture.timestamp,
+    estado: match.fixture.status.short,
+    local: match.teams.home.name,
+    localId: match.teams.home.id,
+    visitante: match.teams.away.name,
+    localEscudo: match.teams.home.logo,
+    visitanteEscudo: match.teams.away.logo,
+    visitanteId: match.teams.away.id,
+    resultadoLocal: match.goals.home,
+    resultadoVisitante: match.goals.away,
+    idFixture: match.fixture.id,
+  }));
+  return mappedTeam;
+};

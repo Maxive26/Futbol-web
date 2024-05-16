@@ -10,7 +10,7 @@ export const getLeague = async (id, season) => {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
-      cache: "default", //no-store
+      cache: "no-store", //no-store
     }
   );
   console.log("[!Leagues!] Hice el fetch");
