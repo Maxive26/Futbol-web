@@ -58,6 +58,7 @@ export default function Fixture({ data }) {
         <FixtureLeague data={data} league={[268]} />
         <FixtureLeague data={data} league={[250]} />
         <FixtureLeague data={data} league={[265]} />
+        <FixtureLeague data={data} league={[262]} />
       </section>
     </>
   );

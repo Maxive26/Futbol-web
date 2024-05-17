@@ -27,6 +27,9 @@ export default function FixtureLeague({ data, league }) {
         : filteredMatches[0].nombreLiga === "Primera División" &&
           filteredMatches[0].paisLiga === "Chile"
         ? "Liga Chile"
+        : filteredMatches[0].nombreLiga === "Liga MX" &&
+          filteredMatches[0].paisLiga === "Mexico"
+        ? "Liga Mexico"
         : filteredMatches[0].nombreLiga;
   }
 

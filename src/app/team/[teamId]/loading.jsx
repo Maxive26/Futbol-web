@@ -1,12 +1,6 @@
-import React from "react";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import LeagueTableSkeleton from "../components/table/leagueTableSkeleton";
-import Matches from "../components/matches/matches";
+import FootballBall from "@/app/components/icons/footballBall";
 import Link from "next/link";
-import FootballBall from "../components/icons/footballBall";
-
-export default function page() {
+export default function loading() {
   return (
     <>
       <div className="flex items-center mb-4 justify-between">
