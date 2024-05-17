@@ -41,7 +41,7 @@ export default function MatchCard(props) {
         estado !== "FT" &&
         estado !== "PEN" &&
         estado !== "PST" ? (
-          <div className="w-5 h-5 bg-red rounded-full absolute top-3 left-3 animate-bounce z-10"></div>
+          <div className="w-5 h-5 bg-red rounded-full absolute top-3 left-3 animate-pulse z-10"></div>
         ) : null}
         <div className="h-6 flex items-center justify-center">
           <span className="bg-blackBG text-sm text-whiteCard px-4 w-28 h-6 font-semibold relative text-center rounded-b-[20px] radiusInverted z-10">

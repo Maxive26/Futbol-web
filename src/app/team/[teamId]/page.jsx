@@ -181,6 +181,14 @@ export default async function page({ params }) {
                       {match.localId == teamId
                         ? obtenerDosPrimerasPalabras(match.visitante)
                         : obtenerDosPrimerasPalabras(match.local)}
+                      {["1H", "HT", "2H", "BT", "P", "ET"].includes(
+                        match.estado
+                      ) ? (
+                        <div className="ml-2 w-3 h-3 bg-red rounded-full animate-pulse"></div>
+                      ) : (
+                        ""
+                      )}
+                      {console.log(match.estado)}
                     </td>
                     <td
                       className={`border font-bold border-greenCard  truncate text-center ${

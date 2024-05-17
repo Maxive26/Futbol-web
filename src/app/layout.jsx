@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           <Buscador />
           <ChangueThemeIcon />
         </header>
-        <section className="overflow-auto bg-blackBG border-r-2 border-grayPage col-[1_/_2] row-[1_/_3] p-5 flex flex-col gap-10">
+        <section className="flex overflow-auto bg-blackBG border-r-2 border-grayPage col-[1_/_2] row-[1_/_3] p-5 flex-col gap-10">
           <Sidebar />
         </section>
         <SkeletonTheme baseColor="#313131" highlightColor="#525252">
