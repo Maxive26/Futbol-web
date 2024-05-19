@@ -62,7 +62,7 @@ export default function FixtureLeague({ data, league }) {
           <div key={match.idFixture} className="mb-5 w-80 h-52 rounded-3xl">
             {(match.estado !== "NS") & (match.estado !== "PST") ? (
               <Link
-                className="hover:opacity-80"
+                className="transition-all ease-out hover:opacity-80"
                 href={`/fixture/${match.idFixture}`}
               >
                 <MatchCard

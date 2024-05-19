@@ -58,7 +58,7 @@ export default function MatchCard(props) {
               className="w-20 h-20  mb-3"
               alt="Escudo del equipo local"
             />
-            <span className="text-center font-bold truncate w-32">
+            <span className="text-center px-2 font-bold truncate w-32">
               {team1.nombre}
             </span>
           </div>
@@ -86,7 +86,7 @@ export default function MatchCard(props) {
               className="w-20 h-20  mb-3"
               alt="Escudo del equipo visitante"
             />
-            <span className="text-center font-bold truncate w-32">
+            <span className="text-center font-bold truncate px-2 w-32">
               {team2.nombre}
             </span>
           </div>

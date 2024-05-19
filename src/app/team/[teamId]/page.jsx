@@ -57,7 +57,7 @@ export default async function page({ params }) {
             key={team.id}
             className="flex flex-col p-3 items-center  text-whiteCard "
           >
-            <div className=" p-3 flex justify-center items-center rounded-full bg-blackBG w-64 h-64">
+            <div className=" p-3 flex justify-center items-center rounded-full bg-blackBG w-64 h-64 shadow-inner shadow-grayCard">
               <img
                 src={team.escudo}
                 alt="Escudo del equipo"
@@ -99,36 +99,6 @@ export default async function page({ params }) {
         ))}
 
         <div className="flex flex-col">
-          <h2 className="text-whiteCard mb-5 font-bold text-xl">PLANTEL </h2>
-          {players?.map((players, index) =>
-            players.jugadores.map((player, index) =>
-              player.numero === null ? (
-                ""
-              ) : (
-                <div
-                  key={player.id}
-                  className="flex w-3/4 flex-col odd:bg-grayPage even:bg-blackBG text-whiteCard items-center"
-                >
-                  <div className="w-full grid rounded relative grid-rows-2 border-x-2 border-y border-greenCard ">
-                    <div className="flex items-center">
-                      <span className="w-8 text-center font-bold mr-4 text-blackBG bg-grayCard">
-                        {player.numero}
-                      </span>
-                      <span className="tracking-wider">{player.nombre}</span>
-                      <span className="absolute right-0 mx-3 text-sm">
-                        {player.edad} años
-                      </span>
-                    </div>
-                    <div className="border-t border-grayCard border-opacity-10">
-                      <span className="mx-3 text-sm">{player.posicion}</span>
-                    </div>
-                  </div>
-                </div>
-              )
-            )
-          )}
-        </div>
-        <div className="flex flex-col">
           <h2 className="text-whiteCard font-bold text-xl mb-5">FIXTURE</h2>
           <table className="mb-10 w-80">
             <thead>
@@ -139,7 +109,7 @@ export default async function page({ params }) {
                 <th className="px-2 text-whiteCard font-normal border-r border-greenCard text-center">
                   L/V
                 </th>
-                <th className="px-2 flex justify-center items-center text-whiteCard font-normal text-left max-w-56 border-greenCard border-r">
+                <th className="px-2 flex justify-center items-center text-whiteCard font-normal text-left w-52 border-greenCard border-r">
                   <img
                     src={data[0].escudo}
                     alt="Escudo del equipo"
@@ -188,7 +158,6 @@ export default async function page({ params }) {
                       ) : (
                         ""
                       )}
-                      {console.log(match.estado)}
                     </td>
                     <td
                       className={`border font-bold border-greenCard  truncate text-center ${
@@ -230,6 +199,36 @@ export default async function page({ params }) {
               )}
             </tbody>
           </table>
+        </div>
+        <div className="flex flex-col">
+          <h2 className="text-whiteCard mb-5 font-bold text-xl">PLANTEL </h2>
+          {players?.map((players, index) =>
+            players.jugadores.map((player, index) =>
+              player.numero === null ? (
+                ""
+              ) : (
+                <div
+                  key={player.id}
+                  className="flex w-3/4 flex-col odd:bg-grayPage even:bg-blackBG text-whiteCard items-center"
+                >
+                  <div className="w-full grid rounded relative grid-rows-2 border-x-2 border-y border-greenCard ">
+                    <div className="flex items-center">
+                      <span className="w-8 text-center font-bold mr-4 text-blackBG bg-grayCard">
+                        {player.numero}
+                      </span>
+                      <span className="tracking-wider">{player.nombre}</span>
+                      <span className="absolute right-0 mx-3 text-sm">
+                        {player.edad} años
+                      </span>
+                    </div>
+                    <div className="border-t border-grayCard border-opacity-10">
+                      <span className="mx-3 text-sm">{player.posicion}</span>
+                    </div>
+                  </div>
+                </div>
+              )
+            )
+          )}
         </div>
       </div>
     </section>

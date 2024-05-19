@@ -56,23 +56,26 @@ export const getPlayersTeam = async (id) => {
   return mappedTeam;
 };
 
-export const getMatchesForTeam = async (id) => {
+export const getMatchesForTeam = async (id, season = 2024) => {
   const URL = "https://v3.football.api-sports.io";
   const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
-  const SEASON = "2024";
   const TIMEZONE = "America/Argentina/Buenos_Aires";
   const response = await fetch(
-    `${URL}/fixtures?season=${SEASON}&team=${id}&timezone=${TIMEZONE}`,
+    `${URL}/fixtures?season=${season}&team=${id}&timezone=${TIMEZONE}`,
     {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
+      cache: "no-store",
     }
   );
   console.log("[!TeamPlayersMatches!] Hice el fetch");
   const data = await response.json();
+  if (data.response.length === 0) {
+    return getMatchesForTeam(id, 2023);
+  }
   const mappedTeam = data.response?.map((match) => ({
     fecha: match.fixture.timestamp,
     estado: match.fixture.status.short,
