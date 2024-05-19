@@ -73,9 +73,9 @@ export const getMatchesForTeam = async (id, season = 2024) => {
   );
   console.log("[!TeamPlayersMatches!] Hice el fetch");
   const data = await response.json();
-  if (data.response.length === 0) {
-    return getMatchesForTeam(id, 2023);
-  }
+  // if (data.response.length === 0) {
+  //   return getMatchesForTeam(id, 2023);
+  // }
   const mappedTeam = data.response?.map((match) => ({
     fecha: match.fixture.timestamp,
     estado: match.fixture.status.short,

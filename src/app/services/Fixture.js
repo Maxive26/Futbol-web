@@ -28,11 +28,12 @@ export const getFixtures = async (tomorrow) => {
   const data = await response.json();
   const requiredLeagues = [
     906, 1032, 135, 39, 128, 140, 71, 78, 61, 13, 2, 239, 11, 16, 3, 848, 130,
-    268, 250, 265, 262,
+    268, 250, 265, 262, 866,
   ];
   const matches = data.response.filter((match) =>
     requiredLeagues.includes(match.league.id)
   );
+
   const mappedMatches = matches?.map((match) => ({
     idLiga: match.league.id,
     logoLiga: match.league.logo,

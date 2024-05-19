@@ -1,39 +1,18 @@
 import FootballBall from "@/app/components/icons/footballBall";
 import Stadium from "@/app/components/icons/stadium";
 import Link from "next/link";
-import {
-  getTeam,
-  getPlayersTeam,
-  getMatchesForTeam,
-} from "@/app/services/Team";
-import Plus from "@/app/components/icons/plus";
+import { getTeam, getPlayersTeam } from "@/app/services/Team";
+import FixtureTableTeams from "@/app/components/fixtureTableTeams/FixtureTableTeams";
+import { Suspense } from "react";
+import FixtureTableTeamsSkeleton from "@/app/components/fixtureTableTeams/FixtureTableTeamsSkeleton";
 
 export default async function page({ params }) {
   const { teamId } = params;
   const data = await getTeam(teamId);
   const players = await getPlayersTeam(teamId);
-  const fixture = await getMatchesForTeam(teamId);
-  fixture.sort((a, b) => a.fecha - b.fecha);
 
   var today = new Date();
   var year = today.getFullYear();
-
-  function convertirTimestamp(timestamp) {
-    const fecha = new Date(timestamp * 1000);
-    const dia = ("0" + fecha.getDate()).slice(-2);
-    const mes = ("0" + (fecha.getMonth() + 1)).slice(-2);
-    const fechaFormateada = `${dia}/${mes}`;
-    return fechaFormateada;
-  }
-  function obtenerDosPrimerasPalabras(oracion) {
-    const palabras = oracion.split(" ");
-
-    if (palabras.length >= 2) {
-      return `${palabras[0]} ${palabras[1]}`;
-    } else {
-      return palabras[0] || "";
-    }
-  }
 
   return (
     <section>
@@ -98,108 +77,14 @@ export default async function page({ params }) {
           </div>
         ))}
 
-        <div className="flex flex-col">
-          <h2 className="text-whiteCard font-bold text-xl mb-5">FIXTURE</h2>
-          <table className="mb-10 w-80">
-            <thead>
-              <tr className={`border border-greenCard`}>
-                <th className="px-2 text-whiteCard font-normal border-r border-greenCard text-center">
-                  Dia
-                </th>
-                <th className="px-2 text-whiteCard font-normal border-r border-greenCard text-center">
-                  L/V
-                </th>
-                <th className="px-2 flex justify-center items-center text-whiteCard font-normal text-left w-52 border-greenCard border-r">
-                  <img
-                    src={data[0].escudo}
-                    alt="Escudo del equipo"
-                    className="w-5 h-5 "
-                  />
-                  {data[0].nombre.toUpperCase()} vs
-                </th>
-                <th className="px-2 text-whiteCard font-normal text-center border-greenCard border-r ">
-                  Res
-                </th>
-                <th className="px-2 text-whiteCard font-normal text-center border-greenCard border-r">
-                  Info
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {fixture.map((match, i) =>
-                match.estado === "CANC" ? null : (
-                  <tr
-                    key={match.idFixture}
-                    className="border text-whiteCard  border-greenCard even:bg-grayPage odd:bg-searchBG"
-                  >
-                    <td className="border border-greenCard px-2 text-center">
-                      {convertirTimestamp(match.fecha)}
-                    </td>
-                    <td className="border border-greenCard text-center font-bold">
-                      {match.localId == teamId ? "L" : "V"}
-                    </td>
-                    <td className="flex items-center w-52 text-left pl-2 truncate ">
-                      <img
-                        src={
-                          match.localId == teamId
-                            ? match.visitanteEscudo
-                            : match.localEscudo
-                        }
-                        className="w-5 h-5 mr-2"
-                        alt=""
-                      />
-                      {match.localId == teamId
-                        ? obtenerDosPrimerasPalabras(match.visitante)
-                        : obtenerDosPrimerasPalabras(match.local)}
-                      {["1H", "HT", "2H", "BT", "P", "ET"].includes(
-                        match.estado
-                      ) ? (
-                        <div className="ml-2 w-3 h-3 bg-red rounded-full animate-pulse"></div>
-                      ) : (
-                        ""
-                      )}
-                    </td>
-                    <td
-                      className={`border font-bold border-greenCard  truncate text-center ${
-                        match.resultadoLocal == null ||
-                        match.resultadoVisitante == null
-                          ? ""
-                          : (match.localId == teamId &&
-                              match.resultadoLocal >
-                                match.resultadoVisitante) ||
-                            (match.localId != teamId &&
-                              match.resultadoLocal < match.resultadoVisitante)
-                          ? "bg-firstTeam text-blackBG  "
-                          : match.resultadoLocal === match.resultadoVisitante
-                          ? "bg-yellow text-blackBG"
-                          : "bg-red"
-                      }`}
-                    >
-                      {match.resultadoLocal == null ||
-                      match.resultadoVisitante == null
-                        ? "-"
-                        : match.localId == teamId
-                        ? `${match.resultadoLocal} - ${match.resultadoVisitante}`
-                        : `${match.resultadoVisitante} - ${match.resultadoLocal}`}
-                    </td>
-                    <td className="flex justify-center items-center mt-1">
-                      {match.estado !== "NS" &&
-                        match.estado !== "TBD" &&
-                        match.estado !== "PST" && (
-                          <Link
-                            href={`/fixture/${match.idFixture}`}
-                            className="w-5 h-full bg-firstTeam flex justify-center items-center"
-                          >
-                            <Plus color={"#fff"} />
-                          </Link>
-                        )}
-                    </td>
-                  </tr>
-                )
-              )}
-            </tbody>
-          </table>
-        </div>
+        <Suspense fallback={<FixtureTableTeamsSkeleton />}>
+          <FixtureTableTeams
+            teamId={teamId}
+            image={data[0].escudo}
+            nombre={data[0].nombre}
+          />
+        </Suspense>
+
         <div className="flex flex-col">
           <h2 className="text-whiteCard mb-5 font-bold text-xl">PLANTEL </h2>
           {players?.map((players, index) =>
