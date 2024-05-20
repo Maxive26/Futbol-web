@@ -36,7 +36,7 @@ export default function FixtureLeague({ data, league }) {
   return (
     <div>
       {filteredMatches.length !== 0 && (
-        <h2 className="text-whiteCard text-xl mb-5 flex">
+        <h2 className="text-whiteCard text-lg sm:text-xl mb-5 flex">
           {filteredMatches[0].logoPais !== null ? (
             <div className="border-opacity-20 border-r-2 border-whiteCard">
               <img
@@ -57,7 +57,7 @@ export default function FixtureLeague({ data, league }) {
         </h2>
       )}
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+      <section className=" flex flex-col justify-center items-center md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {filteredMatches.map((match) => (
           <div key={match.idFixture} className="mb-5 w-80 h-52 rounded-3xl">
             {(match.estado !== "NS") & (match.estado !== "PST") ? (

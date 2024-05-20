@@ -17,7 +17,7 @@ export default async function Page({ params }) {
     return (
       <Suspense>
         <div className="flex items-center mb-4 justify-between">
-          <h1 className="text-2xl sm:font-semibold text-whiteCard  flex items-center">
+          <h1 className="text-lg lg:text-2xl sm:font-semibold text-whiteCard  flex items-center">
             <span className="mr-2">
               <FootballBall color={"#FFF"} />
             </span>
@@ -30,13 +30,20 @@ export default async function Page({ params }) {
             Volver
           </Link>
         </div>
-        <div className="flex bg-grayPage rounded-xl p-5 text-center gap-10">
+        <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 xl:grid-cols-3 bg-grayPage rounded-xl p-5 text-center gap-10">
           {data?.map((team) => (
-            <div className="text-whiteCard " key={team.idEquipo}>
+            <div
+              className="text-whiteCard flex flex-col items-center"
+              key={team.idEquipo}
+            >
               <div className="group">
                 <div className="flex justify-center group-hover:animate-pulse">
                   <Link href={`/team/${team.idEquipo}`}>
-                    <img className="mb-4 " src={team.escudo} alt="Escudo" />
+                    <img
+                      className="mb-4 w-36 h-3w-36"
+                      src={team.escudo}
+                      alt="Escudo"
+                    />
                   </Link>
                 </div>
                 <Link href={`/team/${team.idEquipo}`}>
@@ -63,7 +70,7 @@ export default async function Page({ params }) {
               />
             </div>
           ))}
-          <div className="flex flex-col py-10">
+          <div className="flex flex-col items-center justify-center py-10">
             {data.map((team, index) => (
               <div key={index} className={index === 1 ? "rotate-180" : ""}>
                 <FootballField

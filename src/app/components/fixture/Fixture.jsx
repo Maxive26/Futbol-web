@@ -24,7 +24,7 @@ export default function Fixture({ data }) {
   return (
     <>
       <div className="flex items-center mb-4 justify-between">
-        <h1 className="text-2xl font-semibold text-whiteCard md:w-80 flex items-center">
+        <h1 className="text-xl lg:text-2xl font-semibold text-whiteCard md:w-80 flex items-center">
           <span className="mr-2">
             <FootballBall color={"#FFF"} />
           </span>
@@ -37,29 +37,35 @@ export default function Fixture({ data }) {
           {valorParametro === "1" ? "Hoy" : "Mañana"}
         </button>
       </div>
-      <section className="bg-grayPage rounded-xl p-5">
-        <FixtureLeague data={data} league={[128]} />
-        <FixtureLeague data={data} league={[1032]} />
-        <FixtureLeague data={data} league={[130]} />
-        <FixtureLeague data={data} league={[13]} />
-        <FixtureLeague data={data} league={[11]} />
-        <FixtureLeague data={data} league={[2]} />
-        <FixtureLeague data={data} league={[3]} />
-        <FixtureLeague data={data} league={[848]} />
-        <FixtureLeague data={data} league={[39]} />
-        <FixtureLeague data={data} league={[16]} />
-        <FixtureLeague data={data} league={[140]} />
-        <FixtureLeague data={data} league={[135]} />
-        <FixtureLeague data={data} league={[71]} />
-        <FixtureLeague data={data} league={[906]} />
-        <FixtureLeague data={data} league={[78]} />
-        <FixtureLeague data={data} league={[61]} />
-        <FixtureLeague data={data} league={[239]} />
-        <FixtureLeague data={data} league={[268]} />
-        <FixtureLeague data={data} league={[250]} />
-        <FixtureLeague data={data} league={[265]} />
-        <FixtureLeague data={data} league={[866]} />
-        <FixtureLeague data={data} league={[262]} />
+      <section className="bg-grayPage rounded-xl py-4 p-2 sm:p-5">
+        {data.length === 0 ? (
+          <h1 className=" text-red text-xl">X Peticiones diarias alcanzadas</h1>
+        ) : (
+          <>
+            <FixtureLeague data={data} league={[128]} />
+            <FixtureLeague data={data} league={[1032]} />
+            <FixtureLeague data={data} league={[130]} />
+            <FixtureLeague data={data} league={[13]} />
+            <FixtureLeague data={data} league={[11]} />
+            <FixtureLeague data={data} league={[2]} />
+            <FixtureLeague data={data} league={[3]} />
+            <FixtureLeague data={data} league={[848]} />
+            <FixtureLeague data={data} league={[39]} />
+            <FixtureLeague data={data} league={[16]} />
+            <FixtureLeague data={data} league={[140]} />
+            <FixtureLeague data={data} league={[135]} />
+            <FixtureLeague data={data} league={[71]} />
+            <FixtureLeague data={data} league={[906]} />
+            <FixtureLeague data={data} league={[78]} />
+            <FixtureLeague data={data} league={[61]} />
+            <FixtureLeague data={data} league={[239]} />
+            <FixtureLeague data={data} league={[268]} />
+            <FixtureLeague data={data} league={[250]} />
+            <FixtureLeague data={data} league={[265]} />
+            <FixtureLeague data={data} league={[866]} />
+            <FixtureLeague data={data} league={[262]} />
+          </>
+        )}
       </section>
     </>
   );

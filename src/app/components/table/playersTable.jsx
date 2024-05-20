@@ -4,7 +4,7 @@ export default function PlayersTable({ jugadores, color }) {
   const colorTeam = `#${color.principal}`;
   const colorTeamSecundary = `#${color.secundario}`;
   return (
-    <table className="mb-10">
+    <table className="mb-10 w-80">
       <thead>
         <tr
           style={{ backgroundColor: colorTeam, color: colorTeamSecundary }}

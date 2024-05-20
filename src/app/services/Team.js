@@ -68,7 +68,7 @@ export const getMatchesForTeam = async (id, season = 2024) => {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
-      cache: "no-store",
+      cache: "default",
     }
   );
   console.log("[!TeamPlayersMatches!] Hice el fetch");

@@ -30,7 +30,7 @@ export default async function page({ params }) {
           Volver
         </Link>
       </div>
-      <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-grayPage rounded-xl p-5 gap-10">
+      <div className="flex flex-col justify-center  md:grid md:grid-cols-2 xl:grid-cols-3 bg-grayPage rounded-xl p-5 gap-10">
         {data?.map((team, index) => (
           <div
             key={team.id}
@@ -94,7 +94,7 @@ export default async function page({ params }) {
               ) : (
                 <div
                   key={player.id}
-                  className="flex w-3/4 flex-col odd:bg-grayPage even:bg-blackBG text-whiteCard items-center"
+                  className="flex w-auto sm:w-3/4 flex-col odd:bg-grayPage even:bg-blackBG text-whiteCard items-center"
                 >
                   <div className="w-full grid rounded relative grid-rows-2 border-x-2 border-y border-greenCard ">
                     <div className="flex items-center">

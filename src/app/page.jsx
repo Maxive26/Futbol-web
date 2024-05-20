@@ -9,9 +9,6 @@ export default async function Home({ searchParams }) {
 
   return (
     <>
-      {data.length === 0 && (
-        <h1 className=" text-red">Peticiones diarias alcanzadas</h1>
-      )}
       <Suspense key={currentDay} fallback={<MatchCardSkeleton />}>
         <Fixture data={data} />
       </Suspense>

@@ -29,16 +29,16 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
   return (
     <div className="flex flex-col">
       <h2 className="text-whiteCard font-bold text-xl mb-5">FIXTURE</h2>
-      <table className="mb-10 w-80">
+      <table className="mb-10 w-40 md:w-80">
         <thead>
           <tr className={`border border-greenCard`}>
             <th className="px-2 text-whiteCard font-normal border-r border-greenCard text-center">
               Dia
             </th>
-            <th className="px-2 text-whiteCard font-normal border-r border-greenCard text-center">
+            <th className="text-sm md:text-base md:px-2 text-whiteCard font-normal border-r border-greenCard text-center">
               L/V
             </th>
-            <th className="px-2 flex justify-center items-center text-whiteCard truncate font-normal text-left w-52 border-greenCard border-r">
+            <th className="text-sm md:text-base md:px-2 flex justify-center items-center text-whiteCard truncate font-normal text-left w-auto md:w-52 border-greenCard border-r">
               <img src={image} alt="Escudo del equipo" className="w-5 h-5 " />
               {nombre.toUpperCase()} vs
             </th>
@@ -57,20 +57,20 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
                 key={match.idFixture}
                 className="border text-whiteCard  border-greenCard even:bg-grayPage odd:bg-searchBG"
               >
-                <td className="border border-greenCard px-2 text-center">
+                <td className="text-sm md:text-base border border-greenCard md:px-2 text-center">
                   {convertirTimestamp(match.fecha)}
                 </td>
-                <td className="border border-greenCard text-center font-bold">
+                <td className="text-sm md:text-base md:px-2 border border-greenCard text-center font-bold">
                   {match.localId == teamId ? "L" : "V"}
                 </td>
-                <td className="flex items-center w-52 text-left pl-2 truncate ">
+                <td className="text-sm md:text-base flex items-center w-auto md:w-52 text-left md:pl-2 truncate ">
                   <img
                     src={
                       match.localId == teamId
                         ? match.visitanteEscudo
                         : match.localEscudo
                     }
-                    className="w-5 h-5 mr-2"
+                    className="w-5 h-5 md:mr-2"
                     alt=""
                   />
                   {match.localId == teamId
