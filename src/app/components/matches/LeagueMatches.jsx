@@ -30,13 +30,14 @@ export default function LeagueMatches({ partidosPorFecha, data }) {
     const params = new URLSearchParams(searchParams);
     params.set("fecha", count);
     replace(`${pathname}?${params.toString()}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, searchParams, pathname]);
 
   const aux = partidosPorFecha * (nroFecha - 1);
   const filtroPorFecha = data.slice(aux, partidosPorFecha * nroFecha);
   return (
     <>
-      <span className="mb-5 flex justify-between w-96 font-bold text-xl">
+      <span className="mb-5 flex justify-between w-72 md:w-96 font-bold text-xl">
         <button
           disabled
           onClick={handleSubtractDate}

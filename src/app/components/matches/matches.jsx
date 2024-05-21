@@ -38,7 +38,7 @@ export default function Matches({
       ? "Pospuesto"
       : "Vivo";
   return (
-    <div className="text-whiteCard rounded-xl flex flex-col w-96 border border-greenCard mb-2">
+    <div className="text-whiteCard rounded-xl flex flex-col w-72 md:w-96 border border-greenCard mb-2">
       <div className="flex justify-around relative border-b border-greenCard py-1">
         {estado !== "NS" && estado !== "TBD" && (
           <Link
@@ -51,7 +51,7 @@ export default function Matches({
         <span className="text-sm ">{estadoDePartido}</span>
       </div>
       <div className="flex justify-between">
-        <div className="w-40 flex p-1">
+        <div className="w-28 md:w-40 flex p-1">
           <img
             className="h-5 w-5"
             src={local.Escudo}
@@ -66,7 +66,7 @@ export default function Matches({
         <div className="w-4 py-1 flex justify-center border-r border-greenCard">
           {visitante.Resultado}
         </div>
-        <div className="w-40 flex justify-end p-1">
+        <div className="w-28 md:w-40 flex justify-end p-1">
           <span className="mr-1 border-greenCard truncate">
             {visitante.Nombre}
           </span>
