@@ -4,6 +4,11 @@ import { usePathname } from "next/navigation";
 
 export default function Links({ liga, href }) {
   const pathName = usePathname();
+  const handleClick = (e) => {
+    if (onClick) {
+      onClick();
+    }
+  };
   return (
     <div
       className={`flex border-l-2 border-grayPage ml-2  transition-all ease-in hover:border-greenCard
@@ -15,6 +20,7 @@ export default function Links({ liga, href }) {
         className={`w-full  pl-5 transition-all ease-in hover:text-greenCard hover:opacity-100
         ${pathName === href ? "text-greenCard opacity-100" : "opacity-70"}
         `}
+        onClick={handleClick}
       >
         {liga}
       </Link>

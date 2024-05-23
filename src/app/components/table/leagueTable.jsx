@@ -78,16 +78,19 @@ export default async function LeagueTable({
                         <td className="border text-xs md:text-base border-greenCard">
                           {team.rank}
                         </td>
-                        <Link href={`/team/${team.team.id}`}>
-                          <td className="p-1 flex text-xs md:text-base  items-center w-24 md:w-44 lg:w-52 border-r border-greenCard truncate">
+                        <td className="p-1 flex text-xs md:text-base items-center w-24 md:w-44 lg:w-52 border-r border-greenCard truncate">
+                          <Link
+                            href={`/team/${team.team.id}`}
+                            className="flex items-center w-full h-full"
+                          >
                             <img
                               src={team.team.logo}
                               alt={team.team.name}
-                              className="w-4 h-4 md:w-5 md:h-5 md:mr-2 "
+                              className="w-4 h-4 md:w-5 md:h-5 md:mr-2"
                             />
                             {team.team.name}
-                          </td>
-                        </Link>
+                          </Link>
+                        </td>
                         <td className=" py-1 text-xs md:text-base border-r border-greenCard font-bold">
                           {team.points}
                         </td>

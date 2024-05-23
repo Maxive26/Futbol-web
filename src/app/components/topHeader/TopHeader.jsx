@@ -12,6 +12,9 @@ export default function TopHeader() {
   const handleMenu = () => {
     setIsMenuActive(!isMenuActive);
   };
+  const closeMenu = () => {
+    setIsMenuActive(false);
+  };
 
   return (
     <>
@@ -33,7 +36,7 @@ export default function TopHeader() {
         <button className="absolute top-8 right-5" onClick={handleMenu}>
           <Cross color={"#FFF"} />
         </button>
-        <Sidebar />
+        <Sidebar onLinkClick={closeMenu} />
       </div>
     </>
   );
