@@ -5,8 +5,8 @@ export default function Cross({ color }) {
       fill={color}
       strokeWidth="0"
       viewBox="0 0 15 15"
-      height="40px"
-      width="40px"
+      height="30px"
+      width="30px"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

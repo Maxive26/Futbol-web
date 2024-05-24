@@ -6,18 +6,19 @@ import ChangueThemeIcon from "./components/changueThemeIcon/changueThemeIcon";
 import { SkeletonTheme } from "react-loading-skeleton";
 import MenuIcon from "./components/icons/Menu";
 import TopHeader from "./components/topHeader/TopHeader";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Futbolita",
   description:
-    "Pagina web sobre partidos de futbol y todos los paices y todas las competiciones, con tablas de posiciones, informaciones del encuentro, informaciones de equipos, entre otras funcionalidades",
+    "Página web con información de todos los partidos de fútbol, ligas y competiciones, incluyendo tablas de posiciones, detalles de encuentros y datos de equipos.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
     title: "Futbolita",
     description:
-      "Pagina web sobre partidos de futbol y todos los paices y todas las competiciones, con tablas de posiciones, informaciones del encuentro, informaciones de equipos, entre otras funcionalidades",
+      "Página web con información de todos los partidos de fútbol, ligas y competiciones, incluyendo tablas de posiciones, detalles de encuentros y datos de equipos.",
     images: "https://i.ibb.co/7t9HXQ1/LOGO-PROEMIDOS-2.png",
   },
 };
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
         <SkeletonTheme baseColor="#313131" highlightColor="#525252">
           <main className="overflow-auto bg-blackBG lg:col-[2_/_3] lg:row-[2_/_3] px-5 lg:px-10 py-5 scrollbar-thin scrollbar-thumb-greenCard scrollbar-track-grayPage">
             {children}
+            <Analytics />
           </main>
         </SkeletonTheme>
       </body>

@@ -3,7 +3,7 @@ import Search from "@/app/components/icons/search";
 
 export default function Buscador() {
   return (
-    <div className="bg-searchBG  transition ease-linear border-2 border-grayPage w-40 sm:w-80 h-8 rounded-2xl flex sm:gap-2 items-center hover:border-greenCard">
+    <div className="bg-searchBG transition ease-linear border-2 border-grayPage w-40 sm:w-80 h-8 rounded-2xl flex sm:gap-2 items-center hover:border-greenCard">
       <input
         type="text"
         name="team"
