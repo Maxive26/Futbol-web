@@ -1,13 +1,21 @@
 export const getFixtures = async (tomorrow) => {
   function getCurrentDate(tomorrow) {
     const date = new Date();
-    date.setDate(date.getDate() + tomorrow);
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    const dateFormated = `${year}-${month}-${day}`;
 
-    return dateFormated;
+    const utcOffset = date.getTimezoneOffset() * 60000;
+    const buenosAiresOffset = -3 * 60 * 60000;
+    const buenosAiresDate = new Date(
+      date.getTime() + utcOffset + buenosAiresOffset
+    );
+
+    buenosAiresDate.setDate(buenosAiresDate.getDate() + tomorrow);
+
+    const year = buenosAiresDate.getFullYear();
+    const month = (buenosAiresDate.getMonth() + 1).toString().padStart(2, "0");
+    const day = buenosAiresDate.getDate().toString().padStart(2, "0");
+    const dateFormatted = `${year}-${month}-${day}`;
+
+    return dateFormatted;
   }
   const CURRENT_DAY = getCurrentDate(tomorrow);
   const URL = "https://v3.football.api-sports.io";

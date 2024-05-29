@@ -46,7 +46,7 @@ export default function Sidebar({ onLinkClick }) {
           onClick={onLinkClick}
         />
         <Links
-          href={"/ligas/championsLeague"}
+          href={"/ligas/championsleague"}
           liga={"Champions League"}
           onClick={onLinkClick}
         />

@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export default function FixtureLeague({ data, league }) {
   const filteredMatches = data.filter((match) => league.includes(match.idLiga));
-
   let nombreLigaCorrecto = "";
   if (filteredMatches.length !== 0) {
     nombreLigaCorrecto =

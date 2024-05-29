@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Links({ liga, href }) {
+export default function Links({ liga, href, onClick }) {
   const pathName = usePathname();
   const handleClick = (e) => {
     if (onClick) {

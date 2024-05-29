@@ -58,6 +58,7 @@ export default function MatchCard(props) {
               className="w-20 h-20  mb-3"
               alt="Escudo del equipo local"
             />
+
             <span className="text-center px-2 font-bold truncate w-32">
               {team1.nombre}
             </span>
