@@ -1,13 +1,21 @@
 export const getFixtures = async (tomorrow) => {
   function getCurrentDate(tomorrow) {
     const date = new Date();
-    date.setDate(date.getDate() + tomorrow);
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    const dateFormated = `${year}-${month}-${day}`;
 
-    return dateFormated;
+    const utcOffset = date.getTimezoneOffset() * 60000;
+    const buenosAiresOffset = -3 * 60 * 60000;
+    const buenosAiresDate = new Date(
+      date.getTime() + utcOffset + buenosAiresOffset
+    );
+
+    buenosAiresDate.setDate(buenosAiresDate.getDate() + tomorrow);
+
+    const year = buenosAiresDate.getFullYear();
+    const month = (buenosAiresDate.getMonth() + 1).toString().padStart(2, "0");
+    const day = buenosAiresDate.getDate().toString().padStart(2, "0");
+    const dateFormatted = `${year}-${month}-${day}`;
+
+    return dateFormatted;
   }
   const CURRENT_DAY = getCurrentDate(tomorrow);
   const URL = "https://v3.football.api-sports.io";
@@ -28,7 +36,7 @@ export const getFixtures = async (tomorrow) => {
   const data = await response.json();
   const requiredLeagues = [
     906, 1032, 135, 39, 128, 140, 71, 78, 61, 13, 2, 239, 11, 16, 3, 848, 130,
-    268, 250, 265, 262, 866,
+    268, 250, 265, 262, 866, 129, 131, 134, 9, 4, 10, 15, 909,
   ];
   const matches = data.response.filter((match) =>
     requiredLeagues.includes(match.league.id)
