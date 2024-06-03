@@ -29,6 +29,9 @@ export default function FixtureLeague({ data, league }) {
         : filteredMatches[0].nombreLiga === "Liga MX" &&
           filteredMatches[0].paisLiga === "Mexico"
         ? "Liga Mexico"
+        : filteredMatches[0].nombreLiga === "Friendlies" &&
+          filteredMatches[0].paisLiga === "World"
+        ? "Amistosos Internacionales"
         : filteredMatches[0].nombreLiga;
   }
 

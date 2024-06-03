@@ -1,5 +1,5 @@
 import FootballField from "@/app/components/footballField/footballField";
-import { getMatchInfo } from "@/app/services/MatchInfo.js";
+import { getEvents, getMatchInfo } from "@/app/services/MatchInfo.js";
 import Link from "next/link";
 import PlayersTable from "@/app/components/table/playersTable";
 import NotFound from "@/app/components/not-found/notFound";
@@ -9,7 +9,10 @@ import { Suspense } from "react";
 export default async function Page({ params }) {
   const { match } = params;
   const data = await getMatchInfo(match);
-  // const data = null;
+  let events = [];
+  if (data.length !== 0) {
+    events = await getEvents(match);
+  }
 
   if (data.length === 0) {
     return <NotFound />;
@@ -55,6 +58,7 @@ export default async function Page({ params }) {
               <h1 className="mb-4">Formacion: {team.formacion}</h1>
               <h1 className="mb-4">DT: {team.entrenador}</h1>
               <PlayersTable
+                events={events}
                 jugadores={team.jugadores}
                 color={{
                   principal: team.color,
@@ -62,7 +66,9 @@ export default async function Page({ params }) {
                 }}
               />
               <PlayersTable
+                events={events}
                 jugadores={team.suplentes}
+                titulares={false}
                 color={{
                   principal: team.color,
                   secundario: team.colorSecundario,

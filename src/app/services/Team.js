@@ -40,6 +40,7 @@ export const getPlayersTeam = async (id) => {
       "x-rapidapi-host": "v3.football.api-sports.io",
       "x-rapidapi-key": `${API_KEY}`,
     },
+    next: { revalidate: 3600 },
   });
   console.log("[!TeamPlayers!] Hice el fetch");
   const data = await response.json();
@@ -68,7 +69,7 @@ export const getMatchesForTeam = async (id, season = 2024) => {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
-      next: { revalidate: 300 },
+      next: { revalidate: 3600 },
     }
   );
   console.log("[!TeamPlayersMatches!] Hice el fetch");

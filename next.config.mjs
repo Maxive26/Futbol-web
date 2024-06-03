@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "media.api-sports.io",
+        hostname: "*.media.api-sports.io",
         port: "",
       },
     ],

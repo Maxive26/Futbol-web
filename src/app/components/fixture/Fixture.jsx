@@ -42,7 +42,11 @@ export default function Fixture({ data }) {
           <h1 className=" text-red text-xl">X Peticiones diarias alcanzadas</h1>
         ) : (
           <>
+            <FixtureLeague data={data} league={[9]} />
+            <FixtureLeague data={data} league={[4]} />
+            <FixtureLeague data={data} league={[15]} />
             <FixtureLeague data={data} league={[128]} />
+            <FixtureLeague data={data} league={[10]} />
             <FixtureLeague data={data} league={[1032]} />
             <FixtureLeague data={data} league={[130]} />
             <FixtureLeague data={data} league={[13]} />
@@ -50,10 +54,13 @@ export default function Fixture({ data }) {
             <FixtureLeague data={data} league={[2]} />
             <FixtureLeague data={data} league={[3]} />
             <FixtureLeague data={data} league={[848]} />
+            <FixtureLeague data={data} league={[129]} />
+            <FixtureLeague data={data} league={[131]} />
             <FixtureLeague data={data} league={[39]} />
             <FixtureLeague data={data} league={[16]} />
             <FixtureLeague data={data} league={[140]} />
             <FixtureLeague data={data} league={[135]} />
+            <FixtureLeague data={data} league={[134]} />
             <FixtureLeague data={data} league={[71]} />
             <FixtureLeague data={data} league={[906]} />
             <FixtureLeague data={data} league={[78]} />
@@ -63,6 +70,7 @@ export default function Fixture({ data }) {
             <FixtureLeague data={data} league={[250]} />
             <FixtureLeague data={data} league={[265]} />
             <FixtureLeague data={data} league={[866]} />
+            <FixtureLeague data={data} league={[909]} />
             <FixtureLeague data={data} league={[262]} />
           </>
         )}
