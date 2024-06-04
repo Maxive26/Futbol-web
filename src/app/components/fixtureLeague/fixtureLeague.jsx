@@ -59,7 +59,7 @@ export default function FixtureLeague({ data, league }) {
         </h2>
       )}
 
-      <section className=" flex flex-col justify-center md:items-center md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+      <section className=" flex flex-col justify-center items-center sm:items-start md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {filteredMatches.map((match) => (
           <div key={match.idFixture} className="mb-5 w-80 h-52 rounded-3xl">
             {(match.estado !== "NS") & (match.estado !== "PST") ? (

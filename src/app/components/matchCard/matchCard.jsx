@@ -44,12 +44,12 @@ export default function MatchCard(props) {
           <div className="w-5 h-5 bg-red rounded-full absolute top-3 left-3 animate-pulse z-10"></div>
         ) : null}
         <div className="h-6 flex items-center justify-center">
-          <span className="bg-blackBG text-sm text-whiteCard px-4 w-28 h-6 font-semibold relative text-center rounded-b-[20px] radiusInverted z-10">
+          <span className="bg-grayPage text-sm text-whiteCard px-4 w-28 h-6 font-semibold relative text-center rounded-b-[20px] radiusInverted z-10">
             {estadoDePartido}
           </span>
         </div>
         <span className="text-center text-xs font-bold">{rondaDeLaFecha}</span>
-        <div className="h-[146px] flex justify-center items-center gap-4 z-20">
+        <div className="h-[146px] flex justify-center items-center gap-3 z-20">
           <div className="flex flex-col items-center w-28">
             <img
               priority="true"
@@ -70,7 +70,7 @@ export default function MatchCard(props) {
                 : ""}
             </span>
             <span className="font-bold">VS.</span>
-            <span className="font-bold text-xl">
+            <span className="font-bold w-16 text-center bg-grayPage bg-opacity-90 text-whiteCard text-xl rounded-xl">
               {team1.resultado} - {team2.resultado}
             </span>
             {estado === "PEN" && (
