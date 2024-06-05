@@ -5,6 +5,7 @@ import "@/app/components/matchCard/matchCard.css";
 export default function MatchCard(props) {
   const { estadio, estado, team1, team2, horario, tiempo, ronda, logoLiga } =
     props;
+
   function convertirTimestampAHora(timestamp) {
     const date = new Date(timestamp * 1000);
     const horas = date.getHours().toString().padStart(2, "0");
@@ -28,12 +29,20 @@ export default function MatchCard(props) {
       : "Vivo";
 
   const rondaDeLaFecha = ronda === "Semi-finals" ? "Semifinal" : ronda;
+
+  const style = {
+    height: "2px",
+    width: "100%",
+    opacity: "80%",
+    background:
+      "linear-gradient(to right, rgba(0, 0, 0, 0), #D9DFE8, rgba(0, 0, 0, 0))",
+  };
+
   return (
     <>
       <div className="w-80 h-52 bg-greenCard rounded-3xl relative flex flex-col">
         <img
           className="absolute z-10 w-[130px] h-[130px] top-10 left-[96px] opacity-10 grayscale"
-          priority="true"
           src={logoLiga}
           alt="Logo liga"
         />
@@ -52,13 +61,11 @@ export default function MatchCard(props) {
         <div className="h-[146px] flex justify-center items-center gap-3 z-20">
           <div className="flex flex-col items-center w-28">
             <img
-              priority="true"
               src={team1.escudo}
               style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
-              className="w-20 h-20  mb-3"
+              className="w-20 h-20 mb-3"
               alt="Escudo del equipo local"
             />
-
             <span className="text-center px-2 font-bold truncate w-32">
               {team1.nombre}
             </span>
@@ -81,10 +88,9 @@ export default function MatchCard(props) {
           </div>
           <div className="flex flex-col items-center w-28">
             <img
-              priority="true"
               src={team2.escudo}
               style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
-              className="w-20 h-20  mb-3"
+              className="w-20 h-20 mb-3"
               alt="Escudo del equipo visitante"
             />
             <span className="text-center font-bold truncate px-2 w-32">
@@ -92,7 +98,8 @@ export default function MatchCard(props) {
             </span>
           </div>
         </div>
-        <div className="h-9 border-grayCard border-t-2 flex px-6 items-center justify-center">
+        <div style={style}></div>
+        <div className="h-8  flex px-6 items-center justify-center">
           <Stadium opacity={0.6} />
           <span className="font-bold ml-2 truncate">{estadio}</span>
         </div>
