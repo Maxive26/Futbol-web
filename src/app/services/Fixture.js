@@ -29,7 +29,7 @@ export const getFixtures = async (tomorrow) => {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${API_KEY}`,
       },
-      cache: "default", //no-store
+      cache: "no-store", //no-store
     }
   );
   console.log("[!Fixture!] Hice el fetch");
