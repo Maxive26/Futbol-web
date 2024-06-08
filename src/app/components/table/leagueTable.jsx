@@ -7,8 +7,9 @@ export default async function LeagueTable({
   año,
   clasificationTeams,
   equipos,
-  amarilloTeams,
+  amarilloTeams = false,
   partidosPorFecha,
+  fechas = false,
 }) {
   const data = await getLeague(leagueID, año);
   const leagueMatches = await getLeaguesMatches(leagueID, año);
@@ -37,7 +38,11 @@ export default async function LeagueTable({
               <div key={groupIndex} className="">
                 {league.leagueStandings.length > 1 && (
                   <h2 className="text-lg font-semibold mb-2">
-                    {"Grupo " + String.fromCharCode(65 + groupIndex)}
+                    {(leagueID === 4) &
+                    ("Grupo " + String.fromCharCode(65 + groupIndex) ===
+                      "Grupo G")
+                      ? "Grupo de equipos terceros clasificados"
+                      : "Grupo " + String.fromCharCode(65 + groupIndex)}
                   </h2>
                 )}
                 <table className="border-collapse mb-3">
@@ -122,12 +127,14 @@ export default async function LeagueTable({
                 </table>
               </div>
             ))}
-            <div className="flex flex-col items-center">
-              <LeagueMatches
-                partidosPorFecha={partidosPorFecha}
-                data={leagueMatches}
-              />
-            </div>
+            {fechas ? (
+              <div className="flex flex-col items-center">
+                <LeagueMatches
+                  partidosPorFecha={partidosPorFecha}
+                  data={leagueMatches}
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       ))}

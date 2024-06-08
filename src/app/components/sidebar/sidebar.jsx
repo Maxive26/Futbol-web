@@ -3,6 +3,80 @@ import Links from "./link";
 import Logo from "./logo";
 
 export default function Sidebar({ onLinkClick }) {
+  const LINKS = [
+    {
+      id: "128",
+      href: "/ligas/ligaProfesional",
+      liga: "Liga Profesional",
+      competicion: "liga",
+    },
+    {
+      id: "39",
+      href: "/ligas/premierLeague",
+      liga: "Premier League",
+      competicion: "liga",
+    },
+    {
+      id: "140",
+      href: "/ligas/laLiga",
+      liga: "La Liga",
+      competicion: "liga",
+    },
+    {
+      id: "135",
+      href: "/ligas/serieA",
+      liga: "Serie A",
+      competicion: "liga",
+    },
+    {
+      id: "71",
+      href: "/ligas/brasileirao",
+      liga: "Brasileirao",
+      competicion: "liga",
+    },
+    {
+      id: "1032",
+      href: "/ligas/copaDeLaLiga",
+      liga: "Copa de la liga",
+      competicion: "copa",
+    },
+    {
+      id: "13",
+      href: "/ligas/libertadores",
+      liga: "Libertadores",
+      competicion: "copa",
+    },
+    {
+      id: "11",
+      href: "/ligas/sudamericana",
+      liga: "Sudamericana",
+      competicion: "copa",
+    },
+    {
+      id: "2",
+      href: "/ligas/championsLeague",
+      liga: "Champions League",
+      competicion: "copa",
+    },
+    {
+      id: "130",
+      href: "/ligas/copaArgentina",
+      liga: "Copa Argentina",
+      competicion: "copa",
+    },
+    {
+      id: "9",
+      href: "/ligas/copaAmerica",
+      liga: "Copa América",
+      competicion: "copa",
+    },
+    {
+      id: "4",
+      href: "/ligas/eurocopa",
+      liga: "Eurocopa",
+      competicion: "copa",
+    },
+  ];
   return (
     <>
       <div className="h-10">
@@ -30,50 +104,22 @@ export default function Sidebar({ onLinkClick }) {
           onClick={onLinkClick}
         />
         <br />
-        <span className="font-bold text-xl ml-2">LIGAS</span>
-        <Links
-          href={"/ligas/ligaProfesional"}
-          liga={"Liga Profesional"}
-          onClick={onLinkClick}
-        />
-        <Links
-          href={"/ligas/premierLeague"}
-          liga={"Premier League"}
-          onClick={onLinkClick}
-        />
-        <Links href={"/ligas/laLiga"} liga={"La Liga"} onClick={onLinkClick} />
-        <Links href={"/ligas/serieA"} liga={"Serie A"} onClick={onLinkClick} />
-        <Links
-          href={"/ligas/brasileirao"}
-          liga={"Brasileirao"}
-          onClick={onLinkClick}
-        />
-        <span className="font-bold text-xl ml-2">COPAS</span>
-        <Links
-          href={"/ligas/copadelaliga"}
-          liga={"Copa de la liga"}
-          onClick={onLinkClick}
-        />
-        <Links
-          href={"/ligas/libertadores"}
-          liga={"Copa Libertadores"}
-          onClick={onLinkClick}
-        />
-        <Links
-          href={"/ligas/sudamericana"}
-          liga={"Copa Sudamericana"}
-          onClick={onLinkClick}
-        />
-        <Links
-          href={"/ligas/championsleague"}
-          liga={"Champions League"}
-          onClick={onLinkClick}
-        />
-        <Links
-          href={"/ligas/copaArgentina"}
-          liga={"Copa Argentina"}
-          onClick={onLinkClick}
-        />
+        {LINKS.map((enlace, index) => (
+          <>
+            {index === 0 && (
+              <span className="font-bold text-xl ml-2">LIGAS</span>
+            )}
+            {index === 5 && (
+              <span className="font-bold text-xl ml-2">COPAS</span>
+            )}
+            <Links
+              key={enlace.id}
+              href={enlace.href}
+              liga={enlace.liga}
+              onClick={onLinkClick}
+            />
+          </>
+        ))}
       </div>
     </>
   );
