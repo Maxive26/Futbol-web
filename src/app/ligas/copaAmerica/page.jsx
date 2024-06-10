@@ -9,7 +9,6 @@ export default function CopaAmericaPage() {
           año={2024}
           clasificationTeams={2}
           amarilloTeams={false}
-          fechas={false}
         />
       </section>
     </>
