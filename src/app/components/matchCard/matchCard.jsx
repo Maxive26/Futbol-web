@@ -61,7 +61,12 @@ export default function MatchCard(props) {
         <div className="h-[146px] flex justify-center items-center gap-3 z-20">
           <div className="flex flex-col items-center w-28">
             <img
-              src={team1.escudo}
+              // src={team1.escudo}
+              src={`images/escudos/${team1.id}.png`}
+              onError={(e) => {
+                e.target.onerror = null; // Prevenir un bucle infinito
+                e.target.src = `https://media.api-sports.io/football/teams/${team1.id}.png`;
+              }}
               style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
               className="w-20 h-20 mb-3"
               alt="Escudo del equipo local"
@@ -88,7 +93,9 @@ export default function MatchCard(props) {
           </div>
           <div className="flex flex-col items-center w-28">
             <img
-              src={team2.escudo}
+              // src={team2.escudo}
+              // src={`images/escudos/${team2.id}.png`}
+              src={`https://media.api-sports.io/football/teams/${team2.id}.png`}
               style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
               className="w-20 h-20 mb-3"
               alt="Escudo del equipo visitante"

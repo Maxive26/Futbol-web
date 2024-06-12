@@ -75,12 +75,14 @@ export default function FixtureLeague({ data, league }) {
                   horario={match.horario}
                   ronda={match.ronda}
                   team1={{
+                    id: match.equipoLocalId,
                     escudo: match.equipoLocalEscudo,
                     nombre: match.equipoLocalNombre,
                     resultado: match.equipoLocalResultado,
                     resultadoPen: match.equipoLocalResultadoPen,
                   }}
                   team2={{
+                    id: match.equipoVisitanteId,
                     escudo: match.equipoVisitanteEscudo,
                     nombre: match.equipoVisitanteNombre,
                     resultado: match.equipoVisitanteResultado,
@@ -97,14 +99,18 @@ export default function FixtureLeague({ data, league }) {
                   horario={match.horario}
                   ronda={match.ronda}
                   team1={{
+                    id: match.equipoLocalId,
                     escudo: match.equipoLocalEscudo,
                     nombre: match.equipoLocalNombre,
                     resultado: match.equipoLocalResultado,
+                    resultadoPen: match.equipoLocalResultadoPen,
                   }}
                   team2={{
+                    id: match.equipoVisitanteId,
                     escudo: match.equipoVisitanteEscudo,
                     nombre: match.equipoVisitanteNombre,
                     resultado: match.equipoVisitanteResultado,
+                    resultadoPen: match.equipoVisitanteResultadoPen,
                   }}
                 />
               </div>
