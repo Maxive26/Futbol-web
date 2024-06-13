@@ -11,11 +11,18 @@ import Search from "../icons/search";
 
 export default function TopHeader() {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isSearchMenuActive, setIsSearchMenuActive] = useState(false);
   const handleMenu = () => {
     setIsMenuActive(!isMenuActive);
   };
   const closeMenu = () => {
     setIsMenuActive(false);
+  };
+  const handleSearchMenu = () => {
+    setIsSearchMenuActive(!isSearchMenuActive);
+  };
+  const closeSearchMenu = () => {
+    setIsSearchMenuActive(false);
   };
 
   return (
@@ -36,7 +43,10 @@ export default function TopHeader() {
         </div>
         <div className="flex gap-3">
           <div className="block lg:hidden">
-            <button className=" rounded-full bg-grayPage w-8 h-8 flex justify-center items-center">
+            <button
+              onClick={handleSearchMenu}
+              className=" rounded-full bg-grayPage w-8 h-8 flex justify-center items-center"
+            >
               <Search color={"#FFF"} />
             </button>
           </div>
@@ -52,6 +62,18 @@ export default function TopHeader() {
           <Cross color={"#FFF"} />
         </button>
         <Sidebar onLinkClick={closeMenu} />
+      </div>
+      <div
+        className={`${
+          isSearchMenuActive ? "block" : "hidden"
+        } bg-blackBG transition w-full z-40 p-9 h-screen absolute top-0 left-0 flex flex-col gap-5`}
+      >
+        <div className="flex justify-between">
+          <Buscador closeSearchMenu={closeSearchMenu} />
+          <button className="" onClick={handleSearchMenu}>
+            <Cross color={"#FFF"} />
+          </button>
+        </div>
       </div>
     </>
   );

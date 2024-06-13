@@ -5,6 +5,7 @@ import { getTeam, getPlayersTeam } from "@/app/services/Team";
 import FixtureTableTeams from "@/app/components/fixtureTableTeams/FixtureTableTeams";
 import { Suspense } from "react";
 import FixtureTableTeamsSkeleton from "@/app/components/fixtureTableTeams/FixtureTableTeamsSkeleton";
+import { redirect } from "next/navigation";
 
 export default async function page({ params }) {
   const { teamId } = params;
@@ -77,13 +78,17 @@ export default async function page({ params }) {
           </div>
         ))}
 
-        <Suspense fallback={<FixtureTableTeamsSkeleton />}>
-          <FixtureTableTeams
-            teamId={teamId}
-            image={data[0].escudo}
-            nombre={data[0].nombre}
-          />
-        </Suspense>
+        {data.length !== 0 ? (
+          <Suspense fallback={<FixtureTableTeamsSkeleton />}>
+            <FixtureTableTeams
+              teamId={teamId}
+              image={data[0].escudo}
+              nombre={data[0].nombre}
+            />
+          </Suspense>
+        ) : (
+          redirect("/")
+        )}
 
         <div className="flex flex-col">
           <h2 className="text-whiteCard mb-5 font-bold text-xl">PLANTEL </h2>

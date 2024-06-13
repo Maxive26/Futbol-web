@@ -4,7 +4,6 @@ export const getTeam = async (id) => {
   // const data = team;
   const URL = "https://v3.football.api-sports.io";
   const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
-
   const response = await fetch(`${URL}/teams?id=${id}`, {
     method: "GET",
     headers: {
@@ -40,7 +39,6 @@ export const getPlayersTeam = async (id) => {
       "x-rapidapi-host": "v3.football.api-sports.io",
       "x-rapidapi-key": `${API_KEY}`,
     },
-    next: { revalidate: 3600 },
   });
   console.log("[!TeamPlayers!] Hice el fetch");
   const data = await response.json();

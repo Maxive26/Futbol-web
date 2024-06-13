@@ -90,6 +90,10 @@ export default async function LeagueTable({
                           >
                             <img
                               src={team.team.logo}
+                              onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = `https://media.api-sports.io/football/teams/${team.team.id}.png`;
+                              }}
                               alt={team.team.name}
                               className="w-4 h-4 md:w-5 md:h-5 md:mr-2"
                             />

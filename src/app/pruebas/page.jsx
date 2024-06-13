@@ -5,9 +5,5 @@ import FootballBall from "../components/icons/footballBall";
 import PlayersTable from "../components/table/playersTable";
 
 export default function page() {
-  return (
-    <>
-      <NewCard />
-    </>
-  );
+  return <></>;
 }

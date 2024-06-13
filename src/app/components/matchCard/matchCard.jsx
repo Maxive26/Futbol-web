@@ -64,7 +64,7 @@ export default function MatchCard(props) {
               // src={team1.escudo}
               src={`images/escudos/${team1.id}.png`}
               onError={(e) => {
-                e.target.onerror = null; // Prevenir un bucle infinito
+                e.target.onerror = null;
                 e.target.src = `https://media.api-sports.io/football/teams/${team1.id}.png`;
               }}
               style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
