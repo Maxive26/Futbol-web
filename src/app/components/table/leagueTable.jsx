@@ -1,6 +1,7 @@
 import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 import LeagueMatches from "../matches/LeagueMatches";
 import Link from "next/link";
+import Badge from "@/app/components/Badge/badge";
 
 export default async function LeagueTable({
   leagueID,
@@ -34,6 +35,14 @@ export default async function LeagueTable({
             </Link>
           </div>
           <div className="flex flex-col items-center xl:items-start xl:grid xl:grid-cols-2 bg-grayPage rounded-xl p-5">
+            {/* <Badge
+              text={"· Los 2 primeros de cada grupo clasifican a octavos"}
+              color={"bg-firstTeam/80"}
+            />
+            <Badge
+              text={"· Los 4 mejores terceros clasifican a Octavos"}
+              color={"bg-yellow/50"}
+            /> */}
             {league.leagueStandings.map((group, groupIndex) => (
               <div key={groupIndex} className="">
                 {league.leagueStandings.length > 1 && (
@@ -90,10 +99,6 @@ export default async function LeagueTable({
                           >
                             <img
                               src={team.team.logo}
-                              onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.src = `https://media.api-sports.io/football/teams/${team.team.id}.png`;
-                              }}
                               alt={team.team.name}
                               className="w-4 h-4 md:w-5 md:h-5 md:mr-2"
                             />
