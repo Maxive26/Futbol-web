@@ -1,25 +1,21 @@
-import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
+import { getLeague } from "@/app/services/Leagues.js";
 import Link from "next/link";
 import Badge from "@/app/components/Badge/badge";
 
-export default async function LeagueTable({
+export default async function EuroCopaTable({
   leagueID,
   año,
   clasificationTeams,
-  equipos,
   amarilloTeams = false,
-  partidosPorFecha,
-  fechas = false,
 }) {
   const data = await getLeague(leagueID, año);
-  const leagueMatches = await getLeaguesMatches(leagueID, año);
 
   return (
     <>
       {data?.map((league) => (
         <div key={league.leagueId}>
           <div className="flex items-center mb-4 justify-between">
-            <h1 className="text-lg md:text-2xl font-semibold  flex items-center">
+            <h1 className="text-lg md:text-2xl font-semibold flex items-center">
               <img className="w-8 h-8 mr-3" src={league.leagueLogo} alt="" />
               {league.leagueName.toUpperCase()} -
               {league.leagueSeason === 2023
@@ -28,13 +24,22 @@ export default async function LeagueTable({
             </h1>
             <Link
               href={"/"}
-              className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard  px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
+              className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
             >
               Volver
             </Link>
           </div>
           <div className="bg-grayPage rounded-xl p-5">
-            <div className="flex-col md:flex-row flex gap-2 md:gap-5 mb-5"></div>
+            <div className="flex-col md:flex-row flex gap-2 md:gap-5 mb-5">
+              <Badge
+                text={"· Los 2 primeros de cada grupo clasifican a octavos"}
+                color={"bg-firstTeam/80"}
+              />
+              <Badge
+                text={"· Los 4 mejores terceros clasifican a Octavos"}
+                color={"bg-yellow/50"}
+              />
+            </div>
             <div className="flex flex-col items-center grid-cols-2 xl:items-start 2xl:grid 2xl:auto-cols-max gap-5 xl:w-max">
               {league.leagueStandings.map((group, groupIndex) => (
                 <div
@@ -84,7 +89,7 @@ export default async function LeagueTable({
                               ? "bg-firstTeam bg-opacity-40"
                               : (amarilloTeams === true) & (teamIndex === 2)
                               ? "bg-yellow bg-opacity-20"
-                              : "even:bg-grayPage odd:bg-searchBG "
+                              : "even:bg-grayPage odd:bg-searchBG"
                           } `}
                         >
                           <td className="text-xs md:text-base">{team.rank}</td>

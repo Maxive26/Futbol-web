@@ -28,7 +28,12 @@ export default function MatchCard(props) {
       ? "Pospuesto"
       : "Vivo";
 
-  const rondaDeLaFecha = ronda === "Semi-finals" ? "Semifinal" : ronda;
+  const rondaDeLaFecha =
+    ronda === "Semi-finals"
+      ? "Semifinal"
+      : ronda === "Friendlies 1"
+      ? "Amistosos"
+      : ronda;
 
   const style = {
     height: "2px",

@@ -2,7 +2,7 @@ import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 import Link from "next/link";
 import Badge from "@/app/components/Badge/badge";
 
-export default async function LeagueTable({
+export default async function LigaProfesionalTable({
   leagueID,
   año,
   clasificationTeams,
@@ -34,7 +34,12 @@ export default async function LeagueTable({
             </Link>
           </div>
           <div className="bg-grayPage rounded-xl p-5">
-            <div className="flex-col md:flex-row flex gap-2 md:gap-5 mb-5"></div>
+            <div className="flex-col md:flex-row flex gap-2 md:gap-5 mb-5">
+              <Badge
+                text={"· El campeón clasifica a la copa Libertadores"}
+                color={"bg-firstTeam/80"}
+              />
+            </div>
             <div className="flex flex-col items-center grid-cols-2 xl:items-start 2xl:grid 2xl:auto-cols-max gap-5 xl:w-max">
               {league.leagueStandings.map((group, groupIndex) => (
                 <div

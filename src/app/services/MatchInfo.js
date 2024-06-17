@@ -40,6 +40,7 @@ export const getEvents = async (fixtureID) => {
       "x-rapidapi-host": "v3.football.api-sports.io",
       "x-rapidapi-key": `${API_KEY}`,
     },
+    cache: "no-store",
   });
   console.log("[!MatchEventsInfo!] Hice el fetch");
 

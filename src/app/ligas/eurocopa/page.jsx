@@ -1,10 +1,10 @@
-import LeagueTable from "@/app/components/table/leagueTable.jsx";
+import EuroCopaTable from "@/app/components/ligas/eurocopa/eurocopaTable";
 
 export default function LibertadoresPage() {
   return (
     <>
       <section className="text-whiteCard">
-        <LeagueTable
+        <EuroCopaTable
           leagueID={4}
           año={2024}
           clasificationTeams={2}

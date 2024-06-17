@@ -15,6 +15,21 @@ export default async function page({ params }) {
   var today = new Date();
   var year = today.getFullYear();
 
+  function posiciones(posicion) {
+    const pos =
+      posicion === "Goalkeeper"
+        ? "Arquero"
+        : posicion === "Defender"
+        ? "Defensor"
+        : posicion === "Midfielder"
+        ? "Medio campista"
+        : posicion === "Attacker"
+        ? "Delantero"
+        : posicion;
+
+    return pos;
+  }
+
   return (
     <section>
       <div className="flex items-center mb-4 justify-between">
@@ -112,7 +127,9 @@ export default async function page({ params }) {
                       </span>
                     </div>
                     <div className="border-t border-grayCard border-opacity-10">
-                      <span className="mx-3 text-sm">{player.posicion}</span>
+                      <span className="mx-3 text-sm">
+                        {posiciones(player.posicion)}
+                      </span>
                     </div>
                   </div>
                 </div>
