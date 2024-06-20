@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
+import MatchesContext from "@/app/context/MatchesContext";
 
 export default function PlayersTable({
   jugadores,
@@ -8,6 +10,7 @@ export default function PlayersTable({
 }) {
   const colorTeam = `#${color.principal}`;
   const colorTeamSecundary = `#${color.secundario}`;
+  const Matches = useContext(MatchesContext);
 
   const nombresConEventos = (jugadorID, jugadorNombre) => {
     if (jugadorID === null) {
@@ -22,6 +25,9 @@ export default function PlayersTable({
           case "Goal":
             goalCount++;
             jugadorNombreConEvento += "⚽";
+            if (event.detalle === "Own Goal") {
+              jugadorNombreConEvento += `(e.c)`;
+            }
             break;
           case "Card":
             jugadorNombreConEvento +=
@@ -77,9 +83,7 @@ export default function PlayersTable({
                   <td className="border border-greenCard w-12 text-center">
                     {player.player.number}
                   </td>
-                  <td className="flex w-56 text-left pl-2 truncate">
-                    {nombre}
-                  </td>
+                  <td className="flex w-56 text-left pl-2 ">{nombre}</td>
                 </tr>
               );
             })}

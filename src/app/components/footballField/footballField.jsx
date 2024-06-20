@@ -1,8 +1,11 @@
 import React from "react";
 
-export default function FootballField({ jugadores, index, color }) {
-  const colorTeam = `#${color.principal}`;
-  const colorTeamSecundary = `#${color.secundario}`;
+export default function FootballField({ jugadores, index, color = {} }) {
+  const defaultColorPrincipal = "#0000FF";
+  const defaultColorSecundario = "#FFFFFF";
+
+  const colorTeam = `#${color.principal || defaultColorPrincipal}`;
+  const colorTeamSecundary = `#${color.secundario || defaultColorSecundario}`;
 
   const llenarArrayConJugadores = (jugadores) => {
     let array = [];
@@ -22,9 +25,13 @@ export default function FootballField({ jugadores, index, color }) {
             " " +
             jugador.player.name.split(" ")[2]
           : jugador.player.name.split(" ")[1];
-      let [x, y] = jugador.player.grid.split(":").map(Number);
-      array[x - 1][y - 1].number = jugador.player.number;
-      array[x - 1][y - 1].apellido = nombre;
+
+      let [x, y] = (jugador.player.grid || "").split(":").map(Number);
+
+      if (!isNaN(x) && !isNaN(y) && x > 0 && y > 0 && x <= 5 && y <= 5) {
+        array[x - 1][y - 1].number = jugador.player.number;
+        array[x - 1][y - 1].apellido = nombre;
+      }
     });
 
     return array;

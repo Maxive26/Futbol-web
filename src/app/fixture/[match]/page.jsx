@@ -20,7 +20,7 @@ export default async function Page({ params }) {
     return (
       <Suspense>
         <div className="flex items-center mb-4 justify-between">
-          <h1 className="text-lg lg:text-2xl sm:font-semibold text-whiteCard  flex items-center">
+          <h1 className="text-lg lg:text-2xl sm:font-semibold text-whiteCard flex items-center">
             <span className="mr-2">
               <FootballBall color={"#FFF"} />
             </span>
@@ -28,7 +28,7 @@ export default async function Page({ params }) {
           </h1>
           <Link
             href={"/"}
-            className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard  px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
+            className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
           >
             Volver
           </Link>
@@ -43,7 +43,7 @@ export default async function Page({ params }) {
                 <div className="flex justify-center group-hover:animate-pulse">
                   <Link href={`/team/${team.idEquipo}`}>
                     <img
-                      className="mb-4 w-36 h-3w-36"
+                      className="mb-4 w-36 h-auto"
                       src={team.escudo}
                       alt="Escudo"
                     />
@@ -61,8 +61,8 @@ export default async function Page({ params }) {
                 events={events}
                 jugadores={team.jugadores}
                 color={{
-                  principal: team.color,
-                  secundario: team.colorSecundario,
+                  principal: team.color || "#0000FF",
+                  secundario: team.colorSecundario || "#FFFFFF",
                 }}
               />
               <PlayersTable
@@ -70,8 +70,8 @@ export default async function Page({ params }) {
                 jugadores={team.suplentes}
                 titulares={false}
                 color={{
-                  principal: team.color,
-                  secundario: team.colorSecundario,
+                  principal: team.color || "#0000FF",
+                  secundario: team.colorSecundario || "#FFFFFF",
                 }}
               />
             </div>
@@ -83,8 +83,8 @@ export default async function Page({ params }) {
                   jugadores={team.jugadores}
                   index={index}
                   color={{
-                    principal: team.color,
-                    secundario: team.colorSecundario,
+                    principal: team.color || "#0000FF",
+                    secundario: team.colorSecundario || "#FFFFFF",
                   }}
                 />
               </div>

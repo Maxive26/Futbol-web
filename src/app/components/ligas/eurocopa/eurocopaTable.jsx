@@ -44,7 +44,7 @@ export default async function EuroCopaTable({
               {league.leagueStandings.map((group, groupIndex) => (
                 <div
                   key={groupIndex}
-                  className="bg-blackBG p-5 rounded-xl w-max"
+                  className="bg-blackBG p-2 md:p-5 rounded-xl w-max"
                 >
                   {league.leagueStandings.length > 1 && (
                     <h2 className="text-base md:text-lg font-semibold mb-2 flex">

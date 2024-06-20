@@ -1,4 +1,3 @@
-import fixtureEvents from "@/app/mocks/fixtureEvents.json";
 export const getMatchInfo = async (fixtureID) => {
   const URL = "https://v3.football.api-sports.io";
   const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;

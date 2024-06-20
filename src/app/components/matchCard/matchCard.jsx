@@ -1,6 +1,7 @@
 import React from "react";
 import Stadium from "@/app/components/icons/stadium";
 import "@/app/components/matchCard/matchCard.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 export default function MatchCard(props) {
   const { estadio, estado, team1, team2, horario, tiempo, ronda, logoLiga } =
@@ -76,9 +77,18 @@ export default function MatchCard(props) {
               className="w-20 h-20 mb-3"
               alt="Escudo del equipo local"
             />
-            <span className="text-center px-2 font-bold truncate w-32">
+            <span
+              data-tooltip-id="team1"
+              data-tooltip-content={team1.nombre}
+              className=" text-center px-2 font-bold truncate w-32"
+            >
               {team1.nombre}
             </span>
+            <ReactTooltip
+              place="bottom"
+              style={{ fontSize: "12px", padding: "5px" }}
+              id="team1"
+            />
           </div>
           <div className="flex flex-col items-center">
             <span className="font-bold">
@@ -105,9 +115,18 @@ export default function MatchCard(props) {
               className="w-20 h-20 mb-3"
               alt="Escudo del equipo visitante"
             />
-            <span className="text-center font-bold truncate px-2 w-32">
+            <span
+              data-tooltip-id="team2"
+              data-tooltip-content={team2.nombre}
+              className="text-center font-bold truncate px-2 w-32"
+            >
               {team2.nombre}
             </span>
+            <ReactTooltip
+              place="bottom"
+              style={{ fontSize: "12px", padding: "5px" }}
+              id="team2"
+            />
           </div>
         </div>
         <div style={style}></div>

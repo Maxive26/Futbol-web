@@ -1,10 +1,7 @@
-import Buscador from "@/app/components/buscador/buscador";
 import Sidebar from "@/app/components/sidebar/sidebar";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import ChangueThemeIcon from "./components/changueThemeIcon/changueThemeIcon";
 import { SkeletonTheme } from "react-loading-skeleton";
-import MenuIcon from "./components/icons/Menu";
 import TopHeader from "./components/topHeader/TopHeader";
 import { Analytics } from "@vercel/analytics/react";
 

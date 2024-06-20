@@ -2,17 +2,15 @@ import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 import Link from "next/link";
 import Badge from "@/app/components/Badge/badge";
 
-export default async function LigaProfesionalTable({
+export default async function CopaAmericaTable({
   leagueID,
   año,
   clasificationTeams,
-  equipos,
   amarilloTeams = false,
-  partidosPorFecha,
   fechas = false,
 }) {
   const data = await getLeague(leagueID, año);
-  // const leagueMatches = await getLeaguesMatches(leagueID, año);
+  //   const leagueMatches = await getLeaguesMatches(leagueID, año);
 
   return (
     <>
@@ -36,7 +34,7 @@ export default async function LigaProfesionalTable({
           <div className="bg-grayPage rounded-xl p-5">
             <div className="flex-col md:flex-row flex gap-2 md:gap-5 mb-5">
               <Badge
-                text={"· El campeón clasifica a la copa Libertadores"}
+                text={"· Los 2 primeros de cada grupo clasifican a octavos"}
                 color={"bg-firstTeam/80"}
               />
             </div>
