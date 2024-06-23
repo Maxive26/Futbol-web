@@ -74,6 +74,7 @@ export default function FixtureLeague({ data, league }) {
                   estado={match.estado}
                   horario={match.horario}
                   ronda={match.ronda}
+                  info={true}
                   team1={{
                     id: match.equipoLocalId,
                     escudo: match.equipoLocalEscudo,

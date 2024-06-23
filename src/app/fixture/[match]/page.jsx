@@ -33,14 +33,14 @@ export default async function Page({ params }) {
             Volver
           </Link>
         </div>
-        <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 xl:grid-cols-3 bg-grayPage rounded-xl p-5 text-center gap-10">
+        <div className="flex flex-col justify-center  md:grid md:grid-cols-2 xl:grid-cols-3 bg-grayPage rounded-xl p-5 text-center gap-10">
           {data?.map((team) => (
             <div
               className="text-whiteCard flex flex-col items-center"
               key={team.idEquipo}
             >
               <div className="group">
-                <div className="flex justify-center group-hover:animate-pulse">
+                <div className="flex justify-center group-hover:animate-pulse h-36">
                   <Link href={`/team/${team.idEquipo}`}>
                     <img
                       className="mb-4 w-36 h-auto"
@@ -59,6 +59,7 @@ export default async function Page({ params }) {
               <h1 className="mb-4">DT: {team.entrenador}</h1>
               <PlayersTable
                 events={events}
+                equipoId={team.idEquipo}
                 jugadores={team.jugadores}
                 color={{
                   principal: team.color || "#0000FF",
@@ -67,6 +68,7 @@ export default async function Page({ params }) {
               />
               <PlayersTable
                 events={events}
+                equipoId={team.idEquipo}
                 jugadores={team.suplentes}
                 titulares={false}
                 color={{
@@ -76,7 +78,7 @@ export default async function Page({ params }) {
               />
             </div>
           ))}
-          <div className="flex flex-col items-center justify-center py-10">
+          <div className="flex flex-col items-center  py-10">
             {data.map((team, index) => (
               <div key={index} className={index === 1 ? "rotate-180" : ""}>
                 <FootballField

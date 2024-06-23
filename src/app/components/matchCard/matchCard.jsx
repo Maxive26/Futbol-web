@@ -2,10 +2,20 @@ import React from "react";
 import Stadium from "@/app/components/icons/stadium";
 import "@/app/components/matchCard/matchCard.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import Plus from "../icons/plus";
 
 export default function MatchCard(props) {
-  const { estadio, estado, team1, team2, horario, tiempo, ronda, logoLiga } =
-    props;
+  const {
+    estadio,
+    estado,
+    team1,
+    team2,
+    horario,
+    tiempo,
+    ronda,
+    logoLiga,
+    info = false,
+  } = props;
 
   function convertirTimestampAHora(timestamp) {
     const date = new Date(timestamp * 1000);
@@ -41,7 +51,7 @@ export default function MatchCard(props) {
     width: "100%",
     opacity: "80%",
     background:
-      "linear-gradient(to right, rgba(0, 0, 0, 0), #D9DFE8, rgba(0, 0, 0, 0))",
+      "linear-gradient(to right, rgba(0, 0, 0, 0), #242427, rgba(0, 0, 0, 0))",
   };
 
   return (
@@ -58,6 +68,11 @@ export default function MatchCard(props) {
         estado !== "PST" ? (
           <div className="w-5 h-5 bg-red rounded-full absolute top-3 left-3 animate-pulse z-10"></div>
         ) : null}
+        {info && (
+          <div className="w-5 h-5 bg-green rounded-tr-xl rounded-bl-md absolute top-0 right-0 z-10 flex justify-center items-center">
+            <Plus color={"#000"} />
+          </div>
+        )}
         <div className="h-6 flex items-center justify-center">
           <span className="bg-grayPage text-sm text-whiteCard px-4 w-28 h-6 font-semibold relative text-center rounded-b-[20px] radiusInverted z-10">
             {estadoDePartido}
@@ -108,9 +123,11 @@ export default function MatchCard(props) {
           </div>
           <div className="flex flex-col items-center w-28">
             <img
-              // src={team2.escudo}
-              // src={`images/escudos/${team2.id}.png`}
-              src={`https://media.api-sports.io/football/teams/${team2.id}.png`}
+              src={`images/escudos/${team2.id}.png`}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = `https://media.api-sports.io/football/teams/${team2.id}.png`;
+              }}
               style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
               className="w-20 h-20 mb-3"
               alt="Escudo del equipo visitante"

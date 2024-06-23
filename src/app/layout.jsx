@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <header className="flex relative justify-between items-center  bg-blackBG border-b-2 border-grayPage col-[2_/_3] lg:col-[2_/_3] lg:row-[1_/_2]">
           <TopHeader />
         </header>
-        <section className="hidden lg:flex overflow-auto bg-blackBG border-r-2 border-grayPage lg:col-[1_/_2] lg:row-[1_/_3] p-5 flex-col gap-10">
+        <section className="hidden lg:flex overflow-auto bg-blackBG border-r-2 border-grayPage lg:col-[1_/_2] lg:row-[1_/_3] p-5 flex-col gap-10 scrollbar-thin scrollbar-thumb-greenCard scrollbar-track-grayPage">
           <Sidebar />
         </section>
         <SkeletonTheme baseColor="#313131" highlightColor="#525252">

@@ -30,9 +30,15 @@ export const LINKSSIDEBAR = [
     competicion: "liga",
   },
   {
-    id: "1032",
-    href: "/ligas/copaDeLaLiga",
-    liga: "Copa de la liga",
+    id: "9",
+    href: "/ligas/copaAmerica",
+    liga: "Copa América",
+    competicion: "copa",
+  },
+  {
+    id: "4",
+    href: "/ligas/eurocopa",
+    liga: "Eurocopa",
     competicion: "copa",
   },
   {
@@ -60,15 +66,9 @@ export const LINKSSIDEBAR = [
     competicion: "copa",
   },
   {
-    id: "9",
-    href: "/ligas/copaAmerica",
-    liga: "Copa América",
-    competicion: "copa",
-  },
-  {
-    id: "4",
-    href: "/ligas/eurocopa",
-    liga: "Eurocopa",
+    id: "1032",
+    href: "/ligas/copaDeLaLiga",
+    liga: "Copa de la liga",
     competicion: "copa",
   },
 ];
