@@ -29,25 +29,19 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
   return (
     <div className="flex flex-col">
       <h2 className="text-whiteCard font-bold text-xl mb-5">FIXTURE</h2>
-      <table className="mb-10 w-40 md:w-80">
-        <thead>
-          <tr className={`border border-greenCard`}>
-            <th className="px-2 text-whiteCard font-normal border-r border-greenCard text-center">
-              Dia
-            </th>
-            <th className="text-sm md:text-base md:px-2 text-whiteCard font-normal border-r border-greenCard text-center">
+      <table className="mb-10 w-40 md:w-80 border-collapse rounded-xl overflow-hidden p-3">
+        <thead className="bg-searchBG text-whiteCard/50">
+          <tr>
+            <th className="px-2  font-normal text-center">Dia</th>
+            <th className="text-sm md:text-base md:px-2  font-normal text-center">
               L/V
             </th>
-            <th className="text-sm md:text-base md:px-2 flex justify-center items-center text-whiteCard truncate font-normal text-left w-auto md:w-52 border-greenCard border-r">
+            <th className="text-sm md:text-base md:px-2 flex justify-center items-center text-whiteCard truncate font-normal text-left w-auto md:w-52 ">
               <img src={image} alt="Escudo del equipo" className="w-5 h-5 " />
               {nombre.toUpperCase()} vs
             </th>
-            <th className="px-2 text-whiteCard font-normal text-center border-greenCard border-r ">
-              Res
-            </th>
-            <th className="px-2 text-whiteCard font-normal text-center border-greenCard border-r">
-              Info
-            </th>
+            <th className="px-2  font-normal text-center  ">Res</th>
+            <th className="px-2  font-normal text-center ">Info</th>
           </tr>
         </thead>
         <tbody>
@@ -55,12 +49,12 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
             match.estado === "CANC" ? null : (
               <tr
                 key={match.idFixture}
-                className="border text-whiteCard  border-greenCard even:bg-grayPage odd:bg-searchBG"
+                className=" text-whiteCard  even:bg-grayPage odd:bg-searchBG"
               >
-                <td className="text-sm md:text-base border border-greenCard md:px-2 text-center">
+                <td className="text-sm md:text-base  md:px-2 text-center">
                   {convertirTimestamp(match.fecha)}
                 </td>
-                <td className="text-sm md:text-base md:px-2 border border-greenCard text-center font-bold">
+                <td className="text-sm md:text-base md:px-2  text-center font-bold">
                   {match.localId == teamId ? "L" : "V"}
                 </td>
                 <td className="text-sm md:text-base flex items-center w-auto md:w-52 text-left md:pl-2 truncate ">
@@ -85,7 +79,7 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
                   )}
                 </td>
                 <td
-                  className={`border font-bold border-greenCard  truncate text-center ${
+                  className={` font-bold  truncate text-center ${
                     match.resultadoLocal == null ||
                     match.resultadoVisitante == null
                       ? ""
@@ -106,7 +100,7 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
                     ? `${match.resultadoLocal} - ${match.resultadoVisitante}`
                     : `${match.resultadoVisitante} - ${match.resultadoLocal}`}
                 </td>
-                <td className="flex justify-center items-center mt-1">
+                <td className="">
                   {match.estado !== "NS" &&
                     match.estado !== "TBD" &&
                     match.estado !== "PST" && (

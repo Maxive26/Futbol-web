@@ -114,11 +114,11 @@ export default async function page({ params }) {
               ) : (
                 <div
                   key={player.id}
-                  className="flex w-auto sm:w-3/4 flex-col odd:bg-grayPage even:bg-blackBG text-whiteCard items-center"
+                  className="flex mb-1 rounded-tl-xl w-auto sm:w-3/4 flex-col odd:bg-grayPage even:bg-blackBG text-whiteCard items-center"
                 >
-                  <div className="w-full grid rounded relative grid-rows-2 border-x-2 border-y border-greenCard ">
+                  <div className="w-full grid relative grid-rows-2 ">
                     <div className="flex items-center">
-                      <span className="w-8 text-center font-bold mr-4 text-blackBG bg-grayCard">
+                      <span className="w-8 text-center rounded-tl-xl font-bold mr-4 text-blackBG bg-grayCard">
                         {player.numero}
                       </span>
                       <span className="tracking-wider">{player.nombre}</span>
