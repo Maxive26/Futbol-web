@@ -66,7 +66,7 @@ export default function TopHeader() {
       <div
         className={`${
           isSearchMenuActive ? "block" : "hidden"
-        } bg-blackBG transition w-full z-40 p-9 h-screen absolute top-0 left-0 flex flex-col gap-5`}
+        } bg-blackBG transition w-full z-40 px-3 py-9 h-screen absolute top-0 left-0 flex flex-col gap-5`}
       >
         <div className="flex justify-between">
           <Buscador closeSearchMenu={closeSearchMenu} />

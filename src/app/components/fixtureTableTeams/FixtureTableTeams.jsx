@@ -32,12 +32,16 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
       <table className="mb-10 w-40 md:w-80 border-collapse rounded-xl overflow-hidden p-3">
         <thead className="bg-searchBG text-whiteCard/50">
           <tr>
-            <th className="px-2  font-normal text-center">Dia</th>
+            <th className="px-2 p-3 font-normal text-center">Dia</th>
             <th className="text-sm md:text-base md:px-2  font-normal text-center">
               L/V
             </th>
-            <th className="text-sm md:text-base md:px-2 flex justify-center items-center text-whiteCard truncate font-normal text-left w-auto md:w-52 ">
-              <img src={image} alt="Escudo del equipo" className="w-5 h-5 " />
+            <th className="text-sm p-3 md:text-base md:px-2 flex  items-center text-whiteCard truncate font-normal text-left w-auto md:w-52 ">
+              <img
+                src={image}
+                alt="Escudo del equipo"
+                className="max-w-5 max-h-5 mr-2"
+              />
               {nombre.toUpperCase()} vs
             </th>
             <th className="px-2  font-normal text-center  ">Res</th>
@@ -64,7 +68,7 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
                         ? match.visitanteEscudo
                         : match.localEscudo
                     }
-                    className="w-5 h-5 md:mr-2"
+                    className="max-w-5 max-h-5 md:mr-2"
                     alt=""
                   />
                   {match.localId == teamId
@@ -100,7 +104,7 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
                     ? `${match.resultadoLocal} - ${match.resultadoVisitante}`
                     : `${match.resultadoVisitante} - ${match.resultadoLocal}`}
                 </td>
-                <td className="">
+                <td className="flex items-center justify-center">
                   {match.estado !== "NS" &&
                     match.estado !== "TBD" &&
                     match.estado !== "PST" && (

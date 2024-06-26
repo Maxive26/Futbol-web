@@ -89,7 +89,7 @@ export default function MatchCard(props) {
                 e.target.src = `https://media.api-sports.io/football/teams/${team1.id}.png`;
               }}
               style={{ filter: "drop-shadow(-5px 5px 5px rgba(31,32,34,.5))" }}
-              className="w-20 h-20 mb-3"
+              className="max-w-20 max-h-20 mb-3"
               alt="Escudo del equipo local"
             />
             <span
@@ -129,7 +129,7 @@ export default function MatchCard(props) {
                 e.target.src = `https://media.api-sports.io/football/teams/${team2.id}.png`;
               }}
               style={{ filter: "drop-shadow(5px 5px 5px rgba(31,32,34,.5))" }}
-              className="w-20 h-20 mb-3"
+              className="max-w-20 max-h-20 mb-3"
               alt="Escudo del equipo visitante"
             />
             <span

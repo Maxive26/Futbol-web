@@ -56,7 +56,7 @@ export default async function page({ params }) {
               <img
                 src={team.escudo}
                 alt="Escudo del equipo"
-                className="w-48 h-48"
+                className="max-w-48 max-h-48 rounded-md"
               />
             </div>
 
