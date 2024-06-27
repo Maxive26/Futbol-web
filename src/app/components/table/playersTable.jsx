@@ -21,10 +21,12 @@ export default function PlayersTable({
       if (jugadorID === event.jugadorId) {
         switch (event.evento) {
           case "Goal":
-            goalCount++;
-            jugadorNombreConEvento += "⚽";
-            if (event.detalle === "Own Goal") {
-              jugadorNombreConEvento += `(e.c)`;
+            if (event.detalle !== "Missed Penalty") {
+              goalCount++;
+              jugadorNombreConEvento += "⚽";
+              if (event.detalle === "Own Goal") {
+                jugadorNombreConEvento += `(e.c)`;
+              }
             }
             break;
           case "Card":
@@ -45,13 +47,19 @@ export default function PlayersTable({
   };
 
   const eventosGoles = events
-    ?.filter((event) => event.evento === "Goal" && event.equipoId === equipoId)
+    ?.filter(
+      (event) =>
+        event.evento === "Goal" &&
+        event.detalle !== "Missed Penalty" &&
+        event.equipoId === equipoId
+    )
     .map((event, index) => (
       <div key={index}>
         {`${event.tiempo}${
           event.tiempoExtra ? ` +${event.tiempoExtra}` : ""
         }' ${event.jugador}`}
         {event.detalle === "Own Goal" && " (e.c)"}
+        {event.detalle === "Penalty" && " (p)"}
       </div>
     ));
 
