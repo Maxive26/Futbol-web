@@ -8,30 +8,13 @@ export default async function CopaAmericaTable({
   clasificationTeams,
   amarilloTeams = false,
   fechas = false,
+  data,
 }) {
-  const data = await getLeague(leagueID, año);
-  //   const leagueMatches = await getLeaguesMatches(leagueID, año);
-
   return (
     <>
       {data?.map((league) => (
         <div key={league.leagueId}>
-          <div className="flex items-center mb-4 justify-between">
-            <h1 className="text-lg md:text-2xl font-semibold  flex items-center">
-              <img className="w-8 h-8 mr-3" src={league.leagueLogo} alt="" />
-              {league.leagueName.toUpperCase()} -
-              {league.leagueSeason === 2023
-                ? " " + league.leagueSeason + `/${league.leagueSeason + 1}`
-                : " " + league.leagueSeason}
-            </h1>
-            <Link
-              href={"/"}
-              className="text-whiteCard font-semibold py-1 flex justify-center items-center bg-grayPage w-28 transition ease-out border-2 border-greenCard  px-3 rounded-xl hover:bg-greenCard hover:text-blackBG"
-            >
-              Volver
-            </Link>
-          </div>
-          <div className="bg-grayPage rounded-xl p-5">
+          <div className="">
             <div className="flex-col md:flex-row flex gap-2 md:gap-5 mb-5">
               <Badge
                 text={"· Los 2 primeros de cada grupo clasifican a octavos"}

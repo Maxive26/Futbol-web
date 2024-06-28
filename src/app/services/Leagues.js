@@ -11,7 +11,7 @@ export const getLeague = async (id, season) => {
         "x-rapidapi-key": `${API_KEY}`,
       },
       // next: { revalidate: 300 },
-      cache: "no-store",
+      cache: "default",
     }
   );
   console.log("[!Leagues!] Hice el fetch");
