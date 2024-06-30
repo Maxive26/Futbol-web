@@ -1,4 +1,7 @@
 import LeagueTable from "@/app/components/table/leagueTable.jsx";
+export const metadata = {
+  title: "Brasileirao",
+};
 export default function BrasileiraoPage() {
   return (
     <section className="text-whiteCard">

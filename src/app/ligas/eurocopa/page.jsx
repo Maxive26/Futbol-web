@@ -1,5 +1,9 @@
 import EuroCopaTable from "@/app/components/ligas/eurocopa/eurocopaTable";
 
+export const metadata = {
+  title: "Eurocopa",
+};
+
 export default function LibertadoresPage() {
   return (
     <>

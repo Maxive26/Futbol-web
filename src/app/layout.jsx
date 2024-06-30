@@ -6,7 +6,10 @@ import TopHeader from "./components/topHeader/TopHeader";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: "Futbolita",
+  title: {
+    default: "Inicio | Futbolita",
+    template: "%s | Futbolita",
+  },
   description:
     "Página web con información de todos los partidos de fútbol, ligas y competiciones, incluyendo tablas de posiciones, detalles de encuentros y datos de equipos.",
   alternates: {

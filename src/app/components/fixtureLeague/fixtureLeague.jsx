@@ -32,6 +32,9 @@ export default function FixtureLeague({ data, league }) {
         : filteredMatches[0].nombreLiga === "Friendlies" &&
           filteredMatches[0].paisLiga === "World"
         ? "Amistosos Internacionales"
+        : filteredMatches[0].nombreLiga === "Euro Championship" &&
+          filteredMatches[0].paisLiga === "World"
+        ? "Eurocopa"
         : filteredMatches[0].nombreLiga;
   }
 

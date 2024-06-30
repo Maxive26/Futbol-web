@@ -1,5 +1,8 @@
 import LigaProfesionalTable from "@/app/components/ligas/ligaProfesional/ligaProfesional";
 import LeagueMatches from "@/app/components/matches/LeagueMatches";
+export const metadata = {
+  title: "Liga Profesional",
+};
 
 export default function LigaProfesionalPage() {
   return (

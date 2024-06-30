@@ -6,6 +6,10 @@ import NotFound from "@/app/components/not-found/notFound";
 import FootballBall from "@/app/components/icons/footballBall";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "Fixture",
+};
+
 export default async function Page({ params }) {
   const { match } = params;
   const data = await getMatchInfo(match);

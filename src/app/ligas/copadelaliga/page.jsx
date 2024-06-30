@@ -1,4 +1,7 @@
 import LeagueTable from "@/app/components/table/leagueTable.jsx";
+export const metadata = {
+  title: "Copa de la liga",
+};
 
 export default function CopaDeLaLigaPage() {
   return (

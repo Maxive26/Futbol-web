@@ -3,6 +3,10 @@ import LlavesCopaAmerica from "@/app/components/ligas/copaAmerica/Llaves";
 import Link from "next/link";
 import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 
+export const metadata = {
+  title: "Copa America",
+};
+
 export default async function CopaAmericaPage() {
   const data = await getLeague(9, 2024);
   return (

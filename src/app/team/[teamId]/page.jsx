@@ -7,6 +7,10 @@ import { Suspense } from "react";
 import FixtureTableTeamsSkeleton from "@/app/components/fixtureTableTeams/FixtureTableTeamsSkeleton";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+  title: "Equipos",
+};
+
 export default async function page({ params }) {
   const { teamId } = params;
   const data = await getTeam(teamId);

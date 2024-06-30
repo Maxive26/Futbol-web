@@ -1,4 +1,7 @@
 import LeagueTable from "@/app/components/table/leagueTable.jsx";
+export const metadata = {
+  title: "La liga",
+};
 export default function LaLigaPage() {
   return (
     <section className="text-whiteCard">

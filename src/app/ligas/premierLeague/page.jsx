@@ -1,4 +1,7 @@
 import LeagueTable from "@/app/components/table/leagueTable.jsx";
+export const metadata = {
+  title: "Premier League",
+};
 
 export default function PremierLeaguePage() {
   return (
