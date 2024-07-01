@@ -99,7 +99,7 @@ export default async function LigaProfesionalTable({
                               className="flex items-center w-full h-full font-bold"
                             >
                               <img
-                                src={team.team.logo}
+                                src={`/images/escudos/${team.team.id}.png`}
                                 alt={team.team.name}
                                 className="w-4 h-4 md:w-5 md:h-5 md:mr-2 rounded-full"
                               />

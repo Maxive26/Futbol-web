@@ -1,4 +1,3 @@
-import { getLeague, getLeaguesMatches } from "@/app/services/Leagues.js";
 import Link from "next/link";
 import Badge from "@/app/components/Badge/badge";
 

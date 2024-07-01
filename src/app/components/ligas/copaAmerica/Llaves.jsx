@@ -58,7 +58,7 @@ function Partido({ data = [], pos = "", text = "Cuartos de final" }) {
 
 export default function LlavesCopaAmerica({ data }) {
   return (
-    <div className="p-5 rounded-xl bg-blackBG relative w-auto xl:w-[840px] min-w-auto overflow-auto">
+    <div className="p-5 rounded-xl bg-blackBG relative w-auto xl:w-[840px] min-w-auto overflow-auto scrollbar-thin scrollbar-thumb-greenCard scrollbar-track-grayPage">
       <div className=" w-4 h-44 top-24 left-[265px] border-t-2 border-r-2 border-b-2 border-greenCard absolute  rounded-r-lg">
         <div className="w-3 h-1 top-1/2 left-4 border-t-2  border-greenCard absolute "></div>
       </div>
