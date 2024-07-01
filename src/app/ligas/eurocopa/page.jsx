@@ -33,6 +33,7 @@ export default async function LibertadoresPage() {
         </div>
       ))}
       <section className="text-whiteCard bg-grayPage rounded-xl p-5 flex flex-col gap-5">
+        <LlavesEurocopa data={data} />
         <EuroCopaTable
           leagueID={4}
           año={2024}
@@ -40,7 +41,6 @@ export default async function LibertadoresPage() {
           amarilloTeams
           data={data}
         />
-        <LlavesEurocopa data={data} />
       </section>
     </>
   );

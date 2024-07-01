@@ -104,12 +104,12 @@ export default function LlavesEurocopa({ data }) {
               text={"Cuartos de final"}
               pos={{ team1: "1B", team2: "1A" }}
             />
-            <Partido data={data} text={"Cuartos de final"} />
             <Partido
               data={data}
               text={"Cuartos de final"}
               pos={{ team1: "2D", team2: "1F" }}
             />
+            <Partido data={data} text={"Cuartos de final"} />
             <Partido
               data={data}
               text={"Cuartos de final"}
