@@ -76,7 +76,11 @@ export default function LlavesCopaAmerica({ data }) {
           <Partido data={data} pos={{ team1: "1D", team2: "2C" }} />
         </div>
         <div className="flex flex-col justify-around gap-6 w-60">
-          <Partido text={"Semifinal"} />
+          <Partido
+            data={data}
+            pos={{ team1: "1A", team2: "" }}
+            text={"Semifinal"}
+          />
           <Partido text={"Semifinal"} />
         </div>
         <div className="flex flex-col justify-center gap-6 w-60">

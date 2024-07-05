@@ -8,7 +8,7 @@ export const metadata = {
   title: "Eurocopa",
 };
 
-export default async function LibertadoresPage() {
+export default async function EurocopaPage() {
   const data = await getLeague(4, 2024);
   return (
     <>

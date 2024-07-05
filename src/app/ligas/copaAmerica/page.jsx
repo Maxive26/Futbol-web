@@ -32,6 +32,7 @@ export default async function CopaAmericaPage() {
         </div>
       ))}
       <section className="text-whiteCard bg-grayPage rounded-xl p-5 flex flex-col gap-5">
+        <LlavesCopaAmerica data={data} />
         <CopaAmericaTable
           leagueID={9}
           año={2024}
@@ -39,7 +40,6 @@ export default async function CopaAmericaPage() {
           amarilloTeams={false}
           data={data}
         />
-        <LlavesCopaAmerica data={data} />
       </section>
     </>
   );
