@@ -83,7 +83,7 @@ export default function LlavesCopaAmerica({ data }) {
           />
           <Partido
             data={data}
-            pos={{ team1: "", team2: "" }}
+            pos={{ team1: "1C", team2: "1D" }}
             text={"Semifinal"}
           />
         </div>

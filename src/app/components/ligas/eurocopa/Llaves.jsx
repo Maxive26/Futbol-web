@@ -126,7 +126,11 @@ export default function LlavesEurocopa({ data }) {
               pos={{ team1: "1B", team2: "2D" }}
               text={"Semifinal"}
             />
-            <Partido data={data} text={"Semifinal"} />
+            <Partido
+              data={data}
+              pos={{ team1: "3D", team2: "1C" }}
+              text={"Semifinal"}
+            />
           </div>
           <div className="flex flex-col justify-center gap-6 w-60">
             <Partido data={data} text={"Final"} />
