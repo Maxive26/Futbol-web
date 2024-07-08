@@ -66,6 +66,12 @@ export const LINKSSIDEBAR = [
     competicion: "copa",
   },
   {
+    id: "1123",
+    href: "/ligas/eliminatorias2026",
+    liga: "Elim. Conmebol",
+    competicion: "copa",
+  },
+  {
     id: "1032",
     href: "/ligas/copaDeLaLiga",
     liga: "Copa de la liga",
