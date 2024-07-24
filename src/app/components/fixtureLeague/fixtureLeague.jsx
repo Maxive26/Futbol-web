@@ -35,6 +35,9 @@ export default function FixtureLeague({ data, league }) {
         : filteredMatches[0].nombreLiga === "Euro Championship" &&
           filteredMatches[0].paisLiga === "World"
         ? "Eurocopa"
+        : filteredMatches[0].nombreLiga === "Olympics Men" &&
+          filteredMatches[0].paisLiga === "World"
+        ? "J.J.O.O"
         : filteredMatches[0].nombreLiga;
   }
 

@@ -116,6 +116,7 @@ export default function Fixture({ data }) {
             <FixtureLeague data={data} league={[130]} />
             <FixtureLeague data={data} league={[13]} />
             <FixtureLeague data={data} league={[11]} />
+            <FixtureLeague data={data} league={[480]} />
             <FixtureLeague data={data} league={[2]} />
             <FixtureLeague data={data} league={[3]} />
             <FixtureLeague data={data} league={[848]} />
