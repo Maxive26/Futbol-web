@@ -36,7 +36,7 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
             <th className="text-sm md:text-base md:px-2  font-normal text-center">
               L/V
             </th>
-            <th className="text-sm p-3 md:text-base md:px-2 flex  items-center text-whiteCard truncate font-normal text-left w-auto md:w-52 ">
+            <th className="text-sm p-3 md:text-base md:px-2 flex  items-center text-whiteCard truncate font-normal text-left w-auto md:w-32 xl:w-52 ">
               <img
                 src={image}
                 alt="Escudo del equipo"
@@ -61,7 +61,7 @@ export default async function FixtureTableTeams({ teamId, image, nombre }) {
                 <td className="text-sm md:text-base md:px-2  text-center font-bold">
                   {match.localId == teamId ? "L" : "V"}
                 </td>
-                <td className="text-sm md:text-base flex items-center w-auto md:w-52 text-left md:pl-2 truncate ">
+                <td className="text-sm md:text-base flex items-center w-auto md:w-32 xl:w-52 text-left md:pl-2 truncate ">
                   <img
                     src={
                       match.localId == teamId

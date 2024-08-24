@@ -50,7 +50,7 @@ export default async function page({ params }) {
           Volver
         </Link>
       </div>
-      <div className="flex flex-col justify-center  md:grid md:grid-cols-2 xl:grid-cols-3 bg-grayPage rounded-xl p-5 gap-10">
+      <div className="flex flex-col justify-center  md:grid md:grid-cols-2 2xl:grid-cols-3 bg-grayPage rounded-xl p-5 gap-10">
         {data?.map((team, index) => (
           <div
             key={team.id}
@@ -106,7 +106,8 @@ export default async function page({ params }) {
             />
           </Suspense>
         ) : (
-          redirect("/")
+          // redirect("/")
+          ""
         )}
 
         <div className="flex flex-col">

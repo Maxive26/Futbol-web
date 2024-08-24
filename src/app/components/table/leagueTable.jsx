@@ -22,7 +22,7 @@ export default async function LeagueTable({
             <h1 className="text-lg md:text-2xl font-semibold  flex items-center">
               <img className="w-8 h-8 mr-3" src={league.leagueLogo} alt="" />
               {league.leagueName.toUpperCase()} -
-              {league.leagueSeason === 2023
+              {league.leagueSeason === 2024
                 ? " " + league.leagueSeason + `/${league.leagueSeason + 1}`
                 : " " + league.leagueSeason}
             </h1>

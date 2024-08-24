@@ -55,7 +55,7 @@ export const LINKSSIDEBAR = [
   },
   {
     id: "2",
-    href: "/ligas/championsLeague",
+    href: "/ligas/championsleague",
     liga: "Champions League",
     competicion: "copa",
   },
@@ -73,7 +73,7 @@ export const LINKSSIDEBAR = [
   },
   {
     id: "1032",
-    href: "/ligas/copaDeLaLiga",
+    href: "/ligas/copadelaliga",
     liga: "Copa de la liga",
     competicion: "copa",
   },

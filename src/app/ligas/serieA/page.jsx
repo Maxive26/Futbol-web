@@ -7,7 +7,7 @@ export default function SerieAPage() {
     <section className="text-whiteCard">
       <LeagueTable
         leagueID={135}
-        año={2023}
+        año={2024}
         clasificationTeams={1}
         partidosPorFecha={10}
       />

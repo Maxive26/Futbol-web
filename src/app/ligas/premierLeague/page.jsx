@@ -8,7 +8,7 @@ export default function PremierLeaguePage() {
     <section className="text-whiteCard">
       <LeagueTable
         leagueID={39}
-        año={2023}
+        año={2024}
         clasificationTeams={1}
         partidosPorFecha={10}
       />
