@@ -38,6 +38,13 @@ export default function FixtureLeague({ data, league }) {
         : filteredMatches[0].nombreLiga === "Olympics Men" &&
           filteredMatches[0].paisLiga === "World"
         ? "J.J.O.O"
+        : filteredMatches[0].nombreLiga ===
+            "World Cup - Qualification South America" &&
+          filteredMatches[0].paisLiga === "World"
+        ? "Eliminatorias Sudamericanas"
+        : filteredMatches[0].nombreLiga === "UEFA Nations League" &&
+          filteredMatches[0].paisLiga === "World"
+        ? "Liga Naciones UEFA"
         : filteredMatches[0].nombreLiga;
   }
 

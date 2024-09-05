@@ -109,8 +109,11 @@ export default function Fixture({ data }) {
           <>
             <FixtureLeague data={data} league={[9]} />
             <FixtureLeague data={data} league={[4]} />
+            <FixtureLeague data={data} league={[34]} />
+            <FixtureLeague data={data} league={[32]} />
             <FixtureLeague data={data} league={[15]} />
             <FixtureLeague data={data} league={[128]} />
+            <FixtureLeague data={data} league={[5]} />
             <FixtureLeague data={data} league={[10]} />
             <FixtureLeague data={data} league={[1032]} />
             <FixtureLeague data={data} league={[130]} />
@@ -121,12 +124,12 @@ export default function Fixture({ data }) {
             <FixtureLeague data={data} league={[3]} />
             <FixtureLeague data={data} league={[848]} />
             <FixtureLeague data={data} league={[129]} />
-            <FixtureLeague data={data} league={[131]} />
-            <FixtureLeague data={data} league={[132]} />
             <FixtureLeague data={data} league={[39]} />
-            <FixtureLeague data={data} league={[16]} />
             <FixtureLeague data={data} league={[140]} />
             <FixtureLeague data={data} league={[135]} />
+            <FixtureLeague data={data} league={[131]} />
+            <FixtureLeague data={data} league={[132]} />
+            <FixtureLeague data={data} league={[16]} />
             <FixtureLeague data={data} league={[134]} />
             <FixtureLeague data={data} league={[71]} />
             <FixtureLeague data={data} league={[906]} />
