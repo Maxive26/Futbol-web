@@ -104,7 +104,7 @@ export default function Fixture({ data }) {
       </div>
       <section className="bg-grayPage rounded-xl py-4 p-2 sm:p-5">
         {data.length === 0 ? (
-          <h1 className=" text-red text-xl">X Peticiones diarias alcanzadas</h1>
+          <h1 className=" text-red text-xl">X ESTAMOS EN MANTENIMIENTO</h1>
         ) : (
           <>
             <FixtureLeague data={data} league={[9]} />
