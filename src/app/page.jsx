@@ -6,7 +6,6 @@ import MatchCardSkeleton from "./components/matchCard/matchCardSkeleton";
 export default async function Home({ searchParams }) {
   const currentDay = Number(searchParams?.day) || 0;
   const data = await getFixtures(currentDay);
-
   return (
     <>
       <Suspense key={currentDay} fallback={<MatchCardSkeleton />}>
